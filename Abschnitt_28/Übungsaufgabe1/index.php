@@ -106,18 +106,43 @@ echo $TestWort2 . $br;
 
 $zahl1 = 1;
 $zahl2 = 2;
+$ergebnis = $zahl1 + $zahl2;
 
-$ergebnis = $zahl1 + $zahl2;
-echo '1+2=' . $ergebnis . $br;
-echo '1+1=' . ++$zahl1 . $br;
-$ergebnis = $zahl1 + $zahl2;
-echo '1+1 +2=' . $ergebnis . $br;
-echo ++$zahl1 . $br;
-echo ++$zahl1 . $br;
-echo ++$zahl1 . $br;
-echo ++$zahl1 . $br;
-echo ++$zahl1 . $br;
+echo $ergebnis . $br; #Augabe ist 3
+echo $zahl1++ . $br; #Ausgabe ist 1 weil erst beim nächsten mal wird es erhöht
+$ergebnis = $zahl1 + $zahl2; 
+echo $ergebnis . $br; # Ausgabe ist 4 da jetzt zahl 1 um 1 erhöht wurde also 2+2
+echo $zahl1++ . $br; # Ausgabe ist 2 durch die angabe von vorher und wird beim nächsten mal um 1 erhöht
+echo ++$zahl1 . $br; # Ausgabe ist 4 durch die angabe von vorher und wird sofort um 1 erhöht
+echo $zahl1++ . $br;
+echo $zahl1++ . $br;
+echo $zahl1++ . $br;
+echo $zahl1 . $br; # zahl1 ist hier 7
+
+// kurzform Operatoren
+echo "kurzform Operatoren: $br";
+$zahl1 += 3;
 echo $zahl1 . $br;
+$zahl1 -= 9;
+echo $zahl1 . $br; # Zahl 1 ist hier wieder 1
+$zahl1++;
+echo $zahl1 . $br; # Zahl 1 ist hier 2
 
+//Variablen referenzieren
+
+$original = 'Orginal';
+$kopieOriginal = &$original;
+$original = "geändert";
+
+var_dump ($kopieOriginal);
+echo $br;
+var_dump ($original);
+echo $br;
+
+//Konstanzen
+
+const FESTE_VAR = 33;
+
+echo FESTE_VAR;
 
 ?>
