@@ -1,5 +1,17 @@
 <?php
 $br = "<br>";
+echo "PHP Version: ";
+echo PHP_VERSION;
+echo $br;
+echo "Pi wert: ";
+echo M_PI;
+echo $br;
+echo "Pfad der Datei: ";
+echo __FILE__;
+echo $br;
+
+
+
 $variableString = "Ich bin eine String Variable";
 $variableInteger = 34;
 $float = 99.99;
@@ -11,6 +23,7 @@ $variableGeändert = $variableÄndern;
 $löschen = "Löschen mit unsset";
 $null = 0;
 $leer = "";
+
 //Variable Array zu object konvertieren
 $object = ((object)$array);
 
@@ -77,6 +90,34 @@ var_dump($array);
 echo $br;
 #array zu object davon eine Index anzeigen
 var_dump($object->{0});
+echo $br;
 var_dump($object);
+echo $br;
+
+//Variable Variablen
+$wort = "TestWort";
+$wort2 = "TestWort2";
+
+$$wort = 'test';
+$$wort2 = 'test2';
+echo $TestWort2 . $br;
+
+// Operatoren + , - , / , %
+
+$zahl1 = 1;
+$zahl2 = 2;
+
+$ergebnis = $zahl1 + $zahl2;
+echo '1+2=' . $ergebnis . $br;
+echo '1+1=' . ++$zahl1 . $br;
+$ergebnis = $zahl1 + $zahl2;
+echo '1+1 +2=' . $ergebnis . $br;
+echo ++$zahl1 . $br;
+echo ++$zahl1 . $br;
+echo ++$zahl1 . $br;
+echo ++$zahl1 . $br;
+echo ++$zahl1 . $br;
+echo $zahl1 . $br;
+
 
 ?>
