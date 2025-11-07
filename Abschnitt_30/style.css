@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.2em;
+  h1 {
+    text-align: center;
+  }
+
+  .section1,
+  .section2 {
+    padding: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+
+    .inhalt-container {
+      width: 100vw;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+  }
+}
