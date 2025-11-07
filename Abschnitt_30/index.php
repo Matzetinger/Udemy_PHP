@@ -35,12 +35,6 @@
         <h5>Increment</h5>
         <p>Hier wird das vorherige Ergebnis +1 erhöht <br>$c++ = <?= $c ?></p>
 
-        <?php 
-          $d = 100;
-          $e = ++$d;
-        ?>
-        <h5>Prä-Inkrement (davor)</h5>
-        <p>$d = 100 <br>$e = ++$d <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
       <!-- Subtraktion -->
@@ -65,12 +59,6 @@
         <h5>Decrement</h5>
         <p>Hier wird das vorherige Ergebnis -1 genommen <br>$c-- = <?= $c ?></p>
 
-        <?php 
-          $d = 100;
-          $e = --$d;
-        ?>
-        <h5>Prä-Decrement (davor)</h5>
-        <p>$d = 100 <br>$e = --$d <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
       <!-- Multiplikation -->
@@ -95,12 +83,6 @@
         <h5>Decrement</h5>
         <p>Hier wird das vorherige Ergebnis -1 genommen <br>$c-- = <?= $c ?></p>
 
-        <?php 
-          $d = 100;
-          $e = $d--;
-        ?>
-        <h5>Post-Decrement (danach)</h5>
-        <p>$d = 100 <br>e = $d-- <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
       <!-- Division -->
@@ -125,12 +107,6 @@
         <h5>Decrement</h5>
         <p>Hier wird das vorherige Ergebnis -1 genommen <br>$c-- = <?= $c ?></p>
 
-        <?php 
-          $d = 100;
-          $e = $d--;
-        ?>
-        <h5>Post-Decrement (danach)</h5>
-        <p>$d = 100 <br>e = $d-- <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
       <!-- Modulo -->
@@ -154,6 +130,7 @@
         <?php $c++; ?>
         <h5>Inkrement</h5>
         <p>Hier wird das vorherige Ergebnis +1 erhöht <br>$c++ = <?= $c ?></p>
+
       </div>
 
     </div>
@@ -161,7 +138,7 @@
 
   <!-- Post und Prä Inkrement/Decrement -->
   <section class="section2">   
-    <h2>2. Post und Prä Ink- Decrement</h2>
+    <h2>2. Post und Prä Ink- und Decrement</h2>
     <div class="inhalt-container">
 
       <div>
@@ -170,7 +147,7 @@
           $d = 100;
           $e = $d++;
         ?>
-        <p>$d = 100 <br>e = $d++ <br>e = <?= $e ?> <br>d = <?= $d ?></p>
+        <p>$d = 100 <br>$e = $d++ <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
       <div>
@@ -179,7 +156,7 @@
           $d = 100;
           $e = $d--;
         ?>
-        <p>$d = 100 <br>e = $d-- <br>e = <?= $e ?> <br>d = <?= $d ?></p>
+        <p>$d = 100 <br>$e = $d-- <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
       <div>
@@ -188,7 +165,7 @@
           $d = 100;
           $e = ++$d;
         ?>
-        <p>$d = 100 <br>e = ++$d <br>e = <?= $e ?> <br>d = <?= $d ?></p>
+        <p>$d = 100 <br>$e = ++$d <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
       <div>
@@ -197,7 +174,7 @@
           $d = 100;
           $e = --$d;
         ?>
-        <p>$d = 100 <br>e = --$d <br>e = <?= $e ?> <br>d = <?= $d ?></p>
+        <p>$d = 100 <br>$e = --$d <br>e = <?= $e ?> <br>d = <?= $d ?></p>
       </div>
 
     </div>
