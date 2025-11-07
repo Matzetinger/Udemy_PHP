@@ -142,7 +142,7 @@
     <div class="inhalt-container">
 
       <div>
-        <h3>Post Inkrement (danach)</h3>
+        <h3>Post-Inkrement (danach)</h3>
         <?php 
           $d = 100;
           $e = $d++;
@@ -151,7 +151,7 @@
       </div>
 
       <div>
-        <h3>Post Decrement (danach)</h3>
+        <h3>Post-Decrement (danach)</h3>
         <?php 
           $d = 100;
           $e = $d--;
@@ -160,7 +160,7 @@
       </div>
 
       <div>
-        <h3>Post Inkrement (davor)</h3>
+        <h3>Prä-Inkrement (davor)</h3>
         <?php 
           $d = 100;
           $e = ++$d;
@@ -169,7 +169,7 @@
       </div>
 
       <div>
-        <h3>Post Decrement (davor)</h3>
+        <h3>Prä-Decrement (davor)</h3>
         <?php 
           $d = 100;
           $e = --$d;
