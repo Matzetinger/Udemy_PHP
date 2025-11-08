@@ -460,7 +460,7 @@
       </div>
 
       <!-- Kleiner als oder Gleich-->
-       <div class="box">
+      <div class="box">
         <h4>Kleiner als oder Gleich</h4>
         <?php 
           $a = 100;
@@ -473,6 +473,46 @@
      </div>
     </div>
   </section>
+
+  <!-- Ternärer Operator -->
+  <section class="section6">
+    <h2>6. Ternärer Operator</h2>
+    <div class="inhalt-container">
+
+      <!-- Bedingung -->
+      <div class="box">
+        <h4>(Bedingung) ? "Wenn Wahr": "Wenn falsch";</h4>
+        <?php 
+          $a = true;
+          $b = 100;
+        ?>
+
+        <p>$a = true <br> $b = 100 <br>  $a ? "ist truthy": "ist falsy" = <span><?= $a ? "ist truthy": "ist falsy" ?></span> <br> Falsy-Werte: false, 0, "", null, []</p>
+      </div>
+
+      <div class="box">
+        <h4>Bedingung if / else</h4>
+        <?php 
+          $a = 50;
+          $b = 100;
+        ?>
+
+        <p>$a = 50 <br> $b = 100 <br> ($a <= $b) ? "A Ist kleiner oder Gleich": "A Ist Größer" = <span><?= ($a <= $b) ? "A ist kleiner oder Gleich": "A ist Größer" ?></span></p>
+      </div>
+
+      <div class="box">
+        <h4>Bedingung verschachtelt</h4>
+        <?php 
+          $a = 1000;
+          $b = 100;
+          $c = 50;
+        ?>
+
+        <p>$a = 1000 <br> $b = 100 <br> $c = 50 <br> ($a <= $b) ? "A Ist kleiner oder Gleich": ($c === 10) ? "Ja ist 50": "nein ist größer oder kleiner" = <br> <span><?= ($a <= $b) ? "A Ist kleiner oder Gleich": (($c === 10) ? "Ja C ist 50": "nein ist größer oder kleiner") ?></span></p>
+      </div>
+    </div>
+  </section>
+
 
 </body>
 </html>
