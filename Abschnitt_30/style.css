@@ -12,13 +12,16 @@ body {
 
   .section1,
   .section2,
-  .section3 {
+  .section3,
+  .section4,
+  .section5 {
     padding: 5rem;
     display: flex;
     align-items: center;
 
     h2 {
       width: 15em;
+      align-self: flex-start;
     }
 
     .inhalt-container {
@@ -31,9 +34,24 @@ body {
       .box {
         padding: 1em;
         border: 3px solid rgb(135, 130, 130);
+        h4 {
+          text-align: center;
+          padding-bottom: 1rem;
+        }
         span {
           text-decoration: underline;
         }
+      }
+    }
+  }
+
+  .section5 {
+    .inhalt-container {
+      flex-direction: column;
+      align-items: center;
+      .box-container {
+        display: flex;
+        gap: 2rem;
       }
     }
   }
