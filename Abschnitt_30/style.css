@@ -15,7 +15,8 @@ body {
   .section3,
   .section4,
   .section5,
-  .section6 {
+  .section6,
+  .section7 {
     padding: 5rem;
     display: flex;
     align-items: center;
@@ -37,7 +38,7 @@ body {
         border: 3px solid rgb(135, 130, 130);
         h4 {
           text-align: center;
-          padding-bottom: 1rem;
+          padding: 1rem;
         }
         span {
           text-decoration: underline;

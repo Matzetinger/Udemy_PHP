@@ -513,6 +513,118 @@
     </div>
   </section>
 
+  <section class="section7">
+    <h2>7. Nullsafe ? & Null-Coalescing Operator ?? "Ausgabetext wenn null" </h2>
+    <div class="inhalt-container">
+
+    <!-- Eigenschaft zugreifen -->
+      <div class="box">
+        <h4>Auf eine Eigenschaft zugreifen wenn vorhanden -></h4>
+        <?php 
+
+          class Benutzer1{
+            public $profil1;
+
+            public function __construct($profil1 = null){
+              $this->profil1 = $profil1;
+            }
+          }
+
+          class Profil1{
+            public $name1;
+
+            public function __construct($name1 = null){
+              $this->name1 = $name1;
+            }
+          }
+
+          $benutzer1 = new Benutzer1(new Profil1("IOSIF"));
+        ?>
+        <p>$benutzer1->profil1->name1 = <span><?= $benutzer1->profil1->name1 ?></span></p>
+  </div>
+
+      <!-- Nullsafe -->
+      <div class="box">
+        <h4>Nullsafe ?</h4>
+        <?php 
+
+          class Benutzer{
+            public $profil;
+
+            public function __construct($profil = null){
+              $this->profil = $profil;
+            }
+          }
+
+          class Profil{
+            public $name;
+
+            public function __construct($name = null){
+              $this->name = $name;
+            }
+          }
+
+          $benutzer = new Benutzer(new Profil(null));
+        ?>
+        <p>$benutzer?->profil?->name = <span><?= $benutzer?->profil?->name?></span></p>
+        
+      </div>
+
+      <!-- Null-Coalescing -->
+      <div class="box">
+        <h4>Null-Coalescing ?? "Ausgabetext wenn null"</h4>
+        <p>$benutzer?->profil?->name ?? "Standardwert" = <span><?= $benutzer?->profil?->name ?? "Standardwert" ?></span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section4">
+    <h2>8. Spaceship Operator <=></h2>
+    <div class="inhalt-container">
+
+      <!-- Spaceship Operator -->
+      <div class="box">
+        <h4>Spaceship -1</h4>
+        <?php 
+          $a = 50;
+          $b = 100;
+        ?>
+        <p>$a = 50  $b = 100 <br> $a <=> $b = <span><?= $a <=> $b ?></span> <br> A ist kleiner als B deswegen -1</p>
+      </div>
+
+      <div class="box">
+        <h4>Spaceship 1</h4>
+        <?php 
+          $a = 100;
+          $b = 50;
+        ?>
+        <p>$a = 100  $b = 50 <br> $a <=> $b = <span><?= $a <=> $b ?></span> <br> A ist größer als B deswegen 1</p>
+      </div>
+
+      <div class="box">
+        <h4>Spaceship 0</h4>
+        <?php 
+          $a = 50;
+          $b = 50;
+        ?>
+        <p>$a = 50  $b = 50 <br> $a <=> $b = <span><?= $a <=> $b ?></span> <br> A und B sind gleich deswegen 0</p>
+      </div>
+
+      <div class="box">
+        <h4>Spaceship Sortieren</h4>
+        <?php 
+          $zahlen = [12, 18, 4, 34];
+
+          usort($zahlen, function($a, $b){
+            return $a <=> $b;
+          } );
+        ?>
+        <p>$zahlen = [12, 18, 4, 34] <br> usort($zahlen, function($a, $b){return $a <=> $b;}); <br> = <span><?php print_r($zahlen) ?></span></p>
+      </div>
+
+    </div>
+  </section>
+
 
 </body>
 </html>
