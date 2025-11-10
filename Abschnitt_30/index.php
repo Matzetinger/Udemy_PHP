@@ -541,7 +541,7 @@
           $benutzer1 = new Benutzer1(new Profil1("IOSIF"));
         ?>
         <p>$benutzer1->profil1->name1 = <span><?= $benutzer1->profil1->name1 ?></span></p>
-  </div>
+      </div>
 
       <!-- Nullsafe -->
       <div class="box">
@@ -574,11 +574,42 @@
       <div class="box">
         <h4>Null-Coalescing ?? "Ausgabetext wenn null"</h4>
         <p>$benutzer?->profil?->name ?? "Standardwert" = <span><?= $benutzer?->profil?->name ?? "Standardwert" ?></span></p>
+        <p>Wenn Wert "False" dann keine Ausgabe</p>
+      </div>
+      
+      <!-- Null-Coalescing -->
+      <div class="box">
+        <h4>Null-Coalescing ??</h4>
+
+        <?php
+          $var = null;
+          $value = $var;
+        ?>
+        <p>$var = null <br> $value = $var <br> $value = Keine ausgabe weil ist null <span><?= $value ?></span></p>
+        <?php
+          $var = null;
+          $var2 = null;
+          $var3 = "String";
+          $value = $var?? "Ausgabetext wenn null";
+        ?>
+        <p>$var = null <br> $value = $var?? "Ausgabetext wenn null" <br> $value = <span><?= $value ?></span></p>
+      </div>
+
+      <div class="box">
+        <h4>Null-Coalescing ?? Koaleszens-Operator</h4>
+        <?php
+          $var = 23;
+          $var2 = null;
+          $var3 = "String";
+          $value = $var?? $var2?? $var3?? "Ausgabetext wenn null";
+        ?>
+        <p>$var = 23 <br> $var2 = null <br> $var3 = "String" <br> $value = $var?? $var2?? $var3?? "Ausgabetext wenn null" = <span><?= $value ?></span></p>
       </div>
     </div>
+   </div>
   </section>
 
-  <section class="section4">
+  <section class="section8">
     <h2>8. Spaceship Operator <=></h2>
     <div class="inhalt-container">
 
