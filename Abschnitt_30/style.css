@@ -17,7 +17,8 @@ body {
   .section5,
   .section6,
   .section7,
-  .section8 {
+  .section8,
+  .section9 {
     padding: 5rem;
     display: flex;
     align-items: center;

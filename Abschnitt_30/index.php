@@ -656,6 +656,109 @@
     </div>
   </section>
 
+  <section class="section9">
+    <h2>9. Gültigkeitsbereichoperator ::</h2>
+    <div class="inhalt-container">
+
+      <!-- Gültigkeitsbereichoperator -->
+      <div class="box">
+        <h4>Scope Resolution Operator</h4>
+        <?php 
+          class User{
+            public static $name = "IOSIF";
+            public static function greets(){
+              return "Hallöchen";
+            }
+          };
+
+          $phpcode = <<<'PHPCODE'
+            class User{
+            public static $name = "IOSIF";
+            public static function greets(){
+              return "Hallöchen";
+            }
+          };
+
+          PHPCODE;
+          ?>
+
+        <p><?= $phpcode ?></p>
+        <p>User::$name = <span><?= User::$name ?></span> <br> User::greets() =<span><?= User::greets() ?></span> <br></p>
+      </div>
+
+      <!-- Gültigkeitsbereichoperator -->
+      <div class="box">
+        <h4>Scope Resolution Operator</h4>
+        <?php 
+          class User1{
+            const AGE = 35;
+            public static $name1 = "IOSIF";
+            public static function greets1(){
+              return "Hallöchen";
+            }
+          };
+
+          $phpcode1 = <<<'PHPCODE1'
+            class User1{
+            const AGE = 35;
+            public static $name1 = "IOSIF";
+            public static function greets1(){
+              return "Hallöchen";
+            }
+          };
+          PHPCODE1;
+          ?>
+
+        <p><?= $phpcode1 ?></p>
+        <p>User1::$name1 = <span><?= User1::$name1 ?></span> <br> User1::greets1() = <span><?= User1::greets1() ?></span> <br> User1::AGE =  <span><?= User1::AGE ?></span> </p>
+      </div>
+
+      <!-- Gültigkeitsbereichoperator Parent Class -->
+      <div class="box">
+        <h4>Scope Resolution Operator : Zugriff auf Methoden übergeordeter Klassen</h4>
+        <?php 
+          class User2{
+            const AGE = 35;
+            public static $name2 = "MATTHIAS";
+            public static function greets2(){
+              return "Hallöle";
+            }
+          };
+
+          class Hobby extends User2{
+            public static function kochen(){
+              return parent::greets2();
+            }
+          }
+
+          $phpcode1 = <<<'PHPCODE1'
+            class User2{
+            const AGE = 35;
+            public static $name2 = "IOSIF";
+            public static function greets2(){
+              return "Hallöle";
+            }
+          };
+          PHPCODE1;
+
+          $phpcode2 = <<<'PHPCODE2'
+            class Hobby extends User2{
+            public static function kochen(){
+              return parent::greets2();
+            }
+          }
+
+
+          PHPCODE2
+          ?>
+
+        <p><?= $phpcode1 ?></p>
+        <p><?= $phpcode2 ?></p>
+        <p>User2::$name2 = <span><?= User2::$name2 ?></span> <br> User2::greets2() = <span><?= User2::greets2() ?></span> <br> User2::AGE =  <span><?= User2::AGE ?></span> <br> Hobby::kochen() = <span><?= Hobby::kochen() ?></span> </p>
+      </div>
+    </div>
+  </section>
+
 
 </body>
 </html>
