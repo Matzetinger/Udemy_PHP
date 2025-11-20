@@ -759,6 +759,73 @@
     </div>
   </section>
 
+  <section class="section10">
+    <h2>10. Shell-Operator Befehle</h2>
+    <div class="inhalt-container">
+
+      <!-- shell_exec -->
+      <div class="box">
+        <h4>shell_exec('dir')</h4>
+        <?php 
+          $result = shell_exec('dir');
+          ?>
+
+        <p>$result = shell_exec('dir') mit Var_dump = <span><?php var_dump($result); ?></span></p>
+      </div>
+
+      <!-- exec('dir') -->
+      <div class="box">
+        <h4>exec('dir')</h4>
+        <?php 
+          $result2 = exec('dir');
+          ?>
+
+        <p>$result2 = exec('dir') mit Var_dump = <span><?php var_dump($result2); ?></span></p>
+      </div>
+
+      <!-- system("dir") -->
+      <div class="box">
+        <h4>system("dir")</h4>
+        <p>$result3 = system("dir") = </p>
+          <?php
+            $result3 = system("dir");
+            ?>
+        <p>system("dir") gibt aus ohne echo etc.</p>
+        <p>$result3 = system("dir") mit Var_dump = <span><?php var_dump($result3); ?></span></p>
+      </div>
+
+      <!-- passthru("dir") -->
+      <div class="box">
+        <h4>passthru("dir")</h4>
+        <p>$result4 = passthru("echo test") = 
+          <span><?php
+            passthru("echo Test");
+            ?></span></p>
+            <p>$result4 = passthru("dir") = </p>
+            <?php
+            $result4 = passthru("dir");
+            ?>
+        <p>passthru("dir") gibt aus ohne echo oder var_dump etc.</p>
+        <p>$result4 = passthru("dir") mit Var_dump = <span><?php var_dump($result4); ?></span></p>
+        <p>var_dump zeigt NULL, weil passthru NIE etwas zurückgibt.</p>
+      </div>
+
+      <!-- passthru("dir") -->
+      <div class="box">
+        <h4>File erstellen mit shell</h4>
+        <p>$filename = "text.txt"</p>
+        <p>$inhalt = "Hallo im Hacking"</p>
+          <?php
+            $filename = "text.txt";
+            $inhalt = "Hallo im Hacking";
+            //$result5 = shell_exec("echo $inhalt > $filename 2>&1");
+            ?>
+        <p>$result5 = shell_exec("echo $inhalt > $filename 2>&1") = <span><a href="./text.txt" target="_blank" rel="noopener noreferrer">Datei erstellt</a></span></p>
+        
+      </div>
+    </div>
+  </section>
+
 
 </body>
 </html>
