@@ -826,6 +826,104 @@
     </div>
   </section>
 
+  <section class="section11">
+    <h2>11. Logische Operatoren && oder AND / || oder OR / XOR / ! </h2>
+    <div class="inhalt-container">
+
+    <!-- Logischer Operator && -->
+    <div class="box">
+        <h4>Logischer Operator "&&" (Logisches und)</h4>
+        <?php 
+          $t = true;
+          $t1 = true;
+          $result = $t && $t1;
+          ?>
+
+        <p>$t = true <br> $t1 = true <br> $result = $t && $t1 </p>
+        <p>var_dump($result) = <span><?php var_dump($result) ?></span></p>
+        <p>echo $result ? "true" : "false" = <span><?= $result ? "true" : "false" ?></span></p>
+        <p>"TRUE" weil beide "TRUE" sind und &&/AND prüft immer auf "TRUE"</p>
+      </div>
+
+      <!-- Logischer Operator AND -->
+      <div class="box">
+        <h4>Logischer Operator "AND" (Logisches und )</h4>
+        <?php 
+          $t2 = true;
+          $f2 = false;
+          $result2 = ($t2 AND $f2);
+          ?>
+        <p>"AND" hat niedrigere Priorität: ohne Klammer gibt "TRUE" aus weil der erste wert ist "TRUE"</p>
+        <p>$t2 = true <br> $f2 = false <br> $result2 = ($t2 AND $f2) </p>
+        <p>var_dump($result2) = <span><?php var_dump($result2) ?></span></p>
+        <p>echo $result2 ? "true" : "false" = <span><?= $result2 ? "true" : "false" ?></span></p>
+        <p>"FALSE" weil nicht beide "TRUE" sind &&/AND prüft immer auf "TRUE"</p>
+      </div>
+
+      <!-- Logischer Operator || -->
+      <div class="box">
+        <h4>Logischer Operator "||" (Entweder Oder)</h4>
+        <?php 
+          $t3 = true;
+          $f3 = false;
+          $result3 = $t || $f;
+          ?>
+        <p>$t3 = true <br> $f3 = false <br> $result3 = $t3 || $f3 </p>
+        <p>var_dump($result3) = <span><?php var_dump($result3) ?></span></p>
+        <p>echo $result3 ? "true" : "false" = <span><?= $result3 ? "true" : "false" ?></span></p>
+        <p>"TRUE" weil mindestens ein Wert "True" ist das prüft ||/OR</p>
+      </div>
+
+      <!-- Logischer Operator OR -->
+      <div class="box">
+        <h4>Logischer Operator "OR" (Entweder Oder)</h4>
+        <?php 
+          $f4 = false;
+          $t4 = true;
+          $result4 = ($f4 OR $t4);
+          ?>
+        <p>"OR" hat niedrigere Priorität: ohne Klammer gibt "FALSE" aus weil der erste Wert ist "FALSE"</p>
+        <p>$f4 = false <br> $t4 = true <br> $result4 = ($f4 OR $t4) </p>
+        <p>var_dump($result4) = <span><?php var_dump($result4) ?></span></p>
+        <p>echo $result4 ? "true" : "false" = <span><?= $result4 ? "true" : "false" ?></span></p>
+        <p>"TRUE" weil mindestens ein Wert "True" ist, das prüft ||/OR</p>
+        <p>"FALSE" wenn beide "FALSE" wären: var_dump($f4 OR $f3) = <span><?php var_dump($f4 OR $f3)?> </p>
+      </div>
+
+      <!-- NOT Operator ! (negieren/umkehren)-->
+      <div class="box">
+        <h4>NOT Operator "!" (negieren/umkehren) </h4>
+        <?php 
+          $t5 = true;
+          $f5 = false;
+          ?>
+        <p>$t5 = true <br> $f5 = false</p>
+        <p>var_dump(!$t5) = <span><?php var_dump(!$t5) ?></span></p>
+        <p>"FALSE" weil $t5 ist "TRUE" , "!" prüft also ob etwas "FALSE" ist</p>
+        <p>var_dump(!$f5) = <span><?php var_dump(!$f5) ?></span></p>
+        <p>"TRUE" weil $f5 ist "FALSE" , "!" prüft also ob etwas "FALSE" ist</p>
+      </div>
+
+       <!-- Exklusives oder XOR -->
+      <div class="box">
+        <h4> Exklusives oder "XOR" </h4>
+        <?php 
+          $t6 = true;
+          $f6 = false;
+          $result5 = ($f6 XOR $t6)
+          ?>
+        <p>$t6 = true <br> $f6 = false <br> $result5 = ($f6 XOR $t6) </p>
+        <p>var_dump($result5) = <span><?php var_dump($result5) ?></span></p>
+        <p>"TRUE" weil einer ist TRUE und der andere nicht </p>
+        <p>Sind beide "TRUE" kommt ein "FALSE"</p>
+        <p>var_dump($t6 XOR $t5) = <span><?php var_dump($t6 XOR $t5) ?></span></p>
+        <p> XOR überprüft ob eine Wert "TRUE" ist und der andere NICHT</p>
+       
+      
+      </div>
+        
+      </div>
+
 
 </body>
 </html>
