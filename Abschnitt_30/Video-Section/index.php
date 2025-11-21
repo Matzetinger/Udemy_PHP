@@ -830,8 +830,8 @@
     <h2>11. Logische Operatoren && oder AND / || oder OR / XOR / ! </h2>
     <div class="inhalt-container">
 
-    <!-- Logischer Operator && -->
-    <div class="box">
+      <!-- Logischer Operator && -->
+      <div class="box">
         <h4>Logischer Operator "&&" (Logisches und)</h4>
         <?php 
           $t = true;
@@ -918,11 +918,95 @@
         <p>Sind beide "TRUE" kommt ein "FALSE"</p>
         <p>var_dump($t6 XOR $t5) = <span><?php var_dump($t6 XOR $t5) ?></span></p>
         <p> XOR überprüft ob eine Wert "TRUE" ist und der andere NICHT</p>
-       
-      
       </div>
+    </div>
+  </section>
+
+  <section class="section12">
+    <h2>12. Kurzschlussauswertung</h2>
+    <div class="inhalt-container">
+
+      <!-- Short-circuit-evaluation -->
+      <div class="box">
+        <h4>Short-circuit-evaluation</h4>
+        <?php 
+          function istPositiv($zahl){
+            echo "Überprüfe Zahl: $zahl <br>";
+            return $zahl > 0;
+          }
+
+          $a = 5;
+          $b = -3;
+          ?>
+
+        <p>function istPositiv($zahl){echo "Überprüfe Zahl: $zahl";return $zahl > 0;} <br> $a = 5 <br> $b = -3</p>
+        <p>if(istPositiv($a) && istPositiv($b)){echo "Beide Zahlen sind positiv";}else{echo "Mindestens eine Zahl ist negativ";} = <br>
+          <span><?php if(istPositiv($a) && istPositiv($b)){
+                        echo "Beide Zahlen sind positiv";
+                      }else{
+                        echo "Mindestens eine Zahl ist negativ";
+                      }
+                ?></span></p>
+      </div>
+
+      <!-- Short-circuit-evaluation -->
+      <div class="box">
+        <h4>Short-circuit-evaluation (sichtbar)</h4>
+        <?php 
+          function isPositiv($zahl){
+            echo "Überprüfe Zahl: $zahl <br>";
+            return $zahl > 0;
+          }
+
+          $aa = -5;
+          $bb = 3;
+          ?>
+
+        <p>function isPositiv($zahl){echo "Überprüfe Zahl: $zahl";return $zahl > 0;} <br> $aa = -5 <br> $bb = 3</p>
+        <p>Prüft immer von links nach rechts</p>
+        <p>if(istPositiv($aa) && istPositiv($bb)){echo "Beide Zahlen sind positiv";}else{echo "Mindestens eine Zahl ist negativ";} = <br>
+          <span><?php if(isPositiv($aa) && isPositiv($bb)){
+                        echo "Beide Zahlen sind positiv";
+                      }else{
+                        echo "Mindestens eine Zahl ist negativ";
+                      }
+                ?></span></p>
+                <p> Stoppt die Überprüfung sobald negative Zahl auftaucht wegen Angabe $zahl > 0</p>
+      </div>
+      <div class="box">
+        <h4>Short-circuit-evaluation (sichtbar) Short</h4>
+        <?php 
+          function isPositiv1($zahl){
+            echo "Überprüfe Zahl: $zahl <br>";
+            return $zahl > 0;
+          }
+
+          $aaa = -15;
+          $bbb = 3;
+          ?>
+          <p>(isPositiv1($aaa) && isPositiv1($bbb)) ? "Beide sind Positiv" : "Min eine ist Negatv" = <br></p>
+          <span><?= (isPositiv1($aaa) && isPositiv1($bbb)) ? "Beide sind Positiv" : "Min eine ist Negatv" ?></span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section2">   
+    <h2>13. Zuweisungsoperator =</h2>
+    <div class="inhalt-container">
+
+      <!-- Zuweisungsoperator -->
+      <div class="box">
+        <h4>Zuweisungsoperator = </h4>
+        <?php 
+          $variable = 'Ich wurde der $variable Zugewiesen';
+        ?>
+        <p>$variable = 'Ich wurde der $variable Zugewiesen'<br>echo &variable = <span><?= $variable ?></span></p>
+      </div>
+
+    </div>
+  </section>
         
-      </div>
+      
 
 
 </body>
