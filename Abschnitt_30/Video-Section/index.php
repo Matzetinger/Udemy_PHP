@@ -8,10 +8,34 @@
 </head>
 <body>
   <h1>Abschnitt 30</h1>
+  <section id="0" class="section">
+    <div class="box">
+    <h2>Inhaltsverzeichnis</h2>
+      <ul>
+        <li><a href="#1">01. Mathematische + - * / % </a></li>
+        <li><a href="#2">02. Decrement ++ / --</a></li>
+        <li><a href="#3">03. Expotential **</a></li>
+        <li><a href="#4">04. Verkettung .</a></li>
+        <li><a href="#5">05. Vergleich == != === !== < > <= >=</a></li>
+        <li><a href="#6">06. Ternärer</a></li>
+        <li><a href="#7">07. Nullsafe ? & Null-Coalescing ??</a></li>
+        <li><a href="#8">08. Spaceship <=> </a></li>
+        <li><a href="#9">09. Gültigkeitsbereich ::</a></li>
+        <li><a href="#10">10. Shell</a></li>
+        <li><a href="#11">11. Logische && AND || OR XOR !</a></li>
+        <li><a href="#12">12. Kurzschlussauswertung</a></li>
+        <li><a href="#13">13. Zuweisung =</a></li>
+        <li><a href="#14">14. goto</a></li>
+      </ul>
+      </div>
+  </section>
 
   <!-- Mathematische (Arithmetische) Operatoren -->
-  <section class="section1">
-    <h2>1. Mathematische (Arithmetische) Operatoren + - * / %</h2>
+  <section id="1" class="section1">
+    <div class="text-box">
+      <h2>1. Mathematische (Arithmetische) Operatoren + - * / %</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Addition -->
@@ -138,8 +162,11 @@
   </section>
 
   <!-- Post und Prä Inkrement/Decrement -->
-  <section class="section2">   
-    <h2>2. Post und Prä Ink- und Decrement ++ / --</h2>
+  <section id="2" class="section2">
+    <div class="text-box">
+      <h2>2. Post und Prä Ink- und Decrement ++ / --</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div> 
     <div class="inhalt-container">
 
       <!-- Post-Inkrement (danach) -->
@@ -186,8 +213,11 @@
   </section>
 
   <!-- Expotential-Operator -->
-  <section class="section3">
-    <h2>3. Expotential-Operator **</h2>
+  <section id="3" class="section3">
+    <div class="text-box">
+      <h2>3. Expotential-Operator **</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Potenzrechnung -->
@@ -236,8 +266,11 @@
   </section>
 
   <!-- Verkettungsoperator -->
-  <section class="section4">
-    <h2>4. Verkettungsoperator .</h2>
+  <section id="4" class="section4">
+    <div class="text-box">
+      <h2>4. Verkettungsoperator .</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Konkatenation -->
@@ -276,8 +309,11 @@
   </section>
 
   <!-- Vergleichsoperatoren -->
-  <section class="section5">
-    <h2>5. Vergleichsoperatoren == != === !== < > <= >=</h2>
+  <section id="5" class="section5">
+    <div class="text-box">
+      <h2>5. Vergleichsoperatoren == != === !== < > <= >=</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
      <h3>Gleichheit / Verwendet wird immer die Strikte ===</h3>
      <div class="box-container">
@@ -475,8 +511,11 @@
   </section>
 
   <!-- Ternärer Operator -->
-  <section class="section6">
-    <h2>6. Ternärer Operator</h2>
+  <section id="6" class="section6">
+    <div class="text-box">
+      <h2>6. Ternärer Operator</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Bedingung -->
@@ -513,11 +552,14 @@
     </div>
   </section>
 
-  <section class="section7">
-    <h2>7. Nullsafe ? & Null-Coalescing Operator ?? "Ausgabetext wenn null" </h2>
+  <section id="7" class="section7">
+    <div class="text-box">
+      <h2>7. Nullsafe ? & Null-Coalescing Operator ?? "Ausgabetext wenn null" </h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
-    <!-- Eigenschaft zugreifen -->
+      <!-- Eigenschaft zugreifen -->
       <div class="box">
         <h4>Auf eine Eigenschaft zugreifen wenn vorhanden -></h4>
         <?php 
@@ -606,11 +648,13 @@
         <p>$var = 23 <br> $var2 = null <br> $var3 = "String" <br> $value = $var?? $var2?? $var3?? "Ausgabetext wenn null" = <span><?= $value ?></span></p>
       </div>
     </div>
-   </div>
   </section>
 
-  <section class="section8">
-    <h2>8. Spaceship Operator <=></h2>
+  <section id="8" class="section8">
+    <div class="text-box">
+      <h2>8. Spaceship Operator <=></h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Spaceship Operator -->
@@ -656,8 +700,11 @@
     </div>
   </section>
 
-  <section class="section9">
-    <h2>9. Gültigkeitsbereichoperator ::</h2>
+  <section id="9" class="section9">
+    <div class="text-box">
+      <h2>9. Gültigkeitsbereichoperator ::</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Gültigkeitsbereichoperator -->
@@ -759,8 +806,11 @@
     </div>
   </section>
 
-  <section class="section10">
-    <h2>10. Shell-Operator Befehle</h2>
+  <section id="10" class="section10">
+    <div class="text-box">
+      <h2>10. Shell-Operator Befehle</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- shell_exec -->
@@ -826,8 +876,11 @@
     </div>
   </section>
 
-  <section class="section11">
-    <h2>11. Logische Operatoren && oder AND / || oder OR / XOR / ! </h2>
+  <section id="11" class="section11">
+    <div class="text-box">
+      <h2>11. Logische Operatoren && oder AND / || oder OR / XOR / ! </h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Logischer Operator && -->
@@ -922,8 +975,11 @@
     </div>
   </section>
 
-  <section class="section12">
-    <h2>12. Kurzschlussauswertung</h2>
+  <section id="12" class="section12">
+    <div class="text-box">
+      <h2>12. Kurzschlussauswertung</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
     <div class="inhalt-container">
 
       <!-- Short-circuit-evaluation -->
@@ -990,8 +1046,11 @@
     </div>
   </section>
 
-  <section class="section2">   
-    <h2>13. Zuweisungsoperator =</h2>
+  <section id="13" class="section13"> 
+    <div class="text-box"> 
+      <h2>13. Zuweisungsoperator =</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div> 
     <div class="inhalt-container">
 
       <!-- Zuweisungsoperator -->
@@ -1002,7 +1061,46 @@
         ?>
         <p>$variable = 'Ich wurde der $variable Zugewiesen'<br>echo &variable = <span><?= $variable ?></span></p>
       </div>
+    </div>
+  </section>
 
+  <section id="14" class="section14">  
+    <div class="text-box">
+      <h2>14. goto Operator (Sprünge)</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div> 
+    <div class="inhalt-container">
+    
+
+      <!-- Ohne goto Operator -->
+      <div class="box">
+        <h4>Normaler Fluss ohne goto</h4>
+        <?php 
+          $condition = true;   
+        ?>
+        <p>$condition = true; <br>if($condition){echo "wurde nicht übersprungen";} = 
+        <span><?php if($condition){
+                    echo "wurde nicht übersprungen";
+                    } 
+              ?>
+        </span> <br> echo "Dies hier wird nie Übersprungen (Ziel)" = <span><?= "Dies hier wird nie Übersprungen (Ziel)" ?></span>
+        </p>
+      </div>
+
+      <div class="box">
+        <h4>Mit goto</h4>
+        <?php 
+          $condition1 = true; 
+        ?>
+        <p>$condition1 = true; <br> goto jump; <br><span class = "grau"> if($condition1){echo "das wird übersprungen";}</span> <br> jump:</p>
+        <p><span><?php  goto jump; 
+                    echo "das wird übersprungen";
+                    jump:
+                 ?></span></p>
+
+        <p>echo "hier läuft der code weiter (Ziel)" = </p>
+        <p><span><?php echo "hier läuft der code weiter (Ziel)"; ?></span></p>
+      </div>
     </div>
   </section>
         

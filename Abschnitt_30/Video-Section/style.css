@@ -11,6 +11,7 @@ body {
   font-family: Consolas, monospace;
   h1 {
     text-align: center;
+    padding: 15px;
   }
 
   h2,
@@ -19,6 +20,7 @@ body {
     color: #4fc1ff;
   }
 
+  .section,
   .section1,
   .section2,
   .section3,
@@ -30,19 +32,42 @@ body {
   .section9,
   .section10,
   .section11,
-  .section12 {
+  .section12,
+  .section13,
+  .section14 {
     padding: 5rem;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: center;
     background: #252526;
     border: 1px solid #333;
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
 
-    h2 {
-      width: 15em;
-      align-self: flex-start;
+    ul {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: #ddd;
+        &:hover {
+          color: #4fc1ff;
+        }
+      }
+    }
+
+    .text-box {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      a {
+        text-decoration: none;
+        color: grey;
+        &:hover {
+          color: #4fc1ff;
+        }
+      }
     }
 
     .inhalt-container {
@@ -66,6 +91,9 @@ body {
         span {
           text-decoration: underline;
           color: #ffd700;
+        }
+        .grau {
+          color: gray;
         }
       }
     }
