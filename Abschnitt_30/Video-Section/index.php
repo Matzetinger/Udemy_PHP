@@ -7,7 +7,11 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>Abschnitt 30</h1>
+  <nav>
+    <h6><a href="../../Abschnitt_28">28</a></h6>
+    <h1>Abschnitt 30</h1>
+    <h6><a href="../../Abschnitt_31/Video-Section/index.php">31</a></h6>
+  </nav>
   <section id="0" class="section">
     <div class="box">
     <h2>Inhaltsverzeichnis</h2>
