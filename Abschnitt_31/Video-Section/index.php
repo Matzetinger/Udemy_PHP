@@ -18,8 +18,8 @@
       <ul>
         <li><a href="#1">01. Strings Verbinden . </a></li>
         <li><a href="#2">02. Auf einzelne Zeichen von Strings zugreifen []</a></li>
-        <li><a href="#3">03. </a></li>
-        <li><a href="#4">04. </a></li>
+        <li><a href="#3">03. Strings vergleichen</a></li>
+        <li><a href="#4">04. Strings alphabetisch sortieren</a></li>
         <li><a href="#5">05. </a></li>
         <li><a href="#6">06. </a></li>
         <li><a href="#7">07. </a></li>
@@ -55,7 +55,7 @@
   </section>
 
   <!-- 2. Auf einzelne Zeichen von Strings zugreifen -->
-  <section id="2" class="section1">
+  <section id="2" class="section2">
     <div class="text-box">
       <h2>2. Auf einzelne Zeichen von Strings zugreifen []</h2>
       <h6><a href="#0">Inhaltsverzeichnis</a></h6>
@@ -74,6 +74,87 @@
         <p>echo $zeichen[3]; = <span><?= $zeichen[3] ?></span></p>
         <p>echo $zeichen[4]; = <span><?= $zeichen[4] ?></span></p>
         <p>var_dump ($zeichen[5]); = <span><?php var_dump ($zeichen[5]); ?></span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Vergleichen von Strings -->
+  <section id="3" class="section3">
+    <div class="text-box">
+      <h2>3. Vergleichen von Strings</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+    <!-- Strings Gleich -->
+      <div class="box">
+        <h4>Strings Gleich</h4>
+        <?php 
+        $string1 = "Gerechtigkeit";
+        $string2 = "Gerechtigkeit";
+          
+        ?>
+        <p>$string1 = "Gerechtigkeit"<br>$string2 = "Gerechtigkeit" <br> $string1 === $string2 ? "Gleich" : "Ungleich" = <span><?= $string1 === $string2 ? "Gleich" : "Ungleich";  ?></span></p>
+        <p>Auch Leerzeichen werden Berücksichtigt</p>
+      </div>
+
+      <!-- Strings Ungleich -->
+      <div class="box">
+        <h4>Strings Ungleich</h4>
+        <?php 
+        $string3 = "Gerechtigkeit";
+        $string4 = "Ungerechtigkeit";
+          
+        ?>
+        <p>$string3 = "Gerechtigkeit"<br>$string4 = "Ungerechtigkeit" <br> $string3 === $string4 ? "Gleich" : "Ungleich" = <span><?= $string3 === $string4 ? "Gleich" : "Ungleich";  ?></span></p>
+      </div>
+
+      <!-- Lexikalisch Vergleichen -->
+      <div class="box">
+        <h4>Lexikalischer Vergleich</h4>
+        <?php 
+        $string5 = "A";
+        $string6 = "Z";
+        ?>
+        <p>$string5 = "A" <br> $string6 = "Z"</p>
+        <p>$string5 < $string6 ? "$string5 kommt vor $string6" : "$string5 kommt nach $string6" = <span><?= $string5 < $string6 ? "$string5 kommt vor $string6" : "$string5 kommt nach $string6";  ?></span></p>
+        <p></p>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Strings alphabetisch sortieren -->
+  <section id="4" class="section4">
+    <div class="text-box">
+      <h2>4. Strings alphabetisch sortieren</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <a href="https://www.charset.org/utf-8" target="_blank" rel="noopener noreferrer">Unicode UTF-8 - Zeichentabelle</a>
+    </div>
+    <div class="inhalt-container">
+
+      <!-- Strings sortieren -->
+      <div class="box">
+        <h4>sort</h4>
+        <?php 
+          $array = ["F", "C", "B", "D", "E", "aaaa"];
+          sort($array)
+        ?>
+        <p>$array = ["F", "C", "b", "D", "E", "A"]<br>sort($array)<br>var_export($array) = <span><?php var_export($array) ?></span></p>
+        <p>Groß und kleinschreibung spielt eine Rolle</p>
+      </div>
+
+      <!-- Strings sortieren mit usort -->
+      <div class="box">
+        <h4>usort</h4>
+        <?php 
+          $array1 = ["F", "C", "B", "D", "E", "aaaa"];
+          usort($array1, function($a, $b){
+            return strtolower($a) <=> strtolower($b);
+          });
+          
+        ?>
+        <p>$array1 = ["F", "C", "b", "D", "E", "A"]<br>usort($array1, function($a, $b){return strtolower($a) <=> strtolower($b);});<br>var_export($array1) = <span><?php var_export($array1) ?></span></p>
+        <p>strtolower = Zeichenkette in Kleinbuchstaben umwandeln</p>
       </div>
     </div>
   </section>
