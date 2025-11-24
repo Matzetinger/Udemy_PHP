@@ -20,8 +20,8 @@
         <li><a href="#2">02. Auf einzelne Zeichen von Strings zugreifen []</a></li>
         <li><a href="#3">03. Strings vergleichen</a></li>
         <li><a href="#4">04. Strings alphabetisch sortieren</a></li>
-        <li><a href="#5">05. </a></li>
-        <li><a href="#6">06. </a></li>
+        <li><a href="#5">05. Stringlänge strlen</a></li>
+        <li><a href="#6">06. Stringposition strpos</a></li>
         <li><a href="#7">07. </a></li>
         <li><a href="#8">08. </a></li>
         <li><a href="#9">09. </a></li>
@@ -155,6 +155,63 @@
         ?>
         <p>$array1 = ["F", "C", "b", "D", "E", "A"]<br>usort($array1, function($a, $b){return strtolower($a) <=> strtolower($b);});<br>var_export($array1) = <span><?php var_export($array1) ?></span></p>
         <p>strtolower = Zeichenkette in Kleinbuchstaben umwandeln</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Stringlänge strlen -->
+  <section id="5" class="section5">
+    <div class="text-box">
+      <h2>5. Stringlänge strlen</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+      <!-- strlen -->
+      <div class="box">
+        <h4>strlen</h4>
+        <?php 
+          $string7 = "Stringlänge";
+        ?>
+        <p>$string7 = "Stringlänge"<br>echo strlen($string7) = <span><?= strlen($string7) ?></span></p>
+        <p>Leerzeichen werden auch gezählt / Keine Indexzählung - heißt zählt ab 1</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Stringposition strpos -->
+  <section id="6" class="section6">
+    <div class="text-box">
+      <h2>6. Stringposition strpos</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+      <!-- strlen -->
+      <div class="box">
+        <h4>strpos</h4>
+        <?php 
+          $message = "0123456789";
+          $position = strpos($message, "3")
+        ?>
+        <p>$message = "0123456789"<br>$position = strpos($message, "3") <br>echo $position = <span><?= $position ?></span></p>
+        <p>Leerzeichen werden auch gezählt / Indexwertung heißt ab 0 / Immer der Anfangsbuchstabe - Zahl wird gezeigt</p>
+        <?php 
+          $message1 = "Sei Gerecht auf alles";
+          $position1 = strpos($message1, "Gerecht")
+        ?>
+        <p>$message1 = "Sei Gerecht auf alles"<br>$position1 = strpos($message1, "Gerecht") <br>echo $position1 = <span><?= $position1 ?></span></p>
+        <p>echo $message1[4] = <span><?= $message1[4] ?></span></p>
+      </div>
+      <!-- strlen -->
+      <div class="box">
+        <h4>strpos offset</h4>
+        <?php 
+          $message2 = "Sei Gerecht auf alles";
+          $position2 = strpos($message2, "Gerecht",3)
+        ?>
+        <p>$message2 = "Sei Gerecht auf alles"<br>$position2 = strpos($message2, "Gerecht",3) <br> die 3 Bedeutet - Fängt bei index 3 zu suchen an <br>echo $position2 = <span><?= $position2 ?></span></p>
+        
       </div>
     </div>
   </section>
