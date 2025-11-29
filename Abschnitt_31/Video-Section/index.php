@@ -454,6 +454,46 @@
     </div>
   </section>
 
+  <!-- 12. Array zusammenfügen mit implode -->
+  <section id="12" class="section12">
+    <div class="text-box">
+      <h2>12. Zusammenfügen mit implode</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+      <!-- implode -->
+      <div class="box">
+        <h4>implode</h4>
+        <?php 
+          $werte7 = "Harmonie,Gleichheit,Gerechtigkeit,Tapferkeit,Glückseligkeit,Logik,Ethik";
+          $trennen3 = explode(",",$werte7);
+          $verbinden = implode("/",$trennen3)
+
+        ?>
+        <p>$werte7 = "Harmonie,Gleichheit,Gerechtigkeit,Tapferkeit,Glückseligkeit,Logik,Ethik"<br>$trennen3 = explode(",",$werte) <br> var_export($trennen) = <span><?php var_export($trennen3);  ?></span></p>
+        <p>--------------------------------------</p>
+        <p>$verbinden = implode("/",$trennen3) <br> var_dump($verbinden) = <span><?php var_dump($verbinden); ?></span></p>
+      </div>
+
+      <!-- implode -->
+      <div class="box">
+        <h4>implode</h4>
+        <?php 
+          $array2 = [0,1,6,"eins"];
+          
+          $verbinden1 = implode("",$array2)
+
+        ?>
+        <p>$array2 = [0,1,6,"eins"]<br>$verbinden1 = implode("",$array2)</p>
+        <p>var_dump($array2) = <span><?php var_dump($array2) ?></span></p>
+        <p> var_dump($verbinden1) = <span><?php var_dump($verbinden1);  ?></span></p>
+        
+      </div>
+
+    </div>
+  </section>
+
   
 </body>
 </html>
