@@ -26,10 +26,12 @@
         <li><a href="#8">08. Stringteile ausschneiden substr</a></li>
         <li><a href="#9">09. Klein und Großschreibung strtolower und strtoupper</a></li>
         <li><a href="#10">10. Stringleerzeichen / Zeichen entfernen mit trim</a></li>
-        <li><a href="#11">11. Strings trennen mit explode</a></li>
-        <li><a href="#12">12. </a></li>
-        <li><a href="#13">13. </a></li>
-        <li><a href="#14">14. </a></li>
+        <li><a href="#11">11. Array/Strings Strings trennen mit explode</a></li>
+        <li><a href="#12">12. Array/Strings zusammenfügen mit implode</a></li>
+        <li><a href="#13">13. String in Teile aufteilen mit str_split</a></li>
+        <li><a href="#14">14. String in einzelne Teile brechen ohne array mit strtok</a></li>
+        <li><a href="#15">15. Strings Alphapetisch vergleichen strcmp / strcasecmp</a></li>
+        <li><a href="#16">16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br</a></li>
       </ul>
       </div>
   </section>
@@ -491,6 +493,179 @@
         
       </div>
 
+    </div>
+  </section>
+
+  <!-- 13. String in Teile aufteilen str_split -->
+  <section id="13" class="section13">
+    <div class="text-box">
+      <h2>13. String in Teile aufteilen str_split</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+      <!-- str_split mit Aufteilung -->
+      <div class="box">
+        <h4>str_split mit Aufteilung</h4>
+        <?php 
+          $werte3 = "Gunst,Freiheit,Aesthetik";
+          $split = str_split($werte3,5);
+        ?>
+
+        <p>$werte3 = "Gunst,Freiheit,Ästhetik"<br>$split = str_split($werte3, 5) <br>str_split($werte3, Zeichenanzahl für Aufteilung) <br> var_dump($split)<span><?php var_dump($split);  ?></span></p>
+       </div>
+
+       <!-- str_split gleichegroße Aufteilung -->
+      <div class="box">
+        <h4>str_split gleichegroße Aufteilung</h4>
+        <?php 
+          $werte4 = "Logik,Gunst";
+          $split1 = str_split($werte3);
+        ?>
+
+        <p>$werte4 = "Logik,Gunst" <br>$split1 = str_split($werte4) <br> var_export($split1)<span><?php var_export($split1);  ?></span></p>
+       </div>
+
+    </div>
+  </section>
+
+  <!-- 14. String in einzelne Teile brechen mit strtok  -->
+  <section id="14" class="section14">
+    <div class="text-box">
+      <h2>14. String in einzelne Teile brechen ohne array mit strtok</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+      <!-- strtok -->
+      <div class="box">
+        <h4>strtok</h4>
+        <?php 
+          $werte5 = "Gunst,Freiheit,Logik,Wahrheit";
+  
+        ?>
+
+        <p>$werte5 = "Gunst,Freiheit,Logik,Wahrheit"<br> echo strtok($werte5, ",") = <span><?= strtok($werte5, ",");  ?></span></p>
+        <p>echo strtok(",") = <span><?= strtok(",")  ?></span></p>
+        <p>echo strtok(",") = <span><?= strtok(",")  ?></span></p>
+        <p>echo strtok(",") = <span><?= strtok(",")  ?></span></p>
+        
+       </div>
+
+      <!-- strtok in Variablen Speichern -->
+      <div class="box">
+        <h4>strtok in Variablen Speichern</h4>
+        <?php 
+          $werte5 = "Gunst,Freiheit,Logik,Wahrheit";
+          $wort = strtok($werte5, ",");
+          $wort1 = strtok(",");
+          $wort2 = strtok(",");
+          $wort3 = strtok(",");
+  
+        ?>
+        <p>$werte5 = "Gunst,Freiheit,Logik,Wahrheit"<br> $wort = strtok($werte5, ",") <br> $wort1 = strtok(",") <br> $wort2 = strtok(",") <br> $wort3 = strtok(",") </p>
+        <p>echo $wort . " " . $wort1 . " " . $wort2 . " " . $wort3 = <span><?= $wort . " " . $wort1 . " " . $wort2 . " " . $wort3  ?></span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 15. Strings Alphapetisch vergleichen strcmp / strcasecmp  -->
+  <section id="15" class="section15">
+    <div class="text-box">
+      <h2>15. Strings Alphapetisch vergleichen strcmp / strcasecmp</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <a href="https://www.charset.org/utf-8" target="_blank" rel="noopener noreferrer">Unicode UTF-8 - Zeichentabelle</a>
+    </div>
+    <div class="inhalt-container">
+
+      <!-- strcmp -->
+      <div class="box">
+        <h4>strcmp Ausgabe -1</h4>
+        <?php 
+          $str1 = "Menschen";
+          $str2 = "Ort";
+          $vergleich = strcmp($str1,$str2);
+        ?>
+
+        <p>$str1 = "Menschen"<br> $str2 = "Ort" <br> $vergleich = strcmp($str1,$str2) <br> echo $vergleich = <span><?= $vergleich  ?></span></p>
+        <p>-1 da der erste Wert kleiner ist als der Zweite</p>
+        <p>Alphapetisch ist kleiner zb. M ist kleiner als O da laut der Tabelle M=77 und O=79 ist.</p>
+      </div>
+
+      <!-- strcmp -->
+      <div class="box">
+        <h4>strcmp Ausgabe 0 </h4>
+        <?php 
+          $str3 = "Menschen";
+          $str4 = "Menschen";
+          $vergleich0 = strcmp($str3,$str4);
+        ?>
+
+        <p>$str3 = "Menschen"<br> $str4 = "Menschen" <br> $vergleich0 = strcmp($str3,$str4) <br> echo $vergleich0 = <span><?= $vergleich0  ?></span></p>
+        <p>0 da beide Werte Gleich sind</p>
+      </div>
+
+      <!-- strcmp -->
+      <div class="box">
+        <h4>strcmp Ausgabe 1</h4>
+        <?php 
+          $str5 = "A";
+          $str6 = "Z";
+          $vergleich1 = strcmp($str6,$str5);
+        ?>
+
+        <p>$str5 = "A"<br> $str6 = "Z" <br> $vergleich1 = strcmp($str6,$str5) <br> echo $vergleich1 = <span><?= $vergleich1  ?></span></p>
+        <p>1 da der erste angegebene Wert größer ist als der Zweite</p>
+        <p>Alphapetisch ist Größer zb. Z ist größer als A da laut der Tabelle A=65 und Z=90 ist.</p>
+      </div>
+
+      <!-- strcasecmp -->
+      <div class="box">
+        <h4>strcasecmp Differenz</h4>
+        <?php 
+          $str7 = "A";
+          $str8 = "Z";
+          $vergleich2 = strcasecmp($str7,$str8);
+        ?>
+
+        <p>$str7 = "A"<br> $str8 = "Z" <br> $vergleich2 = strcmp($str7,$str8) <br> echo $vergleich2 = <span><?= $vergleich2  ?></span></p>
+        <p>-25 Da die differenz Zwischen A und Z 25 zeichen sind. A=65 - Z=90 = -25</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 16. nl2br  -->
+  <section id="16" class="section16">
+    <div class="text-box">
+      <h2>16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br </h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+    <!-- nl2br -->
+      <div class="box">
+        <h4>nl2br</h4>
+        <?php 
+          $text = "Zeilenumbruch\nBeginn neue Zeile";
+        ?>
+
+        <p>$text = "Zeilenumbruch\nBeginn neue Zeile" <br> echo nl2br($text) = <span><?= nl2br($text)  ?></span></p>
+        
+      </div>
+
+      <!-- nl2br in Variable -->
+      <div class="box">
+        <h4>nl2br in variable Speichern</h4>
+        <?php 
+          $text1 = "Zeilenumbruch\nBeginn neue Zeile";
+          $text2 = nl2br($text1);
+        ?>
+
+        <p>$text1 = "Zeilenumbruch\nBeginn neue Zeile"<br> $text2 = nl2br($text1); <br> echo $text2 = <span><?= $text2  ?></span></p>
+        
+      </div>
     </div>
   </section>
 
