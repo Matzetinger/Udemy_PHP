@@ -49,7 +49,11 @@ body {
   .section13,
   .section14,
   .section15,
-  .section16 {
+  .section16,
+  .section17,
+  .section18,
+  .section19,
+  .section20 {
     padding: 5rem;
     display: flex;
     align-items: flex-start;

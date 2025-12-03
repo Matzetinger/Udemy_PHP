@@ -32,6 +32,10 @@
         <li><a href="#14">14. String in einzelne Teile brechen ohne array mit strtok</a></li>
         <li><a href="#15">15. Strings Alphapetisch vergleichen strcmp / strcasecmp</a></li>
         <li><a href="#16">16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br</a></li>
+        <li><a href="#17">17. Wörter Zählen mit str_word_count</a></li>
+        <li><a href="#18">18. Gleiche Wörter in einem String zählen mit substr_count</a></li>
+        <li><a href="#19">19. Ausgabe ab einen gewissen Wort mit strstr</a></li>
+        <li><a href="#20">20. </a></li>
       </ul>
       </div>
   </section>
@@ -636,7 +640,7 @@
     </div>
   </section>
 
-  <!-- 16. nl2br  -->
+  <!-- 16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br  -->
   <section id="16" class="section16">
     <div class="text-box">
       <h2>16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br </h2>
@@ -665,6 +669,134 @@
 
         <p>$text1 = "Zeilenumbruch\nBeginn neue Zeile"<br> $text2 = nl2br($text1); <br> echo $text2 = <span><?= $text2  ?></span></p>
         
+      </div>
+    </div>
+  </section>
+
+  <!-- 17. Wörter Zählen mit str_word_count  -->
+  <section id="17" class="section17">
+    <div class="text-box">
+      <h2>17. Wörter Zählen mit str_word_count</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+    <!-- str_word_count -->
+      <div class="box">
+        <h4>str_word_count</h4>
+        <?php 
+          $text3 = "Dieser String hat 4 Woerter";
+          $word = str_word_count($text3);
+
+        ?>
+        <p>$text3 = "Dieser String hat 4 Woerter"<br> $word = str_word_count($text3) <br> var_dump($word) = <span><?php var_dump($word); ?></span></p>
+        </div>
+
+      <!-- str_word_count -->
+      <div class="box">
+        <h4>str_word_count Array</h4>
+        <?php 
+          $text4 = "Dieser String hat 4 Woerter";
+          $word1 = str_word_count($text4,1);
+
+        ?>
+        <p>$text4 = "Dieser String hat 4 Woerter"<br> $word1 = str_word_count($text3,1) (1 = gibt ein Array zurück mit allen Wörtern) <br> var_dump($word1) = <span><?php var_dump($word1); ?></span></p>
+        <p>Bei umlauten wie ÄÖÜ wird das Wort getrennt: Wörter = (W) (rter)</p>
+      </div>
+
+      <!-- str_word_count -->
+      <div class="box">
+        <h4>str_word_count Charlist</h4>
+        <?php 
+          $text5 = "Üben,Änderung,Öffnen";
+          $word2 = str_word_count($text5,1, "ÖÜÄ");
+
+        ?>
+        <p>$text5 = "Üben,Änderung,Öffnen"<br> $word2 = str_word_count($text5,1, "ÜÄÖ") (1 = gibt ein Array zurück mit allen Wörtern),(ÜÄÖ = Charlist, welches er nicht entfernen soll)  <br> var_dump($word2) = <span><?php var_dump($word2); ?></span></p>
+        <p>Groß und Kleinschreibung wird beachtet ÄÖÜäöü</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 18. Gleiche Wörter in einem String zählen mit substr_count  -->
+  <section id="18" class="section18">
+    <div class="text-box">
+      <h2>18. Gleiche Wörter in einem String zählen mit substr_count</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+    <!-- substr_count -->
+      <div class="box">
+        <h4>substr_count</h4>
+        <?php 
+          $string8 = "Wie oft oft kommt ein Wort in einem String vor";
+          $count = substr_count($string8, "oft");
+
+        ?>
+        <p>$string8 = "Wie oft oft kommt ein Wort in einem String vor" <br>echo substr_count($string8, "oft") = <span><?php echo substr_count($string8, "oft") ?></span></p>
+        <p>kann auch in einer Variable gespeichert werden <br> $count = substr_count($string8, "oft") <br> echo $count = <span><?php echo $count ?></span> </p>
+      </div>
+
+        <!-- substr_count -->
+      <div class="box">
+        <h4>substr_count Zeichenlänge</h4>
+        <?php 
+          $count1 = substr_count($string8, "oft" ,7);
+
+        ?>
+        <p>$count1 = substr_count($string8, "oft" ,7) <br> ( 1. Argument = Variable , 2. Argument = welches Wort ich suche, 3. Argument = Druchsuche Zeichenlänge) <br> echo $count1 = <span><?php echo $count1 ?></span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 19. Ausgabe ab einen gewissen Wort (needle) mit strstr  -->
+  <section id="19" class="section19">
+    <div class="text-box">
+      <h2>19. Ausgabe ab einen gewissen Wort (needle) mit strstr</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+    <!-- strstr nach dem Needle -->
+      <div class="box">
+        <h4>strstr nach dem Needle</h4>
+        <?php 
+          $str9 = "Ausgabe ab einen bestimmten Wort, Ab hier";
+        ?>
+        <p>$str9 = "Ausgabe ab einen bestimmten Wort, Ab hier" <br>(1. Argument = variable, 2.Argument = needle) <br> echo strstr($str9, "Ab") = <span><?php echo strstr($str9, "Ab") ?></span></p>
+      </div>
+
+      <!-- strstr vor dem Needle -->
+      <div class="box">
+        <h4>strstr vor dem Needle</h4>
+        <?php 
+          $str10 = "Ausgabe vor einen bestimmten Wort, Ab hier";
+        ?>
+        <p>$str10 = "Ausgabe vor einen bestimmten Wort, Ab hier" <br>(3. Argument = boolean ) <br> echo strstr($str10,"Ab", true) = <span><?php echo strstr($str10, "Ab", true) ?></span></p>
+        <p>"true" = vor dem needle (needle wird nicht angezeigt) <br> "false" = nach dem needle(needle wird angezeigt)</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 20.  -->
+  <section id="20" class="section20">
+    <div class="text-box">
+      <h2>20.</h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+    <!--  -->
+      <div class="box">
+        <h4></h4>
+        <?php 
+          
+        ?>
+        <p><br><br><span><?php ?></span></p>
       </div>
     </div>
   </section>
