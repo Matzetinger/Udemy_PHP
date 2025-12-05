@@ -18,24 +18,25 @@
       <ul>
         <li><a href="#1">01. Strings Verbinden . </a></li>
         <li><a href="#2">02. Auf einzelne Zeichen von Strings zugreifen []</a></li>
-        <li><a href="#3">03. Strings vergleichen</a></li>
-        <li><a href="#4">04. Strings alphabetisch sortieren</a></li>
-        <li><a href="#5">05. Stringlänge strlen</a></li>
-        <li><a href="#6">06. Stringposition strpos - stripos</a></li>
-        <li><a href="#7">07. Wort / Zahl ersetzen str_replace - str_ireplace</a></li>
-        <li><a href="#8">08. Stringteile ausschneiden substr</a></li>
-        <li><a href="#9">09. Klein und Großschreibung strtolower und strtoupper</a></li>
-        <li><a href="#10">10. Stringleerzeichen / Zeichen entfernen mit trim</a></li>
-        <li><a href="#11">11. Array/Strings Strings trennen mit explode</a></li>
-        <li><a href="#12">12. Array/Strings zusammenfügen mit implode</a></li>
-        <li><a href="#13">13. String in Teile aufteilen mit str_split</a></li>
-        <li><a href="#14">14. String in einzelne Teile brechen ohne array mit strtok</a></li>
-        <li><a href="#15">15. Strings Alphapetisch vergleichen strcmp / strcasecmp</a></li>
-        <li><a href="#16">16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br</a></li>
-        <li><a href="#17">17. Wörter Zählen mit str_word_count</a></li>
-        <li><a href="#18">18. Gleiche Wörter in einem String zählen mit substr_count</a></li>
-        <li><a href="#19">19. Ausgabe ab einen gewissen Wort mit strstr</a></li>
-        <li><a href="#20">20. </a></li>
+        <li><a href="#3">03. Strings vergleichen ===</a></li>
+        <li><a href="#4">04. sort/usort = Strings alphabetisch sortieren</a></li>
+        <li><a href="#5">05. strlen = Stringlänge</a></li>
+        <li><a href="#6">06. strpos / stripos = Stringposition</a></li>
+        <li><a href="#7">07. str_replace / str_ireplace = Substring ersetzen</a></li>
+        <li><a href="#8">08. substr = Stringteile ausschneiden</a></li>
+        <li><a href="#9">09. strtolower und strtoupper = Klein und Großschreibung</a></li>
+        <li><a href="#10">10. trim = Stringleerzeichen / Zeichen entfernen</a></li>
+        <li><a href="#11">11. explode = Array/Strings Strings trennen</a></li>
+        <li><a href="#12">12. implode = Array/Strings zusammenfügen</a></li>
+        <li><a href="#13">13. str_split = String in Teile aufteilen</a></li>
+        <li><a href="#14">14. strtok = String in einzelne Teile brechen ohne array</a></li>
+        <li><a href="#15">15. strcmp / strcasecmp = Strings Alphapetisch vergleichen</a></li>
+        <li><a href="#16">16. nl2br = Konsolezeilenumbruch \n für Hmtl < br > Umwandeln</a></li>
+        <li><a href="#17">17. str_word_count = Wörter Zählen</a></li>
+        <li><a href="#18">18. substr_count = Gleiche Wörter in einem String zählen</a></li>
+        <li><a href="#19">19. strstr = Ausgabe ab einen gewissen Wort</a></li>
+        <li><a href="#20">20. str_contains = Prüft ob gewisser Substring im string enthalten ist</a></li>
+        <li><a href="#20">21. str_starts_with und str_ends_with = Prüft wie ein Substring anfängt oder endet</a></li>
       </ul>
       </div>
   </section>
@@ -782,21 +783,51 @@
     </div>
   </section>
 
-  <!-- 20.  -->
+  <!-- 20. Prüft ob gewisser Substring im string enthalten ist mit str_contains  -->
   <section id="20" class="section20">
     <div class="text-box">
-      <h2>20.</h2>
+      <h2>20. Prüft ob gewisser Substring im string enthalten ist mit str_contains</h2>
       <h6><a href="#0">Inhaltsverzeichnis</a></h6>
     </div>
     <div class="inhalt-container">
 
-    <!--  -->
+    <!-- str_contains -->
       <div class="box">
         <h4></h4>
         <?php 
-          
+          $string9 = "Hallo String, ich suche nach dem Substring";
         ?>
-        <p><br><br><span><?php ?></span></p>
+        <p>$string9 = "Hallo String, ich suche nach dem Substring";<br>var_dump(str_contains($string9,"Substring")) = <span><?php var_dump(str_contains($string9,"Substring")); ?></span></p>
+        <p>"true" wenn der gesuchte Substring im String vorhanden ist, ansonsten wird "false" ausgegeben</p>
+        <p> case-sensitiv = Groß und Kleinschreibung wird beachtet</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 21. str_starts_with und str_ends_with -->
+  <section id="21" class="section21">
+    <div class="text-box">
+      <h2>21. Prüft wie ein Substring anfängt oder endet str_starts_with und str_ends_with </h2>
+      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+    </div>
+    <div class="inhalt-container">
+
+    <!-- str_starts_with -->
+      <div class="box">
+        <h4>str_starts_with</h4>
+        <?php 
+          $string10 = "Hallo String, ich starte und ende mit hallo";
+        ?>
+        <p>$string10 = "Hallo String, ich starte und ende mit hallo";<br>var_dump(str_starts_with($string10,"Hallo")) = <span><?php var_dump(str_starts_with($string10,"Hallo")); ?></span></p>
+        
+      </div>
+
+      <!-- str_ends_with -->
+      <div class="box">
+        <h4>str_ends_with</h4>
+        <p>var_dump(str_end_with($string10,"Hallo")) = <span><?php var_dump(str_ends_with($string10,"Hallo")); ?></span></p>
+        <p>case-sensitiv deswegen "false" bei str_ends_with <br> bei "o" würde es "true" ausgeben</p>
+       
       </div>
     </div>
   </section>
