@@ -98,6 +98,13 @@ body {
         .grau {
           color: gray;
         }
+        .rot {
+          color: rgb(191, 21, 21);
+        }
+        .gelb {
+          text-decoration: underline;
+          color: #ffd700;
+        }
       }
     }
   }
