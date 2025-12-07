@@ -34,20 +34,7 @@ body {
   }
 
   .section,
-  .section1,
-  .section2,
-  .section3,
-  .section4,
-  .section5,
-  .section6,
-  .section7,
-  .section8,
-  .section9,
-  .section10,
-  .section11,
-  .section12,
-  .section13,
-  .section14 {
+  .section1 {
     padding: 5rem;
     display: flex;
     align-items: flex-start;
@@ -112,7 +99,7 @@ body {
     }
   }
 
-  .section5 {
+  .section1 {
     .inhalt-container {
       flex-direction: column;
       align-items: center;

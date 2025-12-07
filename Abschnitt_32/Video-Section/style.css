@@ -33,11 +33,7 @@ body {
     color: #4fc1ff;
   }
 
-  .section,
-  .section1,
-  .section2,
-  .section3,
-  .section4 {
+  .section {
     padding: 5rem;
     display: flex;
     align-items: flex-start;
@@ -100,22 +96,12 @@ body {
         }
         .rot {
           color: rgb(191, 21, 21);
+          text-decoration: none;
         }
         .gelb {
           text-decoration: underline;
           color: #ffd700;
         }
-      }
-    }
-  }
-
-  .section5 {
-    .inhalt-container {
-      flex-direction: column;
-      align-items: center;
-      .box-container {
-        display: flex;
-        gap: 2rem;
       }
     }
   }

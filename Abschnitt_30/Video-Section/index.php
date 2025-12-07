@@ -8,9 +8,9 @@
 </head>
 <body>
   <nav>
-    <h6><a href="../../Abschnitt_28">28</a></h6>
+    <p><a href="../../Abschnitt_28">28</a></p>
     <h1>Abschnitt 30</h1>
-    <h6><a href="../../Abschnitt_31/Video-Section/index.php">31</a></h6>
+    <p><a href="../../Abschnitt_31/Video-Section/index.php">31</a></p>
   </nav>
   <section id="0" class="section">
     <div class="box">
@@ -35,10 +35,10 @@
   </section>
 
   <!-- Mathematische (Arithmetische) Operatoren -->
-  <section id="1" class="section1">
+  <section id="1" class="section">
     <div class="text-box">
       <h2>1. Mathematische (Arithmetische) Operatoren + - * / %</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -166,10 +166,10 @@
   </section>
 
   <!-- Post und Prä Inkrement/Decrement -->
-  <section id="2" class="section2">
+  <section id="2" class="section">
     <div class="text-box">
       <h2>2. Post und Prä Ink- und Decrement ++ / --</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div> 
     <div class="inhalt-container">
 
@@ -217,10 +217,10 @@
   </section>
 
   <!-- Expotential-Operator -->
-  <section id="3" class="section3">
+  <section id="3" class="section">
     <div class="text-box">
       <h2>3. Expotential-Operator **</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -270,10 +270,10 @@
   </section>
 
   <!-- Verkettungsoperator -->
-  <section id="4" class="section4">
+  <section id="4" class="section">
     <div class="text-box">
       <h2>4. Verkettungsoperator .</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -313,10 +313,10 @@
   </section>
 
   <!-- Vergleichsoperatoren -->
-  <section id="5" class="section5">
+  <section id="5" class="section1">
     <div class="text-box">
       <h2>5. Vergleichsoperatoren == != === !== < > <= >=</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
      <h3>Gleichheit / Verwendet wird immer die Strikte ===</h3>
@@ -515,10 +515,10 @@
   </section>
 
   <!-- Ternärer Operator -->
-  <section id="6" class="section6">
+  <section id="6" class="section">
     <div class="text-box">
       <h2>6. Ternärer Operator</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -559,7 +559,7 @@
   <section id="7" class="section7">
     <div class="text-box">
       <h2>7. Nullsafe ? & Null-Coalescing Operator ?? "Ausgabetext wenn null" </h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -654,10 +654,10 @@
     </div>
   </section>
 
-  <section id="8" class="section8">
+  <section id="8" class="section">
     <div class="text-box">
       <h2>8. Spaceship Operator <=></h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -704,10 +704,10 @@
     </div>
   </section>
 
-  <section id="9" class="section9">
+  <section id="9" class="section">
     <div class="text-box">
       <h2>9. Gültigkeitsbereichoperator ::</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -810,10 +810,10 @@
     </div>
   </section>
 
-  <section id="10" class="section10">
+  <section id="10" class="section">
     <div class="text-box">
       <h2>10. Shell-Operator Befehle</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -880,10 +880,10 @@
     </div>
   </section>
 
-  <section id="11" class="section11">
+  <section id="11" class="section">
     <div class="text-box">
       <h2>11. Logische Operatoren && oder AND / || oder OR / XOR / ! </h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -979,10 +979,10 @@
     </div>
   </section>
 
-  <section id="12" class="section12">
+  <section id="12" class="section">
     <div class="text-box">
       <h2>12. Kurzschlussauswertung</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -1050,10 +1050,10 @@
     </div>
   </section>
 
-  <section id="13" class="section13"> 
+  <section id="13" class="section"> 
     <div class="text-box"> 
       <h2>13. Zuweisungsoperator =</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div> 
     <div class="inhalt-container">
 
@@ -1071,7 +1071,7 @@
   <section id="14" class="section14">  
     <div class="text-box">
       <h2>14. goto Operator (Sprünge)</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div> 
     <div class="inhalt-container">
     

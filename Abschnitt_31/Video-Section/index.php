@@ -8,9 +8,9 @@
 </head>
 <body>
   <nav>
-    <h6><a href="../../Abschnitt_30/Video-Section/index.php">30</a></h6>
+    <p><a href="../../Abschnitt_30/Video-Section/index.php">30</a></p>
     <h1>Abschnitt 31</h1>
-    <h6><a href="../../Abschnitt_32/Video-Section/index.php">32</a></h6>
+    <p><a href="../../Abschnitt_32/Video-Section/index.php">32</a></p>
   </nav>
   <section id="0" class="section">
     <div class="box">
@@ -30,22 +30,22 @@
         <li><a href="#12">12. implode = Array/Strings zusammenfügen</a></li>
         <li><a href="#13">13. str_split = String in Teile aufteilen</a></li>
         <li><a href="#14">14. strtok = String in einzelne Teile brechen ohne array</a></li>
-        <li><a href="#15">15. strcmp / strcasecmp = Strings Alphapetisch vergleichen</a></li>
+        <li><a href="#15">15. strcmp / strcasecmp = Strings Alphabetisch vergleichen</a></li>
         <li><a href="#16">16. nl2br = Konsolezeilenumbruch \n für Hmtl < br > Umwandeln</a></li>
         <li><a href="#17">17. str_word_count = Wörter Zählen</a></li>
         <li><a href="#18">18. substr_count = Gleiche Wörter in einem String zählen</a></li>
         <li><a href="#19">19. strstr = Ausgabe ab einen gewissen Wort</a></li>
         <li><a href="#20">20. str_contains = Prüft ob gewisser Substring im string enthalten ist</a></li>
-        <li><a href="#20">21. str_starts_with und str_ends_with = Prüft wie ein Substring anfängt oder endet</a></li>
+        <li><a href="#21">21. str_starts_with und str_ends_with = Prüft wie ein Substring anfängt oder endet</a></li>
       </ul>
       </div>
   </section>
 
   <!-- 1. String miteinander Verbinden -->
-  <section id="1" class="section1">
+  <section id="1" class="section">
     <div class="text-box">
       <h2>1. Strings Verbinden .</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -54,7 +54,7 @@
         <h4>String Verbinden</h4>
         <?php 
           $var = "Vollkommen ist gleich ";
-          $var2 = "34 Göttliche Protokolle"
+          $var2 = "34 Göttliche Protokolle";
         ?>
         <p>$var = "Vollkommen ist gleich"<br>$var2 = "34 Göttliche Protokolle" <br>echo $var . $var2 = <span><?= $var . $var2 ?></span></p>
       </div>
@@ -62,10 +62,10 @@
   </section>
 
   <!-- 2. Auf einzelne Zeichen von Strings zugreifen -->
-  <section id="2" class="section2">
+  <section id="2" class="section">
     <div class="text-box">
       <h2>2. Auf einzelne Zeichen von Strings zugreifen []</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -86,10 +86,10 @@
   </section>
 
   <!-- 3. Vergleichen von Strings -->
-  <section id="3" class="section3">
+  <section id="3" class="section">
     <div class="text-box">
       <h2>3. Vergleichen von Strings</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -131,10 +131,10 @@
   </section>
   
   <!-- Strings alphabetisch sortieren -->
-  <section id="4" class="section4">
+  <section id="4" class="section">
     <div class="text-box">
       <h2>4. Strings alphabetisch sortieren</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
       <a href="https://www.charset.org/utf-8" target="_blank" rel="noopener noreferrer">Unicode UTF-8 - Zeichentabelle</a>
     </div>
     <div class="inhalt-container">
@@ -146,7 +146,7 @@
           $array = ["F", "C", "B", "D", "E", "aaaa"];
           sort($array)
         ?>
-        <p>$array = ["F", "C", "b", "D", "E", "A"]<br>sort($array)<br>var_export($array) = <span><?php var_export($array) ?></span></p>
+        <p>$array = ["F", "C", "B", "D", "E", "aaaa"]<br>sort($array)<br>var_export($array) = <span><?php var_export($array) ?></span></p>
         <p>Groß und kleinschreibung spielt eine Rolle</p>
       </div>
 
@@ -160,17 +160,17 @@
           });
           
         ?>
-        <p>$array1 = ["F", "C", "b", "D", "E", "A"]<br>usort($array1, function($a, $b){return strtolower($a) <=> strtolower($b);});<br>var_export($array1) = <span><?php var_export($array1) ?></span></p>
+        <p>$array1 = ["F", "C", "B", "D", "E", "aaaa"]<br>usort($array1, function($a, $b){return strtolower($a) <=> strtolower($b);});<br>var_export($array1) = <span><?php var_export($array1) ?></span></p>
         <p>strtolower = Zeichenkette in Kleinbuchstaben umwandeln</p>
       </div>
     </div>
   </section>
 
   <!-- 5. Stringlänge strlen -->
-  <section id="5" class="section5">
+  <section id="5" class="section">
     <div class="text-box">
       <h2>5. Stringlänge strlen</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -187,10 +187,10 @@
   </section>
 
   <!-- 6. Stringposition strpos -->
-  <section id="6" class="section6">
+  <section id="6" class="section">
     <div class="text-box">
       <h2>6. Stringposition strpos - stripos</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -230,17 +230,17 @@
           $message3 = "Sei Gerecht auf alles";
           $position3 = stripos($message3, "gerecht",3)
         ?>
-        <p>$message3 = "Sei Gerecht auf alles"<br>$position3 = strpos($message3, "gerecht",3) <br> die 3 Bedeutet - Fängt bei index 3 zu suchen an <br>echo $position3 = <span><?= $position3 ?></span></p>
+        <p>$message3 = "Sei Gerecht auf alles"<br>$position3 = stripos($message3, "gerecht",3) <br> die 3 Bedeutet - Fängt bei index 3 zu suchen an <br>echo $position3 = <span><?= $position3 ?></span></p>
         <p>++ stripos - Ignoriert Groß und kleinbuchstaben ++</p>
       </div>
     </div>
   </section>
 
   <!-- 7. Wort ersetzen mit str_replace -->
-  <section id="7" class="section7">
+  <section id="7" class="section">
     <div class="text-box">
       <h2>7. Wort / Zahl ersetzen str_replace - str_ireplace</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -264,7 +264,7 @@
           $string1 = str_replace("Logik", "Tapferkeit", $nachricht1, $count);
           
         ?>
-        <p>$nachricht1 = "Logik ist ein Wert von 12 Werten" <br> $string1 = str_replace("Logik", "Tapferkeit", $nachricht1, $count) <br>echo $string1 . "br" . "Wieviel Wörter wurden ersetzt: " . $count = <br> <span><?= $string1 . "<br>" . "Wieviel Wörter wurden ersetzt: " .$count  ?></span></p>
+        <p>$nachricht1 = "Logik ist ein Wert von 12 Werten" <br> $string1 = str_replace("Logik", "Tapferkeit", $nachricht1, $count) <br>echo $string1 . "br" . "Wieviel Wörter wurden ersetzt: " . $count = <br> <span><?= $string1 . "<br>" . "Wieviel Wörter wurden ersetzt: " . $count  ?></span></p>
         <p>++ Achtet auf Groß oder Kleinschreibung ++</p>
       </div>
 
@@ -276,7 +276,7 @@
           $string2 = str_replace(["Logik", "ein"], ["Selbsterkennung",1,], $nachricht2, $count1);
           
         ?>
-        <p>$nachricht2 = "Logik ist ein Wert von 12 Werten" <br> $string2 = str_replace(["Logik", "ein"], ["Selbsterkennung",1,], $nachricht2, $count1) <br> necho $string2 . "br" . "Wieviel Wörter wurden ersetzt: " . $count = <br> <span><?= $string2 . "<br>" . "Wieviel Wörter wurden ersetzt: " .$count1  ?></span></p>
+        <p>$nachricht2 = "Logik ist ein Wert von 12 Werten" <br> $string2 = str_replace(["Logik", "ein"], ["Selbsterkennung",1,], $nachricht2, $count1) <br> echo $string2 . "br" . "Wieviel Wörter wurden ersetzt: " . $count = <br> <span><?= $string2 . "<br>" . "Wieviel Wörter wurden ersetzt: " .$count1  ?></span></p>
         <p>++ Achtet auf Groß oder Kleinschreibung ++</p>
       </div>
 
@@ -294,10 +294,10 @@
   </section>
 
   <!-- 8. Stringteile ausschneiden substr-->
-  <section id="8" class="section8">
+  <section id="8" class="section">
     <div class="text-box">
       <h2>8. Stringteile ausschneiden substr</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -324,10 +324,10 @@
   </section>
 
   <!-- 9. Groß und Kleinschreibung strtolower und strtoupper -->
-  <section id="9" class="section9">
+  <section id="9" class="section">
     <div class="text-box">
       <h2>9. Klein und Großschreibung strtolower und strtoupper</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -337,7 +337,7 @@
         <?php 
           $nachricht9 = "Der Unrechtsstaat ist klein";
           $klein = strtolower($nachricht9);
-          $nachricht10 = "Der Unrechsstaat ist kleiner wie eine Bakterie"
+          $nachricht10 = "Der Unrechsstaat ist kleiner wie eine Bakterie";
         ?>
         <p>$nachricht9 = "Der Unrechtsstaat ist klein" <br> $klein = strtolower($nachricht9) <br> -------------------------------------- <br>echo $klein = <span><?= $klein ?></span></p>
         <p> -------------------------------------- </p>
@@ -349,22 +349,22 @@
         <h4>strtoupper</h4>
         <?php 
           $nachricht11 = "Der Vollkommene Mann zeigt Größe";
-          $groß = strtoupper($nachricht10);
-          $nachricht11 = "Der Vollkommene Mann ist Iosif"
+          $groß = strtoupper($nachricht11);
+          $nachricht12 = "Der Vollkommene Mann ist Iosif"
         ?>
         <p>$nachricht11 = "Der Vollkommene Mann zeigt Größe" <br> $groß = strtoupper($nachricht11) <br> -------------------------------------- <br>echo $groß = <span><?= $groß ?></span></p>
         <p> -------------------------------------- </p>
-        <p>$nachricht11 = "Der Vollkommene Mann ist Iosif" <br> echo strtoupper($nachricht11) = <span><?= strtoupper($nachricht11) ?></span> </p>
+        <p>$nachricht11 = "Der Vollkommene Mann ist Iosif" <br> echo strtoupper($nachricht12) = <span><?= strtoupper($nachricht12) ?></span> </p>
       </div>
 
     </div>
   </section>
 
   <!-- 10. Stringzeichen entfernen mit trim -->
-  <section id="10" class="section10">
+  <section id="10" class="section">
     <div class="text-box">
       <h2>10. Stringleerzeichen / Zeichen entfernen mit trim - ltrim - rtrim</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -419,10 +419,10 @@
   </section>
 
   <!-- 11. String miteinander Verbinden -->
-  <section id="11" class="section11">
+  <section id="11" class="section">
     <div class="text-box">
       <h2>11. Strings trennen mit explode</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -462,10 +462,10 @@
   </section>
 
   <!-- 12. Array zusammenfügen mit implode -->
-  <section id="12" class="section12">
+  <section id="12" class="section">
     <div class="text-box">
       <h2>12. Zusammenfügen mit implode</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -478,7 +478,7 @@
           $verbinden = implode("/",$trennen3)
 
         ?>
-        <p>$werte7 = "Harmonie,Gleichheit,Gerechtigkeit,Tapferkeit,Glückseligkeit,Logik,Ethik"<br>$trennen3 = explode(",",$werte) <br> var_export($trennen) = <span><?php var_export($trennen3);  ?></span></p>
+        <p>$werte7 = "Harmonie,Gleichheit,Gerechtigkeit,Tapferkeit,Glückseligkeit,Logik,Ethik"<br>$trennen3 = explode(",",$werte7) <br> var_export($trennen3) = <span><?php var_export($trennen3);  ?></span></p>
         <p>--------------------------------------</p>
         <p>$verbinden = implode("/",$trennen3) <br> var_dump($verbinden) = <span><?php var_dump($verbinden); ?></span></p>
       </div>
@@ -502,10 +502,10 @@
   </section>
 
   <!-- 13. String in Teile aufteilen str_split -->
-  <section id="13" class="section13">
+  <section id="13" class="section">
     <div class="text-box">
       <h2>13. String in Teile aufteilen str_split</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -525,7 +525,7 @@
         <h4>str_split gleichegroße Aufteilung</h4>
         <?php 
           $werte4 = "Logik,Gunst";
-          $split1 = str_split($werte3);
+          $split1 = str_split($werte4);
         ?>
 
         <p>$werte4 = "Logik,Gunst" <br>$split1 = str_split($werte4) <br> var_export($split1)<span><?php var_export($split1);  ?></span></p>
@@ -535,10 +535,10 @@
   </section>
 
   <!-- 14. String in einzelne Teile brechen mit strtok  -->
-  <section id="14" class="section14">
+  <section id="14" class="section">
     <div class="text-box">
       <h2>14. String in einzelne Teile brechen ohne array mit strtok</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -575,11 +575,11 @@
     </div>
   </section>
 
-  <!-- 15. Strings Alphapetisch vergleichen strcmp / strcasecmp  -->
-  <section id="15" class="section15">
+  <!-- 15. Strings Alphabetisch vergleichen strcmp / strcasecmp  -->
+  <section id="15" class="section">
     <div class="text-box">
-      <h2>15. Strings Alphapetisch vergleichen strcmp / strcasecmp</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <h2>15. Strings Alphabetisch vergleichen strcmp / strcasecmp</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
       <a href="https://www.charset.org/utf-8" target="_blank" rel="noopener noreferrer">Unicode UTF-8 - Zeichentabelle</a>
     </div>
     <div class="inhalt-container">
@@ -595,7 +595,7 @@
 
         <p>$str1 = "Menschen"<br> $str2 = "Ort" <br> $vergleich = strcmp($str1,$str2) <br> echo $vergleich = <span><?= $vergleich  ?></span></p>
         <p>-1 da der erste Wert kleiner ist als der Zweite</p>
-        <p>Alphapetisch ist kleiner zb. M ist kleiner als O da laut der Tabelle M=77 und O=79 ist.</p>
+        <p>Alphabetisch ist kleiner zb. M ist kleiner als O da laut der Tabelle M=77 und O=79 ist.</p>
       </div>
 
       <!-- strcmp -->
@@ -622,7 +622,7 @@
 
         <p>$str5 = "A"<br> $str6 = "Z" <br> $vergleich1 = strcmp($str6,$str5) <br> echo $vergleich1 = <span><?= $vergleich1  ?></span></p>
         <p>1 da der erste angegebene Wert größer ist als der Zweite</p>
-        <p>Alphapetisch ist Größer zb. Z ist größer als A da laut der Tabelle A=65 und Z=90 ist.</p>
+        <p>Alphabetisch ist Größer zb. Z ist größer als A da laut der Tabelle A=65 und Z=90 ist.</p>
       </div>
 
       <!-- strcasecmp -->
@@ -634,7 +634,7 @@
           $vergleich2 = strcasecmp($str7,$str8);
         ?>
 
-        <p>$str7 = "A"<br> $str8 = "Z" <br> $vergleich2 = strcmp($str7,$str8) <br> echo $vergleich2 = <span><?= $vergleich2  ?></span></p>
+        <p>$str7 = "A"<br> $str8 = "Z" <br> $vergleich2 = strcasecmp($str7,$str8) <br> echo $vergleich2 = <span><?= $vergleich2  ?></span></p>
         <p>-25 Da die differenz Zwischen A und Z 25 zeichen sind. A=65 - Z=90 = -25</p>
       </div>
 
@@ -642,10 +642,10 @@
   </section>
 
   <!-- 16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br  -->
-  <section id="16" class="section16">
+  <section id="16" class="section">
     <div class="text-box">
       <h2>16. Konsolezeilenumbruch \n für Hmtl < br > Umwandeln nl2br </h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -675,10 +675,10 @@
   </section>
 
   <!-- 17. Wörter Zählen mit str_word_count  -->
-  <section id="17" class="section17">
+  <section id="17" class="section">
     <div class="text-box">
       <h2>17. Wörter Zählen mit str_word_count</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -701,7 +701,7 @@
           $word1 = str_word_count($text4,1);
 
         ?>
-        <p>$text4 = "Dieser String hat 4 Woerter"<br> $word1 = str_word_count($text3,1) (1 = gibt ein Array zurück mit allen Wörtern) <br> var_dump($word1) = <span><?php var_dump($word1); ?></span></p>
+        <p>$text4 = "Dieser String hat 4 Woerter"<br> $word1 = str_word_count($text4,1) (1 = gibt ein Array zurück mit allen Wörtern) <br> var_dump($word1) = <span><?php var_dump($word1); ?></span></p>
         <p>Bei umlauten wie ÄÖÜ wird das Wort getrennt: Wörter = (W) (rter)</p>
       </div>
 
@@ -721,10 +721,10 @@
   </section>
 
   <!-- 18. Gleiche Wörter in einem String zählen mit substr_count  -->
-  <section id="18" class="section18">
+  <section id="18" class="section">
     <div class="text-box">
       <h2>18. Gleiche Wörter in einem String zählen mit substr_count</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -747,17 +747,17 @@
           $count1 = substr_count($string8, "oft" ,7);
 
         ?>
-        <p>$count1 = substr_count($string8, "oft" ,7) <br> ( 1. Argument = Variable , 2. Argument = welches Wort ich suche, 3. Argument = Druchsuche Zeichenlänge) <br> echo $count1 = <span><?php echo $count1 ?></span></p>
+        <p>$count1 = substr_count($string8, "oft" ,7) <br> ( 1. Argument = Variable , 2. Argument = welches Wort ich suche, 3. Argument = Startindex ab Zeichenlänge) <br> echo $count1 = <span><?php echo $count1 ?></span></p>
       </div>
 
     </div>
   </section>
 
   <!-- 19. Ausgabe ab einen gewissen Wort (needle) mit strstr  -->
-  <section id="19" class="section19">
+  <section id="19" class="section">
     <div class="text-box">
       <h2>19. Ausgabe ab einen gewissen Wort (needle) mit strstr</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -784,10 +784,10 @@
   </section>
 
   <!-- 20. Prüft ob gewisser Substring im string enthalten ist mit str_contains  -->
-  <section id="20" class="section20">
+  <section id="20" class="section">
     <div class="text-box">
       <h2>20. Prüft ob gewisser Substring im string enthalten ist mit str_contains</h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -805,10 +805,10 @@
   </section>
 
   <!-- 21. str_starts_with und str_ends_with -->
-  <section id="21" class="section21">
+  <section id="21" class="section">
     <div class="text-box">
       <h2>21. Prüft wie ein Substring anfängt oder endet str_starts_with und str_ends_with </h2>
-      <h6><a href="#0">Inhaltsverzeichnis</a></h6>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
     </div>
     <div class="inhalt-container">
 
@@ -825,7 +825,7 @@
       <!-- str_ends_with -->
       <div class="box">
         <h4>str_ends_with</h4>
-        <p>var_dump(str_end_with($string10,"Hallo")) = <span><?php var_dump(str_ends_with($string10,"Hallo")); ?></span></p>
+        <p>var_dump(str_ends_with($string10,"Hallo")) = <span><?php var_dump(str_ends_with($string10,"Hallo")); ?></span></p>
         <p>case-sensitiv deswegen "false" bei str_ends_with <br> bei "o" würde es "true" ausgeben</p>
        
       </div>

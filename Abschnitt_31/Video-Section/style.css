@@ -33,28 +33,7 @@ body {
     color: #4fc1ff;
   }
 
-  .section,
-  .section1,
-  .section2,
-  .section3,
-  .section4,
-  .section5,
-  .section6,
-  .section7,
-  .section8,
-  .section9,
-  .section10,
-  .section11,
-  .section12,
-  .section13,
-  .section14,
-  .section15,
-  .section16,
-  .section17,
-  .section18,
-  .section19,
-  .section20,
-  .section21 {
+  .section {
     padding: 5rem;
     display: flex;
     align-items: flex-start;
@@ -115,17 +94,6 @@ body {
         .grau {
           color: gray;
         }
-      }
-    }
-  }
-
-  .section5 {
-    .inhalt-container {
-      flex-direction: column;
-      align-items: center;
-      .box-container {
-        display: flex;
-        gap: 2rem;
       }
     }
   }
