@@ -27,48 +27,55 @@
   <section id="1" class="section">
     <div class="text-box">
       <h2>1. for-Schleife</h2>
-      <p><a href="#0">Inhaltsverzeichnis</a></p>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
           $i = 0;
+          $s = 0;
           $schleife_start = 1;
           $schleife_end = 0;
-         ?>
+        ?>
         <p>$i = 0<br>$schleife_start = 1;<br>$schleife_end = 0;</p>
-      
     </div>
+
     <div class="inhalt-container">
 
       <!-- for -->
       <div class="box">
         <h4>for im Beispiel mit 3 Schleifen</h4>
-        <pre>
-          for($i;$i < 3;){ 
-            echo "Start $schleife_start. Schleife < br >";
-              $i++;
-            echo "Ausführung Code ++ = " . $i . "< br >";
-              $schleife_start++;
-              $schleife_end++;
-            echo " Ende der $schleife_end. Schleife < br > < br >";
-                  
-          }  =
-              </pre> <p>
-          <span>
-            <?php
-                for($i=0;$i < 3;){ 
-                  echo "Start $schleife_start. Schleife <br>";
-                $i++;
-                  echo "Ausführung Code ++ = " . $i . "<br>";
+        <div>
+          <pre>
+            for($i;$i < 3;){ 
+              echo "Start $schleife_start. Schleife < br >";
+
+               $s = $i++;
+
+              echo "Ausführung Code ++ = " . $i . "< br >";
+
                 $schleife_start++;
                 $schleife_end++;
-                 echo " Ende der $schleife_end. Schleife <br> <br>";
-                  
-                }
+
+              echo " Ende der $schleife_end. Schleife < br > < br >";
+            }  =
+          </pre>
+          <p style="text-align:center">
+            <span>
+              <?php
+                  for($i=0;$i < 3;){ 
+                      echo "Start $schleife_start. Schleife <br>";
+                    $s = $i++;
+                      echo "Ausführung Code $s + 1 = " . $i . "<br>";
+                    $schleife_start++;
+                    $schleife_end++;
+                      echo " Ende der $schleife_end. Schleife <br> <br>";
+                     }
               ?>
-          </span></p>
-        
+            </span>
+            Schleifenanzahl pro for Verschachtelung: 3,12,39,120,363,1092,3279,9840,29523,88572
+          </p>
+        </div>
       </div>
 
     </div>
