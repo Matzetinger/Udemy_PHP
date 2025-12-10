@@ -19,6 +19,7 @@
         <li><a href="#1">01. if elseif else bedingung - Anweisung</a></li>
         <li><a href="#2">02. Switch bedingung - Anweisung </a></li>
         <li><a href="#3">03. Match bedingung - Anweisung </a></li>
+        <li><a href="../Übungsaufgabe Lösung/Lösung.php">Übungsaufgabe Lösung </a></li>
       </ul>
     </div>
   </section>
