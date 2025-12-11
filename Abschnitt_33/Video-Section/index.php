@@ -36,29 +36,30 @@
           $s = 0;
           $schleife_start = 1;
           $schleife_end = 0;
+          $wert = ["Logik","Tugend","Gunst","Tapferkeit"];
         ?>
-        <p>$i = 0<br>$schleife_start = 1;<br>$schleife_end = 0;</p>
+        <p>$i = 0;<br>$schleife_start = 1;<br>$schleife_end = 0;<br>$wert = ["Logik","Tugend","Gunst","Tapferkeit"]</p>
     </div>
 
     <div class="inhalt-container">
 
-      <!-- for -->
+      <!-- for im Beispiel mit 3 Schleifen -->
       <div class="box">
         <h4>for im Beispiel mit 3 Schleifen</h4>
-        <div>
+        
           <pre>
             for($i;$i < 3;){ 
               echo "Start $schleife_start. Schleife < br >";
 
                $s = $i++;
 
-              echo "Ausführung Code ++ = " . $i . "< br >";
+              echo "Ausführung Code $s + 1 = " . $i . "< br >";
 
                 $schleife_start++;
                 $schleife_end++;
 
               echo " Ende der $schleife_end. Schleife < br > < br >";
-            }  =
+            }
           </pre>
           <p style="text-align:center">
             <span>
@@ -74,8 +75,28 @@
               ?>
             </span>
             Schleifenanzahl pro for Verschachtelung: 3,12,39,120,363,1092,3279,9840,29523,88572
-          </p>
-        </div>
+          </p>       
+      </div>
+
+      <!-- for im Beispiel mit Array-->
+      <div class="box">
+        <h4>for im Beispiel mit Array</h4>
+        
+          <pre>
+           for($w=0; $w < count($wert); $w++){ 
+
+            echo $wert[$w] . "< br >";
+           }
+          </pre>
+          <p style="text-align:center">
+            <span>
+              <?php
+                  for($w=0; $w < count($wert); $w++){ 
+                   echo $wert[$w] . "<br>";
+                  };
+              ?>
+            </span>
+          </p>       
       </div>
 
     </div>

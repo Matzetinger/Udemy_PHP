@@ -556,7 +556,7 @@
     </div>
   </section>
 
-  <section id="7" class="section7">
+  <section id="7" class="section">
     <div class="text-box">
       <h2>7. Nullsafe ? & Null-Coalescing Operator ?? "Ausgabetext wenn null" </h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
@@ -1068,7 +1068,7 @@
     </div>
   </section>
 
-  <section id="14" class="section14">  
+  <section id="14" class="section">  
     <div class="text-box">
       <h2>14. goto Operator (Sprünge)</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
