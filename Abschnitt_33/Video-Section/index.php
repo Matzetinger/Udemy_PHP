@@ -102,10 +102,10 @@
     </div>
   </section>
 
-  <!-- 1. While-Schleife -->
+  <!-- 2. While-Schleife -->
   <section id="2" class="section">
     <div class="text-box">
-      <h2>1. while-Schleife</h2>
+      <h2>2. while-Schleife</h2>
         <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
@@ -230,6 +230,41 @@
             </span>
             <br> <br> Start <br> erst wird geprüft ist $tr = true <br> oke $tr = true <br> dann for Schleife bis $tr < 3 <br> $tr === 2 dann "for schleife ende" <br> $t wird auf false gesetzt <br> nächste prüfung while ist $t noch true? Nein $t = false <br> Ende
           </p>      
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. do While-Schleife -->
+  <section id="2" class="section">
+    <div class="text-box">
+      <h2>2. do-while-Schleife</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+         
+        ?>
+        <p></p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- do While Schleife -->
+      <div class="box">
+        <h4>do while </h4>
+        
+          <pre>
+            
+          </pre>
+          <p style="text-align:center">
+            <span>
+              <?php
+                
+              ?>
+            </span>
+          
+          </p>       
       </div>
     </div>
   </section>
