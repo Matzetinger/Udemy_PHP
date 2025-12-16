@@ -18,7 +18,8 @@
       <ul>
         <li><a href="#1">01. for-Schleife</a></li>
         <li><a href="#2">02. while-Schleife</a></li>
-        <li><a href="#3">03. </a></li>
+        <li><a href="#3">03. do-whilde-Schleife</a></li>
+        <li><a href="#4">04. Break und Continue</a></li>
       </ul>
     </div>
   </section>
@@ -148,7 +149,7 @@
                  }
               ?>
             </span>
-           Bei while (Nur bedingung) dann { code }
+           Bei while (Nur bedingung) dann { code } <br> Läuft bis die bedingung erfüllt ist "while ($a < 3)"
           </p>       
       </div>
 
@@ -187,14 +188,14 @@
         <h4>While Schleife verschachtelt </h4>
         
           <pre>
-            while ($tr) {
+            <span class="rot">while</span> ($tr) {
                     var_dump ($tr);
                     echo "< br > Hier ist \$tr = ($tr) noch true < br >";
 
-                      for($b=0; $b < 3;$b++){
+                      <span class="rot">for</span>($b=0; $b < 3;$b++){
                         echo "hier beginnt for-Schleife \$b= $b < 3 < br >";
 
-                        if ($b === 2) {
+                        <span class="rot">if</span> ($b === 2) {
                           echo "for schleife ende";
                         }
                         
@@ -235,35 +236,212 @@
   </section>
 
   <!-- 3. do While-Schleife -->
-  <section id="2" class="section">
+  <section id="3" class="section">
     <div class="text-box">
-      <h2>2. do-while-Schleife</h2>
+      <h2>3. do-while-Schleife</h2>
         <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-         
+         $tru = false;
+         $c = 0;
         ?>
-        <p></p>
+        <p>$tru = false; <br> $c = 0; </p>
     </div>
 
     <div class="inhalt-container">
+
+      <!-- While Schleife -->
+      <div class="box">
+        <h4>Ohne "do" </h4>
+        
+          <pre>
+             <span class="rot">while</span> ($tru === true) {
+                    var_dump ($tru);
+                    echo "< br > Hier ist \$tru = ($tru) noch true < br >";
+
+                      <span class="rot">for</span>($c=0; $c < 3;$c++){
+                        echo "hier beginnt for-Schleife \$c= $c < 3 < br >";
+ 
+                        <span class="rot">if</span> ($c === 2) {
+                          echo "for schleife ende";
+                        }
+
+                      } 
+                      
+                    $tru = false;
+                    echo "<br> hier ist \$tru = ($tru) false <br>";
+                    var_dump ($tru);
+                 }
+          </pre>
+          <p style="text-align:center">
+            <span>
+              <?php
+                 while ($tru === true) {
+                    var_dump ($tru);
+                    echo "<br> Hier ist \$tr = ($tru) noch true <br>";
+
+                      for($c=0; $c<3;$c++){
+                        echo "hier beginnt for-Schleife \$c= $c < 3 <br>";
+
+                        if ($c === 2) {
+                          echo "for schleife ende";
+                        }
+
+                      } 
+                      
+                    $tru = false;
+                    echo "<br> hier ist \$tru = ($tru) false <br>";
+                    var_dump ($tru);
+                 }
+              ?>
+              
+            </span>
+          <span class="orange"> Keine Ausgabe da bedingung nicht erfüllt</span>
+          </p>       
+      </div>
 
       <!-- do While Schleife -->
       <div class="box">
         <h4>do while </h4>
         
           <pre>
-            
+             <span class="rot">do</span>{
+                var_dump ($tru);
+                echo "< br > Hier ist \$tru = ($tru) noch true < br >";
+
+                  <span class="rot">for</span>($c=0; $c < 3;$c++){
+                    echo "hier beginnt for-Schleife \$c= $c < 3 < br >";
+
+                      <span class="rot">if</span> ($c === 2) {
+                        echo "for schleife ende";
+                      }
+                  } 
+                      
+                    $tru = false;
+                    echo "< br > hier ist \$tru = ($tru) false < br >";
+                    var_dump ($tru);
+                    
+              }<span class="rot">while</span> ($tru === true);
           </pre>
           <p style="text-align:center">
             <span>
               <?php
-                
+              do{
+                var_dump ($tru);
+                echo "<br> Hier ist \$tru = ($tru) noch true <br>";
+
+                  for($c=0; $c<3;$c++){
+                    echo "hier beginnt for-Schleife \$c= $c < 3 <br>";
+
+                      if ($c === 2) {
+                        echo "for schleife ende";
+                      }
+                  } 
+                      
+                    $tru = false;
+                    echo "<br> hier ist \$tru = ($tru) false <br>";
+                    var_dump ($tru);
+
+              }while ($tru === true);
               ?>
             </span>
-          
+           <br> <br> Hier wird der Code mindestens 1x Ausgeführt, obwohl die while bedingung nicht erfüllt ist <br> "while ($tru === true)" <br> Das sieht man hier bei der Codeausgabe: Zeile 2,  $true ist "false" !
+          </p>       
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Break und Continue  -->
+  <section id="4" class="section">
+    <div class="text-box">
+      <h2>4. Break und Continue</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+         $d = 0;
+         $e = 0;
+        ?>
+        <p>$d = 0; <br> $e = 0; </p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Break -->
+      <div class="box">
+        <h4>break</h4>
+        
+          <pre>
+            <span class="rot">for</span>($d=0; $d < 10;$d++){
+              echo "hier beginnt for-Schleife \$d= $d < 10 < br >";
+
+                <span class="rot">if</span> ($d === 2) {
+                  echo "for schleife break";
+                  <span class="rot">break</span>;
+                  echo "keine Ausgabe";
+                }
+            }
+             
+          </pre>
+          <p style="text-align:center">
+            <span>
+              <?php
+                 for($d=0; $d<10;$d++){
+                    echo "hier beginnt for-Schleife \$d= $d < 10 <br>";
+
+                      if ($d === 2) {
+                        echo "for schleife break";
+                        break;
+                        echo "keine Ausgabe";
+                      }
+                  } 
+              ?>
+              
+            </span>
+            <br> Code wird abgebrochen bei "break" also wenn die if bedingung erfüllt ist <br>
+            Alles nach dem "break" wird nicht mehr ausgegeben
+          </p>       
+      </div>
+
+      <!-- continue -->
+      <div class="box">
+        <h4>continue</h4>
+        
+          <pre>
+            <span class="rot">for</span>($e=0; $e < 4;$e++){
+                    echo "hier beginnt for-Schleife \$e= $e < 4 < br >";
+
+                      <span class="rot">if</span> ($e < 2) {
+                        continue;
+                        echo "Wird übersprungen/neustart";
+                       }
+
+                    echo "_________ $e _________ < br >";
+                       
+                  } 
+          </pre>
+          <p style="text-align:center">
+            <span>
+              <?php
+                 for($e=0; $e<4;$e++){
+                    echo "hier beginnt for-Schleife \$e= $e < 4 <br>";
+
+                      if ($e < 2) {
+                        continue;
+                        echo "Wird übersprungen/neustart";
+                       }
+
+                    echo "_________ $e _________ <br>";
+                       
+                  } 
+              ?>
+              
+            </span>
+            <br> Code wird neu gestartet bei "continue" also wenn die if bedingung erfüllt ist <br>
+            Solange bedingung erfüllt, alles nach dem "continue": keine Ausgabe <br> bis bedingung nicht mehr erfüllt ist
           </p>       
       </div>
     </div>

@@ -12,14 +12,7 @@
          $prozent = (float)str_replace(',','.',$_POST["txtProzent"]);
          $jahr = 0;
 
-                while ($bevoelkerung < 10) {
-                  
-                  
-                  echo $jahr . ".Jahr: ";
-                  echo $bevoelkerung . "<br>";
-                  $bevoelkerung = $bevoelkerung * (100 + $prozent) / 100;
-                  $jahr++;
-                }
+               
               ?>
            
           <form
@@ -27,10 +20,21 @@
       method="POST"
     >
       Bevölkerung in Mrd.:
-      <input type="text" name="txtAnfang"  />
+      <input type="text" value="<?php echo $bevoelkerung ?>" name="txtAnfang"  />
       Wachstum in Prozent:
-      <input type="text" name="txtProzent"/>
+      <input type="text" value="<?php echo $prozent ?>" name="txtProzent"/>
       <input type="submit" name="cmdBerechnen" value="Berechnen" />
+
     </form>
+    <h2> Wachstums-Statistik :</h2>
+    <?php  while ($bevoelkerung < 10) {
+                  
+                  
+                  echo $jahr . ".Jahr: ";
+                  echo $bevoelkerung . "<br>";
+                  $bevoelkerung = $bevoelkerung * (100 + $prozent) / 100;
+                  
+                  $jahr++;
+                }?>
   </body>
 </html>
