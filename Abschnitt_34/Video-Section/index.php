@@ -8,16 +8,16 @@
 </head>
 <body>
   <nav>
-    <p><a href="../../Abschnitt_33/Video-Section/index.php">32</a></p>
+    <p><a href="../../Abschnitt_33/Video-Section/index.php">33</a></p>
     <h1>Abschnitt 34</h1>
-    <p><a href="../../Abschnitt_35/Video-Section/index.php">34</a></p>
+    <p><a href="../../Abschnitt_35/Video-Section/index.php">35</a></p>
   </nav>
   <section id="0" class="section">
     <div class="box">
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. Arrays</a></li>
-        <li><a href="#2">02. </a></li>
+        <li><a href="#2">02. Variable in Array konvertieren</a></li>
         <li><a href="#3">03. </a></li>
         <li><a href="#4">04. </a></li>
       </ul>
@@ -33,9 +33,9 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-          
+          $kiste = ["Bälle",3,true,false,"Golf"];
         ?>
-        <p></p>
+        <p>$kiste = ["Bälle",3,true,false,"Golf"] <br> <span class="grau"> -- Schreibweise vor Php 5.4 -- <br> $kiste = array("Bälle",3,true,false,"Golf");</span> </p>
     </div>
 
     <div class="inhalt-container">
@@ -44,21 +44,105 @@
       <div class="box">
         <h4>Array</h4>
         
-          <pre>
-            
-          </pre>
-          <p style="text-align:center">
-            <span>
-              <?php
-                  
-              ?>
-            </span>
-            
-          </p>       
+        <p>var_dump($kiste) =
+          <span>
+            <?php
+                var_dump($kiste);
+            ?>
+          </span>
+        </p>
+
+        <p>----------------------</p>
+
+        <p>echo $kiste[4] = 
+          <span>
+            <?php
+               echo $kiste[4];
+            ?>
+          </span>
+        </p> 
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Variable in Array konvertieren -->
+  <section id="2" class="section">
+    <div class="text-box">
+      <h2>2. Variable in Array konvertieren</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $name = "IOSIF";
+          $name2 = "Matze";
+        ?>
+        <p>$name = "IOSIF";<br>$name2 = "Matze";</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- konvertieren -->
+      <div class="box">
+        <h4>konvertieren</h4>
+        <p>var_dump($name) = 
+          <span>
+            <?php
+              var_dump($name);
+            ?>
+          </span>
+        </p>
+        <p>----------------------</p>
+        
+        <p>$konvert = array($name)<br>oder<br>$konvert[ ] = $name;</p>
+
+        <p>var_dump($konvert) = 
+          <span>
+            <?php
+              $konvert = array($name);
+              var_dump($konvert);
+            ?>
+          </span>
+        </p>
       </div>
 
-     
+      <!-- konvertieren setype -->
+      <div class="box">
+        <h4>konvertieren settype</h4>
+        <p>var_dump($name2) = 
+          <span>
+            <?php
+              var_dump($name2);
+            ?>
+          </span>
+        </p>
+        <p>----------------------</p>
+        
+        <p>$konvert = array($name)</p>
 
+        <p>settype($name2,"array") = 
+          <span>
+            <?php
+              settype($name2,"array");
+              var_dump($name2);
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- Hinzufügen -->
+      <div class="box">
+        <h4>Hinzufügen</h4>
+        <p>$konvert[ ] = " Weltrichter" <br>
+          var_dump($konvert) =
+          <span>
+            <?php
+            $konvert[] = "Weltrichter";
+              var_dump($konvert);
+            ?>
+          </span>
+        </p>
+      </div>
     </div>
   </section>
 

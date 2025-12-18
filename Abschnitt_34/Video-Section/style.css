@@ -2,6 +2,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: system-ui;
 }
 
 body {
@@ -55,6 +56,24 @@ body {
       }
     }
 
+    span {
+      color: #ffd700;
+      text-decoration: underline;
+      font-family: system-ui;
+    }
+    .grau {
+      color: gray;
+      text-decoration: none;
+    }
+    .rot {
+      color: rgb(191, 21, 21);
+      text-decoration: none;
+    }
+    .orange {
+      color: rgb(255, 123, 0);
+      text-decoration: none;
+    }
+
     .text-box {
       width: 50%;
       display: flex;
@@ -86,21 +105,6 @@ body {
         h4 {
           text-align: center;
           padding: 1rem;
-        }
-        span {
-          color: #ffd700;
-          text-decoration: underline;
-        }
-        .grau {
-          color: gray;
-        }
-        .rot {
-          color: rgb(191, 21, 21);
-          text-decoration: none;
-        }
-        .orange {
-          color: rgb(255, 123, 0);
-          text-decoration: none;
         }
       }
     }
