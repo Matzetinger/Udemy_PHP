@@ -17,7 +17,7 @@
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. Arrays</a></li>
-        <li><a href="#2">02. Variable in Array konvertieren</a></li>
+        <li><a href="#2">02. Variable in Array konvertieren + Hinzufügen</a></li>
         <li><a href="#3">03. </a></li>
         <li><a href="#4">04. </a></li>
       </ul>
@@ -65,10 +65,10 @@
     </div>
   </section>
 
-  <!-- 2. Variable in Array konvertieren -->
+  <!-- 2. Variable in Array konvertieren + Hinzufügen-->
   <section id="2" class="section">
     <div class="text-box">
-      <h2>2. Variable in Array konvertieren</h2>
+      <h2>2. Variable in Array konvertieren + Hinzufügen</h2>
         <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
@@ -76,8 +76,9 @@
         <?php 
           $name = "IOSIF";
           $name2 = "Matze";
+          $hinzufügen = [];
         ?>
-        <p>$name = "IOSIF";<br>$name2 = "Matze";</p>
+        <p>$name = "IOSIF";<br>$name2 = "Matze";<br>$hinzufügen = [ ];</p>
     </div>
 
     <div class="inhalt-container">
@@ -116,11 +117,9 @@
             ?>
           </span>
         </p>
-        <p>----------------------</p>
         
-        <p>$konvert = array($name)</p>
-
-        <p>settype($name2,"array") = 
+        <p>----------------------</p>
+        <p>settype($name2,"array") <br> var_dump($name2) =
           <span>
             <?php
               settype($name2,"array");
@@ -133,12 +132,16 @@
       <!-- Hinzufügen -->
       <div class="box">
         <h4>Hinzufügen</h4>
-        <p>$konvert[ ] = " Weltrichter" <br>
-          var_dump($konvert) =
+        <p>$hinzufügen[ ] = "Weltrichter";<br>
+            $hinzufügen[ ] = "IOSIF";<br>
+            $hinzufügen[ ] = "Gott"; <br>
+          var_dump($hinzufügen) =
           <span>
             <?php
-            $konvert[] = "Weltrichter";
-              var_dump($konvert);
+            $hinzufügen[] = "Weltrichter";
+            $hinzufügen[] = "IOSIF";
+            $hinzufügen[] = "Gott";
+              var_dump($hinzufügen);
             ?>
           </span>
         </p>
