@@ -21,6 +21,7 @@
         <li><a href="#3">03. Element zu einen Array Hinzufügen </a></li>
         <li><a href="#4">04. Element aus einen Array Löschen</a></li>
         <li><a href="#5">05. Assoziative Arrays</a></li>
+        <li><a href="#6">06. Matrix Arrays (Mehrdimensionale)</a></li>
       </ul>
     </div>
   </section>
@@ -282,6 +283,101 @@
           </span>
         </p>
        
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Matrix Arrays (Mehrdimensionale) -->
+  <section id="6" class="section">
+    <div class="text-box">
+      <h2>6. Matrix Arrays (Mehrdimensionale)</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $matrix = [
+            [1,2,3],
+            [4,5,6],
+          ];
+          $people = [
+              "Markus" => [
+                "Alter" => 18,
+                "Stadt" => "Straubing",
+              ],
+              "Sabine" => [  
+                "Alter" => 20,
+                "Stadt" => "Berlin",
+              ],
+             ]
+        ?>
+        <p> $matrix = [ <br>
+            [1,2,3], <span class="grau">[0]</span> <br>
+            [4,5,6] <span class="grau">[1]</span><br>
+          ];</p>
+          <p>Assoziative Array</p>
+          <p>$people = [ <br>
+              "Markus" => [  <br>
+                "Alter" => 18, <br>
+                "Stadt" => "Straubing", <br>
+                ] <br>
+              "Sabine" => [  <br>
+                "Alter" => 20, <br>
+                "Stadt" => "Berlin", <br>
+                ] <br>
+             ]</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Matrix -->
+      <div class="box">
+        <h4>Matrix</h4>
+        
+        <p>var_dump($matrix) =
+          <span>
+            <?php
+               var_dump($matrix);
+               var_dump($people);
+            ?>
+          </span>
+        </p>
+
+        <p>var_dump($people) =
+          <span>
+            <?php
+               var_dump($people);
+            ?>
+          </span>
+        </p>
+
+      </div>
+
+      <!-- Matrix gezielte Ausgabe -->
+      <div class="box">
+        <h4>Matrix gezielte Ausgabe</h4>
+        
+        <p>var_dump($matrix[1][2]) =
+          <span>
+            <?php
+               var_dump($matrix[1][2]);
+            ?>
+          </span>
+        </p>
+
+      </div>
+      <!-- Matrix gezielte Ausgabe Assoziative -->
+      <div class="box">
+        <h4>Matrix gezielte Ausgabe Assoziative</h4>
+        
+        <p>var_dump($people["Markus"]["Alter"]) =
+          <span>
+            <?php
+               var_dump($people["Markus"]["Alter"]);
+            ?>
+          </span>
+        </p>
+
       </div>
     </div>
   </section>
