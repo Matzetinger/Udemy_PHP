@@ -22,6 +22,10 @@
         <li><a href="#4">04. Element aus einen Array Löschen</a></li>
         <li><a href="#5">05. Assoziative Arrays</a></li>
         <li><a href="#6">06. Matrix Arrays (Mehrdimensionale)</a></li>
+        <li><a href="#7">07. Arrays iterieren mit for-Schleife und Accumulator Pattern</a></li>
+        <li><a href="#8">08. Arrays iterieren mit foreach-Schleife</a></li>
+        <li><a href="#"></a></li>
+        <li><a href="#"></a></li>
       </ul>
     </div>
   </section>
@@ -379,6 +383,239 @@
         </p>
 
       </div>
+    </div>
+  </section>
+
+  <!-- 7. Arrays iterieren mit for-Schleife -->
+  <section id="7" class="section">
+    <div class="text-box">
+      <h2>7. Arrays iterieren mit for-Schleife und Accumulator Pattern</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $iterieren = ["Grün", "Rot", "Blau"];
+          $rechnen = [1,2,3];
+          $ergebnis = 0;
+          $matrix1 = [
+            ["Array[0] Index[0]", "Array[0] Index[1]"],
+            ["Array[1] Index[0]", "Array[1] Index[1]"],
+          ];
+        ?>
+        <p>$iterieren = ["Grün", "Rot", "Blau"]; <br> $rechnen = [1,2,3];<br>$ergebnis = 0; <br> 
+      $matrix1 = [ <br>
+            ["Array[0] Index[0]", "Array[0] Index[1]"],<br>
+            ["Array[1] Index[0]", "Array[1] Index[1]"],<br>
+          ];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- iterieren -->
+      <div class="box">
+        <h4>Iterieren for-Schleife</h4>
+
+        <pre>
+          <span class="rot">for</span>($i = 0; $i < count($iterieren); $i++){
+                echo "Die Farbe ist $iterieren[$i] < br >";
+           } =
+        </pre>
+
+        <p>
+          <span>
+            <?php
+              for($i = 0; $i < count($iterieren); $i++){
+                echo "Die Farbe ist $iterieren[$i] <br>";
+              }
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- iterieren über Matrix -->
+      <div class="box">
+        <h4>Iterieren über Matrix Array</h4>
+
+        <pre>
+          <span class="rot">for</span>($m = 0; $m < count($matrix1); $m++){
+                <span class="rot">for</span>($m1 = 0; $m1 < count($matrix1[$m]); $m1++){
+                  echo $matrix1[$m][$m1] . "< br >";
+                }
+           } =
+        </pre>
+
+        <p>
+          <span>
+            <?php
+              for($m = 0; $m < count($matrix1); $m++){
+                for($m1 = 0; $m1 < count($matrix1[$m]); $m1++){
+                  echo $matrix1[$m][$m1] . "<br>";
+                }
+              }
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- accumulator Pattern -->
+      <div class="box">
+        <h4>Accumulator Pattern</h4>
+
+        <pre>
+          <span class="rot">for</span>($r=0; $r < count($rechnen); $r++){
+                $ergebnis += $rechnen[$r];
+           };
+           
+        </pre>
+
+        <p>echo $ergebnis =
+          <span>
+            <?php
+              for($r=0; $r < count($rechnen); $r++){
+                $ergebnis += $rechnen[$r];
+              };
+              echo $ergebnis;
+            ?>
+          </span>
+        </p>
+       </div>
+
+    </div>
+  </section>
+
+  <!-- 8. Arrays iterieren mit foreach-Schleife -->
+  <section id="8" class="section">
+    <div class="text-box">
+      <h2>8. Arrays iterieren mit foreach-Schleife</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $zahlenbox = [1,2,3];
+          $zahlenmatrix = [
+            [1,2],
+            [1,2,3],
+            [1,2,3,4],
+          ];
+          $assArray = [
+            "Index[0]" => " Hallo[0]",
+            "Index[1]" => " Du[1]"
+          ];
+        ?>
+        <p>$zahlenbox = [1,2,3]; <br> <br> $zahlenmatrix = [ <br>
+            [1,2],<br>
+            [1,2,3],<br>
+            [1,2,3,4],<br>
+          ] <br> <br>
+           $assArray = [<br>
+            "Index[0]" => " Hallo[0]",<br>
+            "Index[1]" => " Du[1]"<br>
+          ];
+        
+        </p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- iterieren foreach -->
+      <div class="box">
+        <h4>Iterieren foreach-Schleife</h4>
+
+        <pre>
+          <span class="rot">foreach</span> ($zahlenbox as $zahl) {
+                echo $zahl;
+           } =
+        </pre>
+
+        <p>
+          <span>
+            <?php
+              foreach ($zahlenbox as $zahl) {
+                echo $zahl . "<br>";
+              }
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- iterieren über Matrix mit foreach -->
+      <div class="box">
+        <h4>Iterieren über Matrix mit foreach</h4>
+
+        <pre>
+          <span class="rot">foreach</span> ($zahlenmatrix as $row) {
+                <span class="rot">foreach</span> ($row as $element){
+                  echo $element;
+                }
+           }=
+        </pre>
+
+        <p>
+          <span>
+            <?php
+              foreach ($zahlenmatrix as $row) {
+                foreach($row as $element){
+                  echo $element;
+                }
+              }
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- iterieren über Assoziative Array mit foreach -->
+      <div class="box">
+        <h4>Iterieren über Assoziative Array mit foreach</h4>
+
+        <pre>
+          <span class="rot">foreach</span> ($assArray as $index => $wert) {
+                echo $index . $wert . "< br >";
+           } =
+        </pre>
+
+        <p>
+          <span>
+            <?php
+              foreach ($assArray as $index => $wert) {
+                echo $index . $wert . "<br>";
+              }
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- iterieren über Assoziative Matrix Array mit foreach -->
+      <div class="box">
+        <h4>Iiterieren über Assoziative Matrix Array mit foreach</h4>
+
+        <pre>
+          <span class="rot">foreach</span> ($people as $namen => $details) {
+                echo $namen; 
+                <span class="rot">foreach</span> ($details as $detail => $value){
+                  echo $value;
+                }
+                echo "< br >";
+           } =
+        </pre>
+
+        <p>
+          <span>
+            <?php
+              foreach ($people as $namen => $details) {
+                echo $namen; 
+                foreach ($details as $detail => $value){
+                  echo $value;
+                }
+                echo "<br>";
+              }
+            ?>
+          </span>
+        </p>
+        <p>Array ist von <a href="#6">06. Matrix Arrays (Mehrdimensionale)</a></p>
+      </div>
+
     </div>
   </section>
 
