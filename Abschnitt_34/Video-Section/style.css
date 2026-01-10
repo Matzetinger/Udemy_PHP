@@ -61,16 +61,24 @@ body {
       text-decoration: underline;
       font-family: system-ui;
     }
+
     .grau {
       color: gray;
       text-decoration: none;
     }
+
     .rot {
       color: rgb(191, 21, 21);
       text-decoration: none;
     }
+
     .orange {
       color: rgb(255, 123, 0);
+      text-decoration: none;
+    }
+
+    .blau {
+      color: rgb(0, 110, 255);
       text-decoration: none;
     }
 

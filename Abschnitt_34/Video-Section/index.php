@@ -24,6 +24,10 @@
         <li><a href="#6">06. Matrix Arrays (Mehrdimensionale)</a></li>
         <li><a href="#7">07. Arrays iterieren mit for-Schleife und Accumulator Pattern</a></li>
         <li><a href="#8">08. Arrays iterieren mit foreach-Schleife</a></li>
+        <li><a href="#9">09. Count und sizeof Arrayelemente Zählen</a></li>
+        <li><a href="#10">10. Arrays prüfen mit isset, empty, is_array und in_array</a></li>
+        <li><a href="#11">11. array_map</a></li>
+        <li><a href="#"></a></li>
         <li><a href="#"></a></li>
         <li><a href="#"></a></li>
       </ul>
@@ -618,6 +622,145 @@
 
     </div>
   </section>
+
+  <!-- 9. Count und sizeof Arrayelemente Zählen -->
+  <section id="9" class="section">
+    <div class="text-box">
+      <h2>9. Count und sizeof Arrayelemente Zählen</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $boxinhalt = [1,"Wahrheit",true,];
+        ?>
+        <p>$boxinhalt = [1,"Wahrheit",true,];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Count -->
+      <div class="box">
+        <h4>count</h4>
+        <p> echo <span class="orange">count</span>($boxinhalt) = <span><?php echo count($boxinhalt); ?></span></p>
+        <p>Bei Matrix-Arrays [index] angeben und bei Assoziative den ["Index-Name"]</p>
+      </div>
+
+      <!-- sizeof -->
+      <div class="box">
+        <h4>sizeof</h4>
+        <p> echo <span class="orange">sizeof</span>($boxinhalt) = <span><?php echo sizeof($boxinhalt); ?></span></p>
+        <p>Bei Matrix-Arrays [index] angeben und bei Assoziative den ["Index-Name"]</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Arrays prüfen mit isset, empty, is_array und in_array -->
+  <section id="10" class="section">
+    <div class="text-box">
+      <h2>10. Arrays prüfen mit isset, empty, is_array und in_array</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $container = ["Ball", "Maus", "Box"];
+          $string = "String";
+        ?>
+        <p>$container = ["Ball", "Maus", "Box"]; <br> $string = "String";</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- isset -->
+      <div class="box">
+        <h4>isset</h4>
+        <p>echo <span class="orange">isset</span>($container) ? "Es gibt Elemente" : "Es gibt keine Elemente"; = <span><?php echo isset($container) ? "Es gibt Elemente" : "Es gibt keine Elemente";  ?></span></p>
+        <p>Bei Matrix-Arrays [index] angeben und bei Assoziative den ["Index-Name"]</p>
+        <p>kann man Prüfen mit echo, var_dump oder var_export </p>
+      </div>
+
+      <!-- isset Matrix -->
+      <div class="box">
+        <h4>isset Matrix</h4>
+        <p>var_dump(<span class="orange">isset</span>($matrix[1])); = <span><?php var_dump(isset($matrix[1])) ?></span></p>
+        <p>Bei Matrix-Arrays [index] angeben und bei Assoziative den ["Index-Name"]</p>
+        <p>Array ist von <a href="#6">06. Matrix Arrays (Mehrdimensionale)</a></p>
+        <p>kann man Prüfen mit echo, var_dump oder var_export </p>
+      </div>
+
+      <!-- empty -->
+      <div class="box">
+        <h4>empty</h4>
+        <p>Prüft ob eine Variable einen "falsy"-Wert hat bzw. leer ist</p>
+        <p>var_export(<span class="orange">empty</span>($container)); = <span><?php var_export(empty($container)); ?></span></p>
+        <p>Bei Matrix-Arrays [index] angeben und bei Assoziative den ["Index-Name"]</p>
+        <p>kann man Prüfen mit echo, var_dump oder var_export </p>
+      </div>
+
+      <!-- is_array -->
+      <div class="box">
+        <h4>is_array</h4>
+        <p>Prüft ob eine Variable ein Array ist</p>
+        <p>var_export(<span class="orange">is_array</span>($container)); = <span><?php var_export(is_array($container)); ?></span></p>
+        <p>var_export(<span class="orange">is_array</span>($string)); = <span><?php var_export(is_array($string)); ?></span></p>
+        <p>Bei Matrix-Arrays [index] angeben und bei Assoziative den ["Index-Name"]</p>
+        <p>es gibt auch mehrere is_ zb. is_string, is_integer usw.</p>
+        <p>kann man Prüfen mit echo, var_dump oder var_export </p>
+      </div>
+
+      <!-- in_array -->
+      <div class="box">
+        <h4>in_array</h4>
+        <p>Prüft ob ein gewisser wert im Array enthalten ist</p>
+        <p>var_export(<span class="orange">in_array</span>("Ball", $container)); = <span><?php var_export(in_array("Ball", $container)); ?></span></p>
+        <p>Bei Matrix-Arrays [index] angeben und bei Assoziative den ["Index-Name"]</p>
+        <p>kann man Prüfen mit echo, var_dump oder var_export </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. array_map -->
+  <section id="11" class="section">
+    <div class="text-box">
+      <h2>11. array_map</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $numbers = [1, 2, 3, 4, 5];
+        ?>
+        <p>$numbers = [1, 2, 3, 4, 5];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- array_map -->
+      <div class="box">
+        <h4>array_map</h4>
+        <pre>
+          <span class="blau">function</span> double($n){
+            <span class="rot">return</span> $n * 2;
+          };
+
+          $newArray = <span class="orange">array_map</span>("double", $numbers);</pre>
+        <p>
+          <?php 
+          function double($n){
+            return $n * 2;
+          };
+
+          $newArray = array_map("double", $numbers);
+          ?>
+        </p>
+        <p>----------------------</p>
+        <p>var_export($newArray) = <span><?php var_export($newArray); ?></span></p>
+      </div>
+
+    </div>
+  </section> 
 
 </body>
 </html>
