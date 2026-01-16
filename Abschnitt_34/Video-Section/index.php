@@ -26,7 +26,10 @@
         <li><a href="#8">08. Arrays iterieren mit foreach-Schleife</a></li>
         <li><a href="#9">09. Count und sizeof Arrayelemente Zählen</a></li>
         <li><a href="#10">10. Arrays prüfen mit isset, empty, is_array und in_array</a></li>
-        <li><a href="#11">11. array_map</a></li>
+        <li><a href="#11">11. array_map - Erzeugt ein neues Array mit veränderten Werten</a></li>
+        <li><a href="#12">12. array_walk - Verändert die Werte im bestehenden Array</a></li>
+        <li><a href="#13">13. array_push, _unshift, _pop, _shift</a></li>
+        <li><a href="#14">14. array_slice, _splice</a></li>
         <li><a href="#"></a></li>
         <li><a href="#"></a></li>
         <li><a href="#"></a></li>
@@ -721,10 +724,10 @@
     </div>
   </section>
 
-  <!-- 11. array_map -->
+  <!-- 11. array_map - Erzeugt ein neues Array mit veränderten Werten -->
   <section id="11" class="section">
     <div class="text-box">
-      <h2>11. array_map</h2>
+      <h2>11. array_map - Erzeugt ein neues Array mit veränderten Werten</h2>
         <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
@@ -761,6 +764,167 @@
 
     </div>
   </section> 
+
+  <!-- 12. array_walk - Verändert die Werte im bestehenden Array -->
+  <section id="12" class="section">
+    <div class="text-box">
+      <h2>12. array_walk - Verändert die Werte im bestehenden Array</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $walk = [1, 2, 3, 4, 5];
+        ?>
+        <p>$walk = [1, 2, 3, 4, 5];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- array_walk-->
+      <div class="box">
+        <h4>array_walk</h4>
+        <pre>
+          <span class="blau">function</span> verdoppeln(&$h){
+             $h *= 2;
+          };
+
+          <span class="orange">array_walk</span>($walk, "verdoppeln");</pre>
+        <p>
+          <?php 
+          function verdoppeln(&$h){
+            $h *= 2;
+          };
+
+          array_walk($walk, "verdoppeln");
+          ?>
+        </p>
+        <p>----------------------</p>
+        <p>print_r($walk) = <span><?php print_r($walk); ?></span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 13. array_push, _unshift, _pop, _shift  -->
+  <section id="13" class="section">
+    <div class="text-box">
+      <h2>13. array_push, _unshift, _pop, _shift</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $array = [1, 2, 3, 4, 5];
+        ?>
+        <p>$array = [1, 2, 3, 4, 5];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- array_push-->
+      <div class="box">
+        <h4>array_push</h4>
+        
+        <p><span class="orange">array_push</span>($array, "Hinzufügen am Ende"); =
+          <?php 
+          array_push($array, "Hinzufügen am Ende");
+          ?>
+        </p>
+        <p>print_r($array) = <span><?php print_r($array); ?></span></p>
+      </div>
+
+      <!-- array_unshift-->
+      <div class="box">
+        <h4>array_unshift</h4>
+        
+        <p><span class="orange">array_unshift</span>($array, "Hinzufügen am Anfang"); =
+          <?php 
+          array_unshift($array, "Hinzufügen am Anfang");
+          ?>
+        </p>
+        <p>print_r($array) = <span><?php print_r($array); ?></span></p>
+      </div>
+
+      <!-- array_pop-->
+      <div class="box">
+        <h4>array_pop</h4>
+        
+        <p><span class="orange">array_pop</span>($array); =
+          <?php 
+          array_pop($array);
+          ?>
+        </p>
+        <p>print_r($array) = <span><?php print_r($array); ?></span></p>
+        <p>array_pop entfernt das letzte Element</p>
+      </div>
+
+      <!-- array_shift-->
+      <div class="box">
+        <h4>array_shift</h4>
+        
+        <p><span class="orange">array_shift</span>($array); =
+          <?php 
+          array_shift($array);
+          ?>
+        </p>
+        <p>print_r($array) = <span><?php print_r($array); ?></span></p>
+        <p>array_shift entfernt das erste Element</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 14. array_slice, _splice  -->
+  <section id="14" class="section">
+    <div class="text-box">
+      <h2>14. array_slice, _splice</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $slice = [1, 2, 3, 4, 5];
+          $splice = [1, 2, 3, 4, 5];
+        ?>
+        <p>$slice = [1, 2, 3, 4, 5]; <br> $splice = [1, 2, 3, 4, 5];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- array_slice-->
+      <div class="box">
+        <h4>array_slice</h4>
+        
+        <p>$subset = <span class="orange">array_slice</span>($slice, 1, 3, true); =
+          <?php 
+          $subset = array_slice($slice, 1, 3, true);
+          ?>
+        </p>
+        <p>print_r($subset) = <span><?php print_r($subset); ?></span></p>
+        <p>array_slice(start, länge, true), wenn start oder länge negativ (-wert) ist, zählt er vom Ende rückwärts.</p>
+        <p>true = Schlüssel beibehalten</p>
+        <p>Kopiert einen Ausschnitt des Arrays in ein neues Array, ohne das Original zu verändern.</p>
+        <p>print_r($slice) = <span><?php print_r($slice); ?></span></p>
+      </div>
+
+      <!-- array_slice-->
+      <div class="box">
+        <h4>array_splice</h4>
+        
+        <p>$ausschneiden = <span class="orange">array_splice</span>($splice, 2, 3, ["ersetzt", "ersetzt", "ersetzt"]); =
+          <?php 
+          $ausschneiden = array_splice($splice, 2, 3, ["ersetzt", "ersetzt", "ersetzt"]);
+          ?>
+        </p>
+        <p>print_r($ausschneiden) = <span><?php print_r($ausschneiden); ?></span></p>
+        <p>array_splice(start, länge, ersetztende werte), wenn start oder länge negativ (-wert) ist, zählt er vom Ende rückwärts.</p>
+        <p>Entfernt einen Ausschnitt des Original-Arrays und fügt es in ein neues Array, das Original wird verändert.</p>
+        <p>print_r($splice) = <span><?php print_r($splice); ?></span></p>
+      </div>
+
+    </div>
+  </section>
 
 </body>
 </html>
