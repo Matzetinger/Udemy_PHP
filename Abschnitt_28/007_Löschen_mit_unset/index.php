@@ -10,7 +10,7 @@ var_dump($value);
 echo $br;
 
 unset($value, $value1);
-var_dump($value, $value1, $value);
+var_dump($value, $value1, $value2);
 
 
 ?>

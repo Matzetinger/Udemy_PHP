@@ -30,9 +30,12 @@
         <li><a href="#12">12. array_walk - Verändert die Werte im bestehenden Array</a></li>
         <li><a href="#13">13. array_push, _unshift, _pop, _shift</a></li>
         <li><a href="#14">14. array_slice, _splice</a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
-        <li><a href="#"></a></li>
+        <li><a href="#15">15. array_merge, array_merge_recursive und array_replace_recursive = Zusammenfügen (überschreiben) von Arrays</a></li>
+        <li><a href="#16">16. array_combine = Kombiniert Arrays 1 Array Keys und 2 Array Elemente/a></li>
+        <li><a href="#17">17. Array_key_exists prüft ob ein key im Array existiert</a></li>
+        <li><a href="#18">18. </a></li>
+        <li><a href="#19">19. </a></li>
+        <li><a href="#20">20. </a></li>
       </ul>
     </div>
   </section>
@@ -921,6 +924,154 @@
         <p>array_splice(start, länge, ersetztende werte), wenn start oder länge negativ (-wert) ist, zählt er vom Ende rückwärts.</p>
         <p>Entfernt einen Ausschnitt des Original-Arrays und fügt es in ein neues Array, das Original wird verändert.</p>
         <p>print_r($splice) = <span><?php print_r($splice); ?></span></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 15. array_merge, array_merge_recursive und array_replace_recursive = Zusammenfügen (überschreiben) von Arrays  -->
+  <section id="15" class="section">
+    <div class="text-box">
+      <h2>15. array_merge, array_merge_recursive und array_replace_recursive = Zusammenfügen (überschreiben) von Arrays</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $box1 = ["0:box1", "1:box1", "2:box1"];
+          $box2 = ["0:box2", "1:box2", "2:box2"];
+          $ass = ["a" => "A", "b" => "C",];
+          $ass1 = ["a" => "B", "b" => "D",];
+        ?>
+        <p>$box1 = ["0:box1", "1:box1", "2:box1"]; <br> $box2 = ["0:box2", "1:box2", "2:box2"];</p>
+        <p>----------------------</p>
+        <p>$ass = ["a" => "A", "b" => "C",]; <br> $ass1 = ["a" => "B", "b" => "D",];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- array_merge-->
+      <div class="box">
+        <h4>array_merge</h4>
+        
+        <p>$box3 = <span class="orange">array_merge</span>($box1, $box2); <br> print_r($box3); = 
+          <span>
+            <?php 
+            $box3 = array_merge($box1, $box2);
+            print_r($box3);
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- array_merge_recursive-->
+      <div class="box">
+        <h4>ararray_merge_recursive</h4>
+        
+        <p>$newAss = <span class="orange">array_merge_recursive</span>($ass, $ass1); <br> print_r($newAss); = 
+          <span>
+            <?php 
+            $newAss = array_merge_recursive($ass, $ass1);
+            print_r($newAss);
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- array_replace_recursive-->
+      <div class="box">
+        <h4>array_replace_recursive</h4>
+        
+        <p>$newAss = <span class="orange">array_replace_recursive</span>($ass, $ass1); <br> print_r($newAss); = 
+          <span>
+            <?php 
+            $newAss = array_replace_recursive($ass, $ass1);
+            print_r($newAss);
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- array_merge bei Assoziative-->
+      <div class="box">
+        <h4>array_merge bei Assoziative</h4>
+        
+        <p>$newAss = <span class="orange">array_merge</span>($ass, $ass1); <br> print_r($newAss); = 
+          <span>
+            <?php 
+            $newAss = array_merge($ass, $ass1);
+            print_r($newAss);
+            ?>
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 16. array_combine Kombiniert Arrays 1 Array Keys und 2 Array Elemente -->
+  <section id="16" class="section">
+    <div class="text-box">
+      <h2>16. array_combine Kombiniert Arrays 1 Array Keys und 2 Array Elemente</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $key = ["zahl1", "zahl2", "zahl3"];
+          $elemente = [3,4,5];
+        ?>
+        <p>$key = ["zahl1", "zahl2", "zahl3"]; <br> $elemente = [3,4,5];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- array_combine-->
+      <div class="box">
+        <h4>array_combine</h4>
+        
+        <p>$kombiniert = <span class="orange">array_combine</span>($key, $elemente); <br> print_r($kombiniert); = 
+          <span>
+            <?php 
+            $kombiniert = array_combine($key, $elemente);
+            print_r($kombiniert);
+            ?>
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 17. Array_key_exists prüft ob ein key im Array existiert -->
+  <section id="17" class="section">
+    <div class="text-box">
+      <h2>17. Array_key_exists prüft ob ein key im Array existiert</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $matthias = ["Stadt" => null, "Alter" => 38, "Ort" => "Haselbach"];
+        ?>
+        <p>$matthias = ["Stadt" => null, "Alter" => 38, "Ort" => "Haselbach"];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Array_key_exists-->
+      <div class="box">
+        <h4>Array_key_exists</h4>
+        
+        <p>echo <span class="orange">array_key_exists</span>("Stadt", $matthias) ? "Der Key existiert" : "Der Key existiert nicht"; = 
+          <span>
+            <?php 
+            echo array_key_exists("Stadt", $matthias) ? "Der Key existiert" : "Der Key existiert nicht";
+            
+            ?>
+          </span>
+        </p>
+        <p>Der Unterschied: isset prüft zusätzlich, dass der Wert nicht null ist, während array_key_exists auch null als existierenden Key akzeptiert.</p>
       </div>
 
     </div>
