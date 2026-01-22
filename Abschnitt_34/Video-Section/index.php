@@ -24,18 +24,22 @@
         <li><a href="#6">06. Matrix Arrays (Mehrdimensionale)</a></li>
         <li><a href="#7">07. Arrays iterieren mit for-Schleife und Accumulator Pattern</a></li>
         <li><a href="#8">08. Arrays iterieren mit foreach-Schleife</a></li>
-        <li><a href="#9">09. Count und sizeof Arrayelemente Zählen</a></li>
-        <li><a href="#10">10. Arrays prüfen mit isset, empty, is_array und in_array</a></li>
-        <li><a href="#11">11. array_map - Erzeugt ein neues Array mit veränderten Werten</a></li>
-        <li><a href="#12">12. array_walk - Verändert die Werte im bestehenden Array</a></li>
+        <li><a href="#9">09. Count und sizeof = Arrayelemente Zählen</a></li>
+        <li><a href="#10">10. isset, empty, is_array und in_array = Arrays prüfen </a></li>
+        <li><a href="#11">11. array_map = Erzeugt ein neues Array mit veränderten Werten</a></li>
+        <li><a href="#12">12. array_walk = Verändert die Werte im bestehenden Array</a></li>
         <li><a href="#13">13. array_push, _unshift, _pop, _shift</a></li>
         <li><a href="#14">14. array_slice, _splice</a></li>
         <li><a href="#15">15. array_merge, array_merge_recursive und array_replace_recursive = Zusammenfügen (überschreiben) von Arrays</a></li>
         <li><a href="#16">16. array_combine = Kombiniert Arrays 1 Array Keys und 2 Array Elemente/a></li>
-        <li><a href="#17">17. Array_key_exists prüft ob ein key im Array existiert</a></li>
-        <li><a href="#18">18. </a></li>
-        <li><a href="#19">19. </a></li>
-        <li><a href="#20">20. </a></li>
+        <li><a href="#17">17. Array_key_exists = prüft ob ein key im Array existiert</a></li>
+        <li><a href="#18">18. Array_search = sucht ein Element und gibt dessen Key aus, wenn existiert</a></li>
+        <li><a href="#19">19. Array_keys = gibt den / die Schlüssel aus, entweder alle oder je nach Elementsuche</a></li>
+        <li><a href="#20">20. Array_values = werden die Werte mit neuen Index ausgegeben</a></li>
+        <li><a href="#21">21. Array_rand gibt ein oder mehrere zufällige Indexe aus</a></li>
+        <li><a href="#22">22. sort() und seine Einstellmöglichkeiten</a></li>
+        <li><a href="#23">23.</a></li>
+        <li><a href="#24">24.</a></li>
       </ul>
     </div>
   </section>
@@ -1072,6 +1076,224 @@
           </span>
         </p>
         <p>Der Unterschied: isset prüft zusätzlich, dass der Wert nicht null ist, während array_key_exists auch null als existierenden Key akzeptiert.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 18. Array_search sucht ein Element und gibt dessen Key aus, wenn existiert -->
+  <section id="18" class="section">
+    <div class="text-box">
+      <h2>18. Array_search sucht ein Element und gibt dessen Key aus, wenn existiert</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $search = ["String", 12, "test"];
+        ?>
+        <p>$search = ["String", 12,];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Array_search -->
+      <div class="box">
+        <h4>Array_search</h4>
+        <p>$index = <span class="orange">Array_search</span>("String", $search);</p>
+        <pre>
+
+          <span class="rot">if</span>($index !== false){
+              echo "Key existiert";
+            }<span class="rot">else</span>{
+              echo "Key existiert nicht";
+            }; =
+        </pre>
+        <p>
+          <span>
+            <?php 
+            $index = array_search("String", $search);
+
+            if($index !== false){
+              echo "Key existiert, Index = $index";
+            }else{
+              echo "Key existiert nicht";
+            };
+            
+            ?>
+          </span>
+        </p>
+        <p>Da der Key [0] ein false-Value ist, muss ich bei der Prüfung angeben das $index !== ist nicht False</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 19. Array_keys gibt den / die Schlüssel aus entweder alle oder je nach Elementsuche -->
+  <section id="19" class="section">
+    <div class="text-box">
+      <h2>19. Array_keys gibt den / die Schlüssel aus entweder alle oder je nach Elementsuche</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $keys = ["String", 12, "test", "String"];
+        ?>
+        <p>$keys = ["String", 12, "test", "String"];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Array_keys -->
+      <div class="box">
+        <h4>Array_keys</h4>
+        <p>print_r(<span class="orange">array_keys</span>($keys, "String")); = </p>
+        <p>
+          <span>
+            <?php 
+            print_r(array_keys($keys, "String"));
+            ?>
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 20. Array_values werden die Werte mit neuen Index ausgegeben -->
+  <section id="20" class="section">
+    <div class="text-box">
+      <h2>20. Array_values werden die Werte mit neuen Index ausgegeben</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $person = [
+            "Name" => "Herbert",
+            "Age" => 12,
+            "Email" => "Test@Test.de",
+          ];
+        ?>
+        <p>$person = [ <br>
+            "Name" => "Herbert",<br>
+            "Age" => 12,<br>
+            "Email" => "Test@Test.de",<br>
+          ];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Array_values -->
+      <div class="box">
+        <h4>Array_values</h4>
+        <p>print_r(<span class="orange">array_values</span>($person)); = </p>
+        <p>
+          <span>
+            <?php 
+            print_r(array_values($person));
+            ?>
+          </span>
+        </p>
+        <p>Wird erst sichbar bei Assoziative Arrays und bei Assoziative Matrix-Arrays wird nur ein teil neu Indexiert </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 21. Array_rand gibt ein oder mehrere zufällige Indexe aus -->
+  <section id="21" class="section">
+    <div class="text-box">
+      <h2>21. Array_rand gibt ein oder mehrere zufällige Indexe aus</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $fruits = ["Banane", "Apfel", "Kirsche"];
+        ?>
+        <p>$fruits = ["Banane", "Apfel", "Kirsche"];</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Array_rand -->
+      <div class="box">
+        <h4>Array_rand</h4>
+        <p>$random = (<span class="orange">array_rand</span>($fruits)); <br> print_r($random); =
+          <span>
+            <?php 
+            $random = (array_rand($fruits));
+            print_r($random);
+            ?>
+          </span>
+        </p>
+        <p>echo "Zufällig ausgewählte Frucht ist $fruits[$random]"; = 
+          <span>
+            <?php 
+            echo "Zufällig ausgewählte Frucht ist > $fruits[$random] <";
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <!-- Array_rand mehrere -->
+      <div class="box">
+        <h4>Array_rand mehrere</h4>
+        <p>$random = (<span class="orange">array_rand</span>($fruits)); <br> print_r($random); =
+          <span>
+            <?php 
+            $random = (array_rand($fruits, 2));
+            print_r($random);
+            ?>
+          </span>
+        </p>
+        <p>echo "Zufällig ausgewählte Frucht ist > " . $fruits[$random[0]] . " < und die zweite Frucht ist > " . $fruits[$random[1]] . " <" ; = 
+          <span>
+            <?php 
+            echo "Zufällig ausgewählte Frucht ist > " . $fruits[$random[0]] . " < und die zweite Frucht ist > " . $fruits[$random[1]] . " <" ;
+            ?>
+          </span>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 22. sort() und seine Einstellmöglichkeiten -->
+  <section id="22" class="section">
+    <div class="text-box">
+      <h2>22. sort() und seine Einstellmöglichkeiten</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          
+        ?>
+        <p></p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Sort() -->
+      <div class="box">
+        <h4>Sort()</h4>
+        <p>
+          <span>
+            <?php 
+            
+            ?>
+          </span>
+        </p>
+        <p> 
+          <span>
+            <?php 
+            
+            ?>
+          </span>
+        </p>
       </div>
 
     </div>
