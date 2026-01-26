@@ -1270,32 +1270,66 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-          
+          $data = ["img2.png", "img10.png", "img1.png", "Äpfel", "Banane", "dattel", "Kirsche", 1, "2", 10];
+          $regular = $data;
+          $numeric = $data;
+          $string = $data;
+          $stringCase = $data;
+          $local = $data;
+          $naturalCase = $data;
         ?>
-        <p></p>
+        <p>$data = ["img2.png", "img10.png", "img1.png", "Äpfel", "Banane", "dattel", "Kirsche", 1, "2", 10]; <br> <br>
+          $regular = $data; <br>
+          $numeric = $data; <br>
+          $string = $data; <br>
+          $stringCase = $data;<br>
+          $local = $data; <br>
+          $naturalCase = $data;
+        </p>
     </div>
 
     <div class="inhalt-container">
 
-      <!-- Sort() -->
+      <!-- Ausgabe der Sortierungen -->
       <div class="box">
-        <h4>Sort()</h4>
-        <p>
-          <span>
-            <?php 
-            
-            ?>
-          </span>
-        </p>
-        <p> 
-          <span>
-            <?php 
-            
-            ?>
-          </span>
-        </p>
-      </div>
+        
 
+        <h4>Sortierung</h4>
+        <?php
+          setlocale(LC_COLLATE, 'DE');
+          sort($regular, SORT_REGULAR);
+          sort($numeric, SORT_NUMERIC);
+          sort($string, SORT_STRING);
+          sort($stringCase, SORT_STRING | SORT_FLAG_CASE);
+          sort($local, SORT_LOCALE_STRING);
+          sort($naturalCase, SORT_NATURAL | SORT_FLAG_CASE);
+        ?>
+        <p>setlocale(LC_COLLATE, 'de_DE.UTF-8'); <br>
+          sort($regular, <Span class="orange">SORT_REGULAR</Span>);<br>
+          sort($numeric, <Span class="orange">SORT_NUMERIC</Span>);<br>
+          sort($string, <Span class="orange">SORT_STRING</Span>);<br>
+          sort($stringCase, <Span class="orange">SORT_STRING | SORT_FLAG_CASE</Span>); Flag_Case ist zwecks Groß und kleinschreibung<br>
+          sort($local, <Span class="orange">SORT_LOCALE_STRING</Span>);<br>
+          sort($naturalCase, <Span class="orange">SORT_NATURAL | SORT_FLAG_CASE</Span>);
+        </p>
+
+        <h4>HINWEIS zu "<u>setlocale(LC_COLLATE, 'DE');</u>"</h4>
+
+        <p>Erst mit einer gesetzten Locale berücksichtigt SORT_LOCALE_STRING sprachspezifische Sortierregeln, z. B. dass „Äpfel“ bei A einsortiert wird; ohne Locale erfolgt die Sortierung nach Zeichencodes, wodurch Umlaute häufig am Ende der Liste (z. B. nach Z) erscheinen. -- 'DE' (Windows) oder 'de_DE.UTF-8' (Linux/macOS) -- </p>
+
+
+        <h4>Ausgabe der Sortierungen </h4>
+        
+        <table> 
+            <tr><td>echo <span class="rot">implode</span>(" ", $regular)</td><td>=</td><td><span><?= implode(" ", $regular) ?></span></td></tr>
+            <tr><td>echo <span class="rot">implode</span>(" ", $numeric)</td><td>=</td><td><span><?= implode(" ", $numeric) ?></span></td></tr>
+            <tr><td>echo <span class="rot">implode</span>(" ", $string)</td><td>=</td><td><span><?= implode(" ", $string) ?></span></td></tr>
+            <tr><td>echo <span class="rot">implode</span>(" ", $stringCase)</td><td>=</td><td><span><?= implode(" ", $stringCase) ?></span></td></tr>
+            <tr><td>echo <span class="rot">implode</span>(" ", $local)</td><td>=</td><td><span><?= implode(" ", $local) ?></span></td></tr>
+            <tr><td>echo <span class="rot">implode</span>(" ", $naturalCase)</td><td>=</td><td><span><?= implode(" ", $naturalCase) ?></span></td></tr>
+        </table>
+        
+      </div>
     </div>
   </section>
 

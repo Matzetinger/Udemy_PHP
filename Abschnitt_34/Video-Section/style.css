@@ -82,6 +82,11 @@ body {
       text-decoration: none;
     }
 
+    .weiß {
+      color: #ddd;
+      text-decoration: none;
+    }
+
     .text-box {
       width: 50%;
       display: flex;
@@ -109,6 +114,12 @@ body {
         margin-bottom: 20px;
         border-radius: 8px;
         border: 3px solid rgb(135, 130, 130);
+
+        table {
+          td {
+            padding: 0.1875rem;
+          }
+        }
 
         a {
           text-decoration: none;
