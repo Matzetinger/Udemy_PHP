@@ -38,8 +38,9 @@
         <li><a href="#20">20. Array_values = werden die Werte mit neuen Index ausgegeben</a></li>
         <li><a href="#21">21. Array_rand gibt ein oder mehrere zufällige Indexe aus</a></li>
         <li><a href="#22">22. sort() und seine Einstellmöglichkeiten</a></li>
-        <li><a href="#23">23.</a></li>
-        <li><a href="#24">24.</a></li>
+        <li><a href="#23">23. Shuffle - Elemente im Array durchmischen</a></li>
+        <li><a href="#24">24. Dereferenzierung von Arrays + array_reverse</a></li>
+        <li><a href="#25">25. (...) Mit Arrays -Entpackungsoperator - Spread - Syntax</a></li>
       </ul>
     </div>
   </section>
@@ -1332,6 +1333,132 @@
       </div>
     </div>
   </section>
+
+  <!-- 23. Shuffle - Arrays durchwürfeln -->
+  <section id="23" class="section">
+    <div class="text-box">
+      <h2>23. Shuffle - Elemente im Array durchmischen</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $zahlen = [1, 2, 3, 4, 5];
+        ?>
+        <p>$zahlen = [1, 2, 3, 4, 5];</p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+        <h4>shuffle</h4>
+
+        <p><span class="orange">shuffle</span>($zahlen); = <br> print_r($zahlen);
+          <span><?php
+            shuffle($zahlen);
+            print_r($zahlen);
+          ?></span>
+        </p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 24. Dereferenzierung von Arrays + array_reverse -->
+  <section id="24" class="section">
+    <div class="text-box">
+      <h2>24. Dereferenzierung von Arrays + array_reverse</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+        <h4>Dereferenzieren</h4> 
+
+        <pre>
+          <span class="blau">function</span> getfruits(){
+            <span class="rot">return</span>["Apfel", "Birne", "Kirsche"];
+            };
+
+            echo getfruits()[1]; =
+        </pre>
+
+        <p>
+          <span>
+            <?php
+              function getfruits(){
+                return["Apfel", "Birne", "Kirsche"];
+              };
+
+              echo getfruits()[1];
+            ?>
+          </span>
+        </p>
+        <p>----------------------</p>
+        <p>Geht auch mit Assoziative Arrays, jedoch muss dann der [Indexname] angegeben werden</p>
+        <p>Funktion auch in einer Variablen speichern<br>$fruits = getfruits(); <br> echo $fruits[2]; =
+            
+          <span>
+            <?php 
+            $fruits = getfruits();
+            echo $fruits[2];
+            ?>
+          </span>
+        </p>
+        
+        <h4> Array ohne Variable</h4>
+        <p>echo ["A5", "Clio"][0]; =
+          <span>
+            <?php 
+            echo ["A5", "Clio"][1];
+            ?>
+          </span>
+        </p>
+      </div>
+
+      <div class="box">
+        <h4>array_reverse</h4>
+
+        <p>echo <span class="orange">array_reverse</span>(getfruits())[0]; = <br> 
+          <span><?php
+            echo array_reverse(getfruits())[0];
+          ?></span>
+        </p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 25. (...) Mit Arrays -Entpackungsoperator - Spread - Syntax -->
+  <section id="25" class="section">
+    <div class="text-box">
+      <h2>25. (...) Mit Arrays -Entpackungsoperator - Spread - Syntax</h2>
+        <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          
+        ?>
+        <p>____</p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+        <h4>____</h4>
+
+        <p>
+          <span>
+            <?php
+            
+            ?>
+          </span>
+        </p>
+        
+      </div>
+    </div>
+  </section>
+
+
 
 </body>
 </html>
