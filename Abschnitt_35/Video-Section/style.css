@@ -56,11 +56,6 @@ body {
       }
     }
 
-    a {
-      text-decoration: none;
-      color: rgb(99, 75, 110);
-    }
-
     span {
       color: #ffd700;
       text-decoration: underline;
@@ -121,8 +116,10 @@ body {
         border: 3px solid rgb(135, 130, 130);
 
         table {
+          border-collapse: collapse;
           td {
-            padding: 0.1875rem;
+            padding: 0.3125rem;
+            border: 1px solid rgb(136, 136, 136);
           }
         }
 

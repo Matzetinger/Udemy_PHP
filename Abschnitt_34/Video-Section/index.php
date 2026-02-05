@@ -42,6 +42,7 @@
         <li><a href="#24">24. Dereferenzierung von Arrays + array_reverse</a></li>
         <li><a href="#25">25. (...) Mit Arrays -Entpackungsoperator - Spread - Syntax</a></li>
       </ul>
+    <h5><a href="../../Abschnitt_34/Lösung/Lösung.php">26. Lösung Übungsaufgabe</a></h5>
     </div>
   </section>
 
@@ -1437,28 +1438,80 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-          
+          $arr1 = [5, 5];
+          $arr2 = ["Hey", "IOSIF"];
         ?>
-        <p>____</p>
+        <p>$arr1 = [5, 5]; <br> $arr2 = ["Hey", "IOSIF"];</p>
     </div>
 
+    <!-- Normale Function -->
     <div class="inhalt-container">
       <div class="box">
-        <h4>____</h4>
+        <h4>Normale Function</h4>
+
+        <pre>
+          <span class="blau">function</span> add($num1, $num2, $num3){
+              echo $num1 + $num2 + $num3;
+            }
+            
+            add(1,2,3); = <span><?php
+            function add($num1, $num2, $num3){
+              echo $num1 + $num2 + $num3;
+            }
+
+            add(1,2,3);
+            ?></span>
+        </pre>
+        <p>Zuwenig Argumente ergibt einen Fatal Error und überschüssige werden Ignoriert</p>
+      </div>
+
+      <!-- Spread ...-->
+      <div class="box">
+        <h4>Spread ...</h4>
+
+        <pre>
+          <span class="blau">function</span> addSum(...$numbers1){
+              print_r($numbers1);
+              echo "< br > forschleife =";
+              <span class="rot">for</span>($q = 0; $q < count($numbers1); $q++){
+                echo $numbers1[$q] . ", ";
+              }
+              echo "< br > array_sum = " . <span class="orange">array_sum</span>($numbers1);
+            } 
+            
+            addSum(1,2,3,4); = 
+        </pre>
 
         <p>
-          <span>
-            <?php
-            
-            ?>
-          </span>
+          <span><?php
+            function addSum(...$numbers1){
+              print_r($numbers1);
+              echo "<br> forschleife =";
+              for($q = 0; $q < count($numbers1); $q++){
+                echo $numbers1[$q] . ", ";
+                
+              }
+              echo "<br> array_sum = " . array_sum($numbers1);
+            }
+
+            addSum(1,2,3,4);
+            ?></span>
         </p>
+        <p>Funktionen können mehrmals aufgerufen werden ! <br> ---------------------- <br> addSum(1,2); = </p>
+        <p><span><?php addSum(1,2);?></span></p>
         
+      </div>
+
+      <!-- Kombinieren mit ...-->
+      <div class="box">
+        <h4>Kombinieren mit ...</h4>
+      
+        <p>$combine = [...$arr1, ...$arr2, "Werte", "addSum" ]; <br> print_r($combine) = </p>
+        <p><span><?php $combine = [...$arr1, ...$arr2, "Werte", "addSum" ]; print_r($combine)?></span></p>
+        <p>echo $combine[5](1,1); = <span><?= $combine[5](1,1); ?></span></p>
+
       </div>
     </div>
   </section>
-
-
-
 </body>
 </html>
