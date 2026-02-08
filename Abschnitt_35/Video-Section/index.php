@@ -38,7 +38,11 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-          
+          if ($_GET){
+            $username = $_GET["username"];
+            $age = $_GET["age"];
+            echo "\$username = $username <br> \$age = $age";
+          }
         ?>
         <p>
         </p>
@@ -52,23 +56,56 @@
 
         <h4>$_GET</h4>
         <?php
-          
+          if ($_GET){
+            $username = $_GET["username"];
+            $age = $_GET["age"];
+          }
         ?>
-        <p>
-          TEXT
-        </p>
-
-
-        <h4>Ausgabe</h4>
-        
-        <table> 
+        <form action="#" method="get">
+          <table> 
             <tr>
-              <td>TEXT</td>
-              <td>TEXT</td>
-              <td><span><?= "CODEAUSGABE"  ?></span></td>
+              <td>
+                <label for="username">Username:</label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  placeholder="Username"
+                >
+                <label for="age">Alter:</label>
+                <input
+                  type="text"
+                  name="age"
+                  id="age"
+                  placeholder="Alter"
+                >
+              </td>
+
+              <td>
+                <input type="submit" value="Abschicken">
+                <a href="http://localhost:3000/UDEMY_PHP/Abschnitt_35/Video-Section/index.php">Zurücksetzen</a>
+              </td>
+
+              <td>
+                print_r($_GET) =
+                <span>
+                  <?php if ($_GET){
+                  print_r($_GET);
+                  } 
+                  ?>
+                </span>
+              </td>
+
+              <td>
+                <span><?php if (isset($username,$age)){
+                            echo "Mein Name ist $username und bin $age Jahre";
+                            }
+                      ?>
+                </span>
+              </td>
             </tr>
-        </table>
-        
+          </table>
+        </form>
       </div>
     </div>
   </section>

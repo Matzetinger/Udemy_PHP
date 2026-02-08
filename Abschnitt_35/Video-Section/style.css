@@ -11,6 +11,14 @@ body {
   color: #ddd;
   font-family: Consolas, monospace;
 
+  input {
+    margin: 0px 30px 0px 30px;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
   nav {
     display: flex;
     align-items: center;
@@ -115,19 +123,27 @@ body {
         border-radius: 8px;
         border: 3px solid rgb(135, 130, 130);
 
+        form {
+          display: flex;
+          justify-content: center;
+        }
+
         table {
           border-collapse: collapse;
           td {
             padding: 0.3125rem;
             border: 1px solid rgb(136, 136, 136);
+            display: flex;
+            justify-content: center;
+            text-align: center;
           }
         }
 
         a {
           text-decoration: none;
-          color: rgb(7, 181, 25);
+          color: rgb(6, 232, 168);
           &:hover {
-            color: #4fc1ff;
+            color: #1aff00;
           }
         }
 
