@@ -1,3 +1,7 @@
+<?php 
+  setcookie("Beruf", "Friseur", time() + 3600);
+?>
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -44,8 +48,6 @@
             echo "\$username = $username <br> \$age = $age";
           }
         ?>
-        <p>
-        </p>
     </div>
 
     <div class="inhalt-container">
@@ -83,17 +85,18 @@
 
               <td>
                 <input type="submit" value="Abschicken">
-                <a href="http://localhost:3000/UDEMY_PHP/Abschnitt_35/Video-Section/index.php">Zurücksetzen</a>
+                <a href="./">Zurücksetzen</a>
               </td>
 
               <td>
-                print_r($_GET) =
-                <span>
-                  <?php if ($_GET){
-                  print_r($_GET);
-                  } 
-                  ?>
-                </span>
+                <p>print_r($_GET) =
+                  <span>
+                    <?php if ($_GET){
+                    print_r($_GET);
+                    } 
+                    ?>
+                  </span>
+                </p>
               </td>
 
               <td>
@@ -118,10 +121,8 @@
       
       <!-- Variablen -->
       <h4>Variablen</h4>
-        <?php 
-          
-        ?>
         <p>
+          Daten werden in einem Array gespeichert <br> Lässt sich auch in eine Variable speichern
         </p>
     </div>
 
@@ -132,23 +133,46 @@
         
 
         <h4>$_POST</h4>
-        <?php
-          
-        ?>
-        <p>
-          TEXT
-        </p>
-
-
-        <h4>Ausgabe</h4>
         
-        <table> 
+        <form action="#" method="POST">
+          <table> 
             <tr>
-              <td>TEXT</td>
-              <td>TEXT</td>
-              <td><span><?= "CODEAUSGABE"  ?></span></td>
+              <td>
+                <label for="email">E-Mail:</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  placeholder="email@eingeben.de"
+                >
+                <label for="password">Passwort:</label>
+                <input
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Passwort"
+                >
+              </td>
+
+              <td>
+                <input type="submit" value="Anmelden">
+                <a href="./">Zurücksetzen</a>
+              </td>
+
+              <td>
+                <p>print_r($_POST) =
+                  <span>
+                    <?php if ($_POST){
+                    print_r($_POST);
+                    } 
+                    ?>
+                  </span>
+                </p>
+              </td>
+
             </tr>
-        </table>
+          </table>
+        </form>
         
       </div>
     </div>
@@ -162,10 +186,10 @@
       
       <!-- Variablen -->
       <h4>Variablen</h4>
-        <?php 
-          
-        ?>
         <p>
+          <p>
+          Daten werden in einem Array gespeichert <br> Lässt sich auch in eine Variable speichern
+        </p>
         </p>
     </div>
 
@@ -175,24 +199,24 @@
       <div class="box">
         
 
-        <h4>$_REQUEST</h4>
-        <?php
-          
-        ?>
-        <p>
-          TEXT
-        </p>
-
-
-        <h4>Ausgabe</h4>
-        
+        <h4>$_REQUEST (Nicht empfohlen)</h4>
+        <p>Enthält alle Daten die über POST, GET oder Cookie Methoden Übermittelt werden</p>
         <table> 
             <tr>
-              <td>TEXT</td>
-              <td>TEXT</td>
-              <td><span><?= "CODEAUSGABE"  ?></span></td>
+              <td>
+                <p>print_r($_REQUEST) =
+                  <span>
+                    <!-- coditional Rendering -->
+                    <?php if ($_REQUEST){
+                    print_r($_REQUEST);
+                    } 
+                    ?>
+                  </span>
+                </p>
+              </td>
+
             </tr>
-        </table>
+          </table>
         
       </div>
     </div>
@@ -220,24 +244,48 @@
         
 
         <h4>$_FILES</h4>
-        <?php
-          
-        ?>
-        <p>
-          TEXT
-        </p>
-
-
-        <h4>Ausgabe</h4>
         
-        <table> 
+        <form action="#" method="POST" enctype="multipart/form-data">
+          <table> 
             <tr>
-              <td>TEXT</td>
-              <td>TEXT</td>
-              <td><span><?= "CODEAUSGABE"  ?></span></td>
+              <td>
+                <label for="file">Dateiupload:</label>
+                <input
+                  type="file"
+                  name="uploaded_files[]"
+                  id="file"
+                  multiple
+                >
+              </td>
+
+              <td>
+                <input type="submit" value="Uplaod">
+                <a href="./">Zurücksetzen</a>
+              </td>
+
+              <td>
+                <p>print_r($_FILES) =
+                  <span>
+                    <?php if ($_FILES){
+                    print_r($_FILES);
+                    } 
+                    ?>
+                  </span>
+                </p>
+              </td>
+
+              <?php if($_FILES):?>
+              <td><p>Name der Datei = <span> <?php  echo htmlspecialchars($_FILES["uploaded_files"]["name"][0]); ?></span></p></td>
+              <td><p>Vollständiger Pfad = <span> <?php  echo htmlspecialchars($_FILES["uploaded_files"]["full_path"][0]); ?></span></p></td>
+              <td><p>Dateityp = <span><?php  echo htmlspecialchars($_FILES["uploaded_files"]["type"][0]); ?></span></p></td>
+              <td><p>Temporärer Pfad = <span><?php  echo htmlspecialchars($_FILES["uploaded_files"]["tmp_name"][0]); ?></span></p></td>
+              <td><p>Größe der Datei = <span><?php  echo htmlspecialchars (round($_FILES["uploaded_files"]["size"][0]/1024/1024,2)) ; ?></span> MB</p></td>
+              <?php endif; ?>
+              
+
             </tr>
-        </table>
-        
+          </table>
+        </form>
       </div>
     </div>
   </section>
@@ -248,12 +296,11 @@
       <h2>05. $_COOKIE</h2>
         <p><a href="#0">Inhaltsverzeichnis</a></p>
       
-      <!-- Variablen -->
-      <h4>Variablen</h4>
-        <?php 
-          
-        ?>
+      <!-- Cookie setzen -->
+      <h4>Cookie setzen</h4>
+        
         <p>
+          <span class="orange">setcookie</span>("Beruf", "Friseur", time() + 3600);
         </p>
     </div>
 
@@ -268,7 +315,7 @@
           
         ?>
         <p>
-          TEXT
+         setcookie() Muss immer ganz oben außerhalb der html Struktur stehen !
         </p>
 
 
@@ -276,9 +323,8 @@
         
         <table> 
             <tr>
-              <td>TEXT</td>
-              <td>TEXT</td>
-              <td><span><?= "CODEAUSGABE"  ?></span></td>
+              <td><p>print_r($_COOKIE;) = <span><?php print_r($_COOKIE); ?></span> </p></td>
+              <td><p>echo($_COOKIE["Beruf"]); = <span><?php echo($_COOKIE["Beruf"]); ?></span></p></td>
             </tr>
         </table>
         
