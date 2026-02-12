@@ -123,6 +123,14 @@ body {
         border-radius: 8px;
         border: 3px solid rgb(135, 130, 130);
 
+        pre {
+          text-align: left;
+          white-space: pre-wrap; /* Behält Zeilenumbrüche von var_dump bei */
+          word-break: break-all; /* Erzwingt Umbruch mitten im Wort (z.B. bei langen Pfaden) */
+          max-width: 80%; /* Oder ein fester Wert wie 600px */
+          margin: 0 auto; /* Jetzt gibt es Platz zum Zentrieren */
+        }
+
         form {
           display: flex;
           justify-content: center;

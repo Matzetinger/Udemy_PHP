@@ -1,5 +1,6 @@
 <?php 
   setcookie("Beruf", "Friseur", time() + 3600);
+  session_start();
 ?>
 
 <!DOCTYPE html>
@@ -322,10 +323,12 @@
         <h4>Ausgabe</h4>
         
         <table> 
+          <?php if($_COOKIE): ?>
             <tr>
               <td><p>print_r($_COOKIE;) = <span><?php print_r($_COOKIE); ?></span> </p></td>
               <td><p>echo($_COOKIE["Beruf"]); = <span><?php echo($_COOKIE["Beruf"]); ?></span></p></td>
             </tr>
+          <?php endif; ?>
         </table>
         
       </div>
@@ -338,13 +341,13 @@
       <h2>06. $_SESSION</h2>
         <p><a href="#0">Inhaltsverzeichnis</a></p>
       
-      <!-- Variablen -->
-      <h4>Variablen</h4>
+      <!-- Session setzen-->
+      <h4>Session setzen</h4>
         <?php 
-          
+          $_SESSION["Vorname"]="Matthias";
         ?>
-        <p>
-        </p>
+        <p><span class="orange">session_start()</span></p>
+        <p><span class="orange">$_SESSION["Vorname"]="Matthias";</span></p>
     </div>
 
     <div class="inhalt-container">
@@ -354,11 +357,8 @@
         
 
         <h4>$_SESSION</h4>
-        <?php
-          
-        ?>
         <p>
-          TEXT
+          Kann auch über mehrere Seiten hinweg abgefragt werden
         </p>
 
 
@@ -366,9 +366,8 @@
         
         <table> 
             <tr>
-              <td>TEXT</td>
-              <td>TEXT</td>
-              <td><span><?= "CODEAUSGABE"  ?></span></td>
+              <td><p>print_r($_SESSION); = <span><?php print_r($_SESSION); ?></span></p></td>
+              <td><p><a href="session.php">zur Session.php</a></p></td>
             </tr>
         </table>
         
@@ -385,10 +384,9 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-          
+          $port = $_SERVER["SERVER_PORT"];
         ?>
-        <p>
-        </p>
+        <p>$port = $_SERVER["SERVER_PORT"];</p>
     </div>
 
     <div class="inhalt-container">
@@ -398,23 +396,24 @@
         
 
         <h4>$_SERVER</h4>
-        <?php
-          
-        ?>
-        <p>
-          TEXT
-        </p>
-
-
-        <h4>Ausgabe</h4>
         
-        <table> 
+         <table> 
             <tr>
-              <td>TEXT</td>
-              <td>TEXT</td>
-              <td><span><?= "CODEAUSGABE"  ?></span></td>
+             
+              <td><p>echo $port = <span> <?php echo $port  ?></span></p></td>
+
+              <td>
+                <pre>
+                  <span>
+                    <?php 
+                      var_dump($_SERVER)
+                    ?>
+                  </span>
+                </pre>
+              </td>
+              
             </tr>
-        </table>
+         </table>
         
       </div>
     </div>
