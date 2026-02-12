@@ -52,6 +52,7 @@ body {
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
+    height: 100vh;
 
     ul {
       list-style: none;
@@ -100,6 +101,7 @@ body {
       display: flex;
       flex-direction: column;
       gap: 1em;
+
       a {
         text-decoration: none;
         color: grey;
@@ -111,6 +113,8 @@ body {
 
     .inhalt-container {
       width: 100%;
+      height: 100%;
+      align-items: center;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -143,11 +147,21 @@ body {
           justify-content: center;
 
           td {
-            padding: 0.3125rem;
+            padding: 1rem;
             border: 1px solid rgb(136, 136, 136);
             display: flex;
             justify-content: center;
             text-align: center;
+
+            input[type="submit"] {
+              padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+              font-size: 1.2rem;
+              cursor: pointer;
+            }
+
+            input[type="number"] {
+              font-size: 1.2rem;
+            }
           }
         }
 
