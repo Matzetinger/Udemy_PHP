@@ -25,8 +25,8 @@
         <li><a href="#2">02. round() - Aufrunden</a></li>
         <li><a href="#3">03. ceil() - Aufrunden</a></li>
         <li><a href="#4">04. floor() - Abrunden</a></li>
-        <li><a href="#5">05. </a></li>
-        <li><a href="#6">06. </a></li>
+        <li><a href="#5">05. sqrt() - Square (Quadratwurzel)</a></li>
+        <li><a href="#6">06. pow() - Potenz</a></li>
         <li><a href="#7">07. </a></li>
       </ul>
     </div>
@@ -308,6 +308,166 @@
                 </p>
               </td>
               <td><a href="./#4">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. sqrt() - Square (Quadratwurzel) -->
+  <section id="5" class="section">
+    <div class="text-box">
+      <h2>05. sqrt() - Square (Quadratwurzel)</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $zahl5 = NULL;
+          
+
+          if(isset($_GET["zahl5"]) && $_GET["zahl5"] !== ""){
+            $clean_input5 = str_replace(",", ".", $_GET["zahl5"]);
+
+            if (is_numeric($clean_input5)){
+            $zahl5 = sqrt((float)$clean_input5);
+            } else {
+              $zahl5 = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+        ?>
+        <p>$zahl5 = NULL;</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- sqrt() -->
+      <div class="box">
+        
+
+        <h4>sqrt()</h4>
+        <form action="#5" method="GET">
+          <table> 
+            <tr>
+              <td>
+                <label for="zahl5"><span class="orange">floor</span></label>
+                (<input
+                  type="number"
+                  name="zahl5"
+                  id="zahl5"
+                  placeholder="Zahl"
+                  required 
+                  step="0.1"
+                  max="10"
+                >)
+              </td>
+
+              <td>
+                <input type="submit" value="Berechnen">
+                
+              </td>
+              <td><p>Eingabe = <?php echo isset($clean_input5) ? htmlspecialchars($clean_input5) : ""; ?></p></td>
+              <td>
+                <p> Ergebnis = 
+                  <span>
+                    <?php if ($zahl5 !== NULL){
+                      echo htmlspecialchars($zahl5);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="./#5">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. pow() - Potenz -->
+  <section id="6" class="section">
+    <div class="text-box">
+      <h2>06. pow() - Potenz</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $zahl6 = NULL;
+          $zahl61 = Null;
+          $zahl661 = NULL;
+          
+
+          if((isset($_GET["zahl6"]) && $_GET["zahl6"] !== "") && (isset($_GET["zahl61"]) && $_GET["zahl61"] !== "")){
+            $clean_input6 = str_replace(",", ".", $_GET["zahl6"]);
+            $clean_input61 = str_replace(",", ".", $_GET["zahl61"]);
+
+            if (is_numeric($clean_input6) && is_numeric($clean_input61)){
+            $zahl661 = pow((float)$clean_input6, (float)$clean_input61);
+
+            if(is_nan($zahl661)){
+              $zahl661 = "Mathematisch nicht möglich (imaginäre Zahl)";
+            }
+            elseif(is_infinite($zahl661)){
+              $zahl661 = "Ergebnis zu groß oder unendlich";
+            }
+            
+            } else {
+              $zahl661 = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+        ?>
+        <p>$zahl6 = NULL; <br> $zahl61 = Null; <br> $zahl661 = NULL;</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- pow() -->
+      <div class="box">
+        
+
+        <h4>pow()</h4>
+        <form action="#6" method="GET">
+          <table> 
+            <tr>
+              <td>
+                <label for="zahl6"><span class="orange">pow</span></label>
+                (<input
+                  type="number"
+                  name="zahl6"
+                  id="zahl6"
+                  placeholder="Zahl Basis"
+                  required 
+                  step="0.1"
+                  max="10"
+                >,
+                <input
+                  type="number"
+                  name="zahl61"
+                  id="zahl61"
+                  placeholder="Zahl exponent"
+                  required 
+                  step="0.1"
+                  max="10"
+                >)
+              </td>
+
+              <td>
+                <input type="submit" value="Berechnen">
+                
+              </td>
+              <td><p>Eingabe = <?php echo isset($clean_input6, $clean_input61) ? htmlspecialchars("$clean_input6,$clean_input61") : ""; ?></p></td>
+              <td>
+                <p> Ergebnis = 
+                  <span>
+                    <?php if ($zahl661 !== NULL){
+                      echo htmlspecialchars($zahl661);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="./#6">Zurücksetzen</a></td>
             </tr>
           </table>
         </form>
