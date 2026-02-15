@@ -27,7 +27,11 @@
         <li><a href="#4">04. floor() - Abrunden</a></li>
         <li><a href="#5">05. sqrt() - Square (Quadratwurzel)</a></li>
         <li><a href="#6">06. pow() - Potenz</a></li>
-        <li><a href="#7">07. </a></li>
+        <li><a href="#7">07. max() - Höchste Zahl ermitteln</a></li>
+        <li><a href="#8">08. min() - niedrigste Zahl ermitteln</a></li>
+        <li><a href="#9">09. </a></li>
+        <li><a href="#10">10. </a></li>
+        <li><a href="#11">11. </a></li>
       </ul>
     </div>
   </section>
@@ -154,7 +158,7 @@
               </td>
 
               <td>
-                <input type="submit" value="Berechnen">
+                <input type="submit" value="Runden">
                 
               </td>
               <td><p>Eingabe = <?php echo isset($clean_input2) ? htmlspecialchars($clean_input2) : ""; ?></p></td>
@@ -224,7 +228,7 @@
               </td>
 
               <td>
-                <input type="submit" value="Berechnen">
+                <input type="submit" value="Aufrunden">
                 
               </td>
               <td><p>Eingabe = <?php echo isset($clean_input3) ? htmlspecialchars($clean_input3) : ""; ?></p></td>
@@ -294,7 +298,7 @@
               </td>
 
               <td>
-                <input type="submit" value="Berechnen">
+                <input type="submit" value="Abrunden">
                 
               </td>
               <td><p>Eingabe = <?php echo isset($clean_input4) ? htmlspecialchars($clean_input4) : ""; ?></p></td>
@@ -475,7 +479,170 @@
     </div>
   </section>
 
-  
+  <!-- 07. max() - Höchste Zahl ermitteln -->
+  <section id="7" class="section">
+    <div class="text-box">
+      <h2>07. max() - Höchste Zahl ermitteln</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php
+          $zahl7 = NULL;
+          $zahl71 = NULL;
+          $maxZahl = NULL;
+          
+          
+
+          if((isset($_GET["zahl7"]) && $_GET["zahl7"] !== "") && (isset($_GET["zahl71"]) && $_GET["zahl71"] !== "") ){
+            $clean_input7 = str_replace(",", ".", $_GET["zahl7"]);
+            $clean_input71 = str_replace(",", ".", $_GET["zahl71"]);
+            $clean_inputmax = [$clean_input7, $clean_input71];
+
+            if ((is_numeric($clean_input7)) && (is_numeric($clean_input71))){
+            $maxZahl = max((float)$clean_inputmax[0], (float)$clean_inputmax[1] );
+            } else {
+              $maxZahl = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+        ?>
+        <p>$zahl7 = NULL; <br> $zahl71 = NULL;<br> $maxzahl = NULL;</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- max() -->
+      <div class="box">
+        
+
+        <h4>max()</h4>
+        <form action="#7" method="GET">
+          <table> 
+            <tr>
+              <td>
+                <label for="zahl7"><span class="orange">max</span></label>
+                (<input
+                  type="number"
+                  name="zahl7"
+                  id="zahl7"
+                  placeholder="Zahl"
+                  required 
+                  max="10"
+                >,
+                <input
+                  type="number"
+                  name="zahl71"
+                  id="zahl71"
+                  placeholder="Zahl"
+                  required 
+                  max="10"
+                >)
+              </td>
+
+              <td>
+                <input type="submit" value="MaxZahl Ermitteln">
+                
+              </td>
+              <td><p>Eingabe = <?php echo isset($clean_input7,$clean_input71) ? htmlspecialchars($clean_input7 . "," . $clean_input71) : ""; ?></p></td>
+              <td>
+                <p> Ergebnis = 
+                  <span>
+                    <?php if ($maxZahl !== NULL){
+                      echo htmlspecialchars($maxZahl);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="./#7">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. min() - niedrigste Zahl ermitteln -->
+  <section id="8" class="section">
+    <div class="text-box">
+      <h2>08. min() - niedrigste Zahl ermitteln</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php
+          $zahl8 = NULL;
+          $zahl81 = NULL;
+          $minZahl = NULL;
+          
+          
+
+          if((isset($_GET["zahl8"]) && $_GET["zahl8"] !== "") && (isset($_GET["zahl81"]) && $_GET["zahl81"] !== "") ){
+            $clean_input8 = str_replace(",", ".", $_GET["zahl8"]);
+            $clean_input81 = str_replace(",", ".", $_GET["zahl81"]);
+            $clean_inputmin = [$clean_input8, $clean_input81];
+
+            if ((is_numeric($clean_input8)) && (is_numeric($clean_input81))){
+            $minZahl = min((float)$clean_inputmin[0], (float)$clean_inputmin[1] );
+            } else {
+              $minZahl = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+        ?>
+        <p>$zahl8 = NULL; <br> $zahl81 = NULL;<br> $minzahl = NULL;</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- min() -->
+      <div class="box">
+        
+
+        <h4>min()</h4>
+        <form action="#8" method="GET">
+          <table> 
+            <tr>
+              <td>
+                <label for="zahl8"><span class="orange">min</span></label>
+                (<input
+                  type="number"
+                  name="zahl8"
+                  id="zahl8"
+                  placeholder="Zahl"
+                  required 
+                  max="10"
+                >,
+                <input
+                  type="number"
+                  name="zahl81"
+                  id="zahl81"
+                  placeholder="Zahl"
+                  required 
+                  max="10"
+                >)
+              </td>
+
+              <td>
+                <input type="submit" value="MinZahl Ermitteln">
+                
+              </td>
+              <td><p>Eingabe = <?php echo isset($clean_input8,$clean_input81) ? htmlspecialchars($clean_input8 . "," . $clean_input81) : ""; ?></p></td>
+              <td>
+                <p> Ergebnis = 
+                  <span>
+                    <?php if ($minZahl !== NULL){
+                      echo htmlspecialchars($minZahl);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="./#8">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </section>
+
 
 </body>
 </html>
