@@ -1,0 +1,186 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+}
+
+body {
+  font-size: 1.2em;
+  background: #1e1e1e;
+  color: #ddd;
+  font-family: Consolas, monospace;
+
+  input {
+    margin: 0px 30px 0px 30px;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+    padding: 15px;
+
+    a {
+      text-decoration: none;
+      color: gray;
+      &:hover {
+        color: #4fc1ff;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: #4fc1ff;
+  }
+
+  .section {
+    padding: 5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #252526;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    min-height: 100vh;
+
+    ul {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: #ddd;
+        &:hover {
+          color: #4fc1ff;
+        }
+      }
+    }
+
+    span {
+      color: #ffd700;
+      text-decoration: underline;
+      font-family: system-ui;
+    }
+
+    .grau {
+      color: gray;
+      text-decoration: none;
+    }
+
+    .rot {
+      color: rgb(191, 21, 21);
+      text-decoration: none;
+    }
+
+    .orange {
+      color: rgb(255, 123, 0);
+      text-decoration: none;
+    }
+
+    .blau {
+      color: rgb(0, 110, 255);
+      text-decoration: none;
+    }
+
+    .weiß {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .text-box {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+
+      a {
+        text-decoration: none;
+        color: grey;
+        &:hover {
+          color: #4fc1ff;
+        }
+      }
+    }
+
+    .inhalt-container {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      gap: 1rem;
+
+      .box {
+        border: 1px solid #333;
+        padding: 15px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 3px solid rgb(135, 130, 130);
+
+        pre {
+          text-align: left;
+          white-space: pre-wrap; /* Behält Zeilenumbrüche von var_dump bei */
+          word-break: break-all; /* Erzwingt Umbruch mitten im Wort (z.B. bei langen Pfaden) */
+          max-width: 80%; /* Oder ein fester Wert wie 600px */
+          margin: 0 auto; /* Jetzt gibt es Platz zum Zentrieren */
+        }
+
+        form {
+          display: flex;
+          justify-content: center;
+        }
+
+        table {
+          border-collapse: collapse;
+          margin: 1rem;
+          display: flex;
+          justify-content: center;
+
+          td {
+            padding: 1rem;
+            border: 1px solid rgb(136, 136, 136);
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            input[type="submit"] {
+              padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+              font-size: 1.2rem;
+              cursor: pointer;
+            }
+
+            input[type="number"] {
+              font-size: 1.2rem;
+              width: 23%;
+            }
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: rgb(6, 232, 168);
+          &:hover {
+            color: #1aff00;
+          }
+        }
+
+        h4 {
+          text-align: center;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
