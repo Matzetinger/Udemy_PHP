@@ -1119,11 +1119,11 @@
         </form>
       </div>
         <!-- log10() -->
-      <div class="box" id="log">
+      <div class="box">
         
 
         <h4>log10()</h4>
-        <form action="#log" method="GET">
+        <form action="#12" method="GET">
           <table> 
             <tr>
               <td>
@@ -1153,7 +1153,7 @@
                   </span>
                 </p>
               </td>
-              <td><a href="./#log">Zurücksetzen</a></td>
+              <td><a href="./#12">Zurücksetzen</a></td>
             </tr>
           </table>
         </form>
@@ -1198,7 +1198,7 @@
         
 
         <h4>random_int()</h4>
-        <form action="#13" method="POST">
+        <form action="./index.php#13" method="POST">
           <table> 
             <tr>
               <td>
@@ -1237,7 +1237,7 @@
                   </span>
                 </p>
               </td>
-              <td><a href="">Zurücksetzen</a></td>
+              <td><a href="?#13">Zurücksetzen</a></td>
             </tr>
           </table>
         </form>
@@ -1282,7 +1282,7 @@
         
 
         <h4>rand()</h4>
-        <form action="#14" method="POST">
+        <form action="./index.php#14" method="POST">
           <table> 
             <tr>
               <td>
@@ -1321,7 +1321,7 @@
                   </span>
                 </p>
               </td>
-              <td><a href="">Zurücksetzen</a></td>
+              <td><a href="?#14">Zurücksetzen</a></td>
             </tr>
           </table>
         </form>
@@ -1366,7 +1366,7 @@
         
 
         <h4>mt_rand()</h4>
-        <form action="#15" method="POST">
+        <form action="./index.php#15" method="POST">
           <table> 
             <tr>
               <td>
@@ -1405,7 +1405,7 @@
                   </span>
                 </p>
               </td>
-              <td><a href="">Zurücksetzen</a></td>
+              <td><a href="?#15">Zurücksetzen</a></td>
             </tr>
           </table>
         </form>
