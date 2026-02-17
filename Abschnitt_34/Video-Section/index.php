@@ -4,15 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
-  <title>Document</title>
+  <title>Arrays in PHP</title>
 </head>
 <body>
   <nav>
-    <p><a href="../../Abschnitt_33/Video-Section/index.php">33</a></p>
-    <h1>Abschnitt 34</h1>
-    <p><a href="../../Abschnitt_35/Video-Section/index.php">35</a></p>
+    <p><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen</a></p>
+    <h1>Abschnitt 34 - Arrays</h1>
+    <p><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></p>
   </nav>
-  <section id="0" class="section">
+  <section id="0" class="section_index">
     <div class="box">
     <h2>Inhaltsverzeichnis</h2>
       <ul>
@@ -43,6 +43,18 @@
         <li><a href="#25">25. (...) Mit Arrays -Entpackungsoperator - Spread - Syntax</a></li>
       </ul>
     <h5><a href="../../Abschnitt_34/Lösung/Lösung.php">26. Lösung Übungsaufgabe</a></h5>
+    </div>
+    <div class="box">
+      <h2>Abschnitte</h2>
+      <ul>
+        <li><a href="../../Abschnitt_30/Video-Section/index.php">30_Operatoren in PHP</a></li>
+        <li><a href="../../Abschnitt_31/Video-Section/index.php">31_Arbeiten mit String</a></li>
+        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung (Bedingte Anweisung)</a></li>
+        <li><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen in PHP</a></li>
+        <li><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></li>
+        <li><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></li>
+        <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
+      </ul>
     </div>
   </section>
 

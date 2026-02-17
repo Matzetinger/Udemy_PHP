@@ -42,6 +42,24 @@ body {
     color: #4fc1ff;
   }
 
+  .section_index {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 5rem;
+    ul {
+      padding-top: 1rem;
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: #ddd;
+        &:hover {
+          color: #4fc1ff;
+        }
+      }
+    }
+  }
+
   .section {
     padding: 5rem;
     display: flex;
@@ -53,17 +71,6 @@ body {
     margin-bottom: 20px;
     border-radius: 8px;
     min-height: 100vh;
-
-    ul {
-      list-style: none;
-      a {
-        text-decoration: none;
-        color: #ddd;
-        &:hover {
-          color: #4fc1ff;
-        }
-      }
-    }
 
     span {
       color: #ffd700;

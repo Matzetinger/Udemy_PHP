@@ -34,6 +34,24 @@ body {
     color: #4fc1ff;
   }
 
+  .section_index {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    padding: 5rem;
+    ul {
+      padding-top: 1rem;
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: #ddd;
+        &:hover {
+          color: #4fc1ff;
+        }
+      }
+    }
+  }
+
   .section,
   .section1 {
     padding: 5rem;
@@ -45,17 +63,6 @@ body {
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
-
-    ul {
-      list-style: none;
-      a {
-        text-decoration: none;
-        color: #ddd;
-        &:hover {
-          color: #4fc1ff;
-        }
-      }
-    }
 
     .text-box {
       width: 50%;
