@@ -13,12 +13,12 @@
 </head>
 <body>
   <nav>
-    <p><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></p>
-    <h1>Abschnitt 36 - Mathematische Funktionen</h1>
-    <p><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></p>
+    <p><a href="../../Abschnitt_35/Video-Section/index.php">35</a></p>
+    <h1>Abschnitt 36</h1>
+    <p><a href="../../Abschnitt_37/Video-Section/index.php">37</a></p>
   </nav>
   <section id="0" class="section_index">
-    <div class="box">
+    <div>
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. abs() - Berechnet den absoluten Wert einer Zahl</a></li>
@@ -38,15 +38,16 @@
         <li><a href="#15">15. mt_rand() - Zahl Zwischen ... und ... (bessere version von rand)</a></li>
       </ul>
     </div>
-    <div class="box">
+    <div class="box_abschnitte">
       <h2>Abschnitte</h2>
       <ul>
         <li><a href="../../Abschnitt_30/Video-Section/index.php">30_Operatoren in PHP</a></li>
         <li><a href="../../Abschnitt_31/Video-Section/index.php">31_Arbeiten mit String</a></li>
-        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung (Bedingte Anweisung)</a></li>
+        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung</a></li>
         <li><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen in PHP</a></li>
         <li><a href="../../Abschnitt_34/Video-Section/index.php">34_Arrays in PHP</a></li>
         <li><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></li>
+        <li>36_Mathematische Funktionen</li>
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
       </ul>
     </div>

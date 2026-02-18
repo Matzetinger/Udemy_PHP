@@ -13,12 +13,12 @@
 </head>
 <body>
   <nav>
-    <p><a href="../../Abschnitt_34/Video-Section/index.php">34_Arrays</a></p>
-    <h1>Abschnitt 35 - Superglobale Arrays</h1>
-    <p><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></p>
+    <p><a href="../../Abschnitt_34/Video-Section/index.php">34</a></p>
+    <h1>Abschnitt 35</h1>
+    <p><a href="../../Abschnitt_36/Video-Section/index.php">36</a></p>
   </nav>
   <section id="0" class="section_index">
-    <div class="box">
+    <div>
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. $_GET</a></li>
@@ -30,14 +30,15 @@
         <li><a href="#7">07. $_SERVER</a></li>
       </ul>
     </div>
-    <div class="box">
+    <div class="box_abschnitte">
       <h2>Abschnitte</h2>
       <ul>
         <li><a href="../../Abschnitt_30/Video-Section/index.php">30_Operatoren in PHP</a></li>
         <li><a href="../../Abschnitt_31/Video-Section/index.php">31_Arbeiten mit String</a></li>
-        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung (Bedingte Anweisung)</a></li>
+        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung</a></li>
         <li><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen in PHP</a></li>
         <li><a href="../../Abschnitt_34/Video-Section/index.php">34_Arrays in PHP</a></li>
+        <li>35_Superglobale Arrays</li>
         <li><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></li>
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
       </ul>

@@ -9,11 +9,11 @@
 <body>
   <nav>
     <p><a href="../../Abschnitt_28">28</a></p>
-    <h1>Abschnitt 30 - Operatoren</h1>
-    <p><a href="../../Abschnitt_31/Video-Section/index.php">31_Arbeiten mit Strings</a></p>
+    <h1>Abschnitt 30</h1>
+    <p><a href="../../Abschnitt_31/Video-Section/index.php">31</a></p>
   </nav>
   <section id="0" class="section_index">
-    <div class="box">
+    <div>
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. Mathematische + - * / % </a></li>
@@ -32,9 +32,10 @@
         <li><a href="#14">14. goto</a></li>
       </ul>
     </div>
-    <div class="box">
+    <div class="box_abschnitte">
       <h2>Abschnitte</h2>
       <ul>
+        <li>30_Operatoren in PHP</li>
         <li><a href="../../Abschnitt_31/Video-Section/index.php">31_Arbeiten mit Strings</a></li>
         <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung</a></li>
         <li><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen in PHP</a></li>

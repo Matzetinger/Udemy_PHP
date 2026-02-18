@@ -8,12 +8,12 @@
 </head>
 <body>
   <nav>
-    <p><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen</a></p>
-    <h1>Abschnitt 34 - Arrays</h1>
-    <p><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></p>
+    <p><a href="../../Abschnitt_33/Video-Section/index.php">33</a></p>
+    <h1>Abschnitt 34</h1>
+    <p><a href="../../Abschnitt_35/Video-Section/index.php">35</a></p>
   </nav>
   <section id="0" class="section_index">
-    <div class="box">
+    <div>
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. Arrays</a></li>
@@ -31,7 +31,7 @@
         <li><a href="#13">13. array_push, _unshift, _pop, _shift</a></li>
         <li><a href="#14">14. array_slice, _splice</a></li>
         <li><a href="#15">15. array_merge, array_merge_recursive und array_replace_recursive = Zusammenfügen (überschreiben) von Arrays</a></li>
-        <li><a href="#16">16. array_combine = Kombiniert Arrays 1 Array Keys und 2 Array Elemente/a></li>
+        <li><a href="#16">16. array_combine = Kombiniert Arrays 1 Array Keys und 2 Array Elemente</a></li>
         <li><a href="#17">17. Array_key_exists = prüft ob ein key im Array existiert</a></li>
         <li><a href="#18">18. Array_search = sucht ein Element und gibt dessen Key aus, wenn existiert</a></li>
         <li><a href="#19">19. Array_keys = gibt den / die Schlüssel aus, entweder alle oder je nach Elementsuche</a></li>
@@ -44,13 +44,14 @@
       </ul>
     <h5><a href="../../Abschnitt_34/Lösung/Lösung.php">26. Lösung Übungsaufgabe</a></h5>
     </div>
-    <div class="box">
+    <div class="box_abschnitte">
       <h2>Abschnitte</h2>
       <ul>
         <li><a href="../../Abschnitt_30/Video-Section/index.php">30_Operatoren in PHP</a></li>
         <li><a href="../../Abschnitt_31/Video-Section/index.php">31_Arbeiten mit String</a></li>
-        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung (Bedingte Anweisung)</a></li>
+        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung</a></li>
         <li><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen in PHP</a></li>
+        <li>34_Arrays in PHP</li>
         <li><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></li>
         <li><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></li>
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>

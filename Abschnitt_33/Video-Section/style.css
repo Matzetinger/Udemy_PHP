@@ -36,17 +36,31 @@ body {
 
   .section_index {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     gap: 10rem;
-    padding: 5rem;
+    padding: 10rem 5rem;
+    font-size: 1.3rem;
+    height: 100vh;
     ul {
       padding-top: 1rem;
       list-style: none;
+
       a {
+        display: inline-block; /* Notwendig für transform */
         text-decoration: none;
+        transition: 0.5s ease;
         color: #ddd;
         &:hover {
           color: #4fc1ff;
+          transform: translateX(-1.2rem);
+        }
+      }
+    }
+    .box_abschnitte {
+      ul {
+        li:nth-child(4) {
+          color: #e1801f;
+          transform: translateX(-1.2rem);
         }
       }
     }
@@ -62,6 +76,7 @@ body {
     padding: 15px;
     margin-bottom: 20px;
     border-radius: 8px;
+    min-height: 100vh;
 
     .text-box {
       width: 50%;
@@ -83,6 +98,7 @@ body {
       flex-wrap: wrap;
       justify-content: center;
       gap: 1rem;
+      margin: auto;
 
       .box {
         border: 1px solid #333;

@@ -13,7 +13,7 @@
     <p><a href="../../Abschnitt_38/Video-Section/index.php">38</a></p>
   </nav>
   <section id="0" class="section_index">
-    <div class="box">
+    <div>
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. mt_srand mit mt_rand und mt_getrandmax</a></li>
@@ -29,19 +29,19 @@
         <li><a href="#11">11.</a></li>
         <li><a href="#12">12.</a></li>
         <li><a href="#13">13.</a></li>
-        </a></li>
       </ul>
     </div>
-    <div class="box">
+    <div class="box_abschnitte">
       <h2>Abschnitte</h2>
       <ul>
         <li><a href="../../Abschnitt_30/Video-Section/index.php">30_Operatoren in PHP</a></li>
         <li><a href="../../Abschnitt_31/Video-Section/index.php">31_Arbeiten mit String</a></li>
-        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung (Bedingte Anweisung)</a></li>
+        <li><a href="../../Abschnitt_32/Video-Section/index.php">32_Fallunterscheidung</a></li>
         <li><a href="../../Abschnitt_33/Video-Section/index.php">33_Schleifen in PHP</a></li>
         <li><a href="../../Abschnitt_34/Video-Section/index.php">34_Arrays in PHP</a></li>
         <li><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></li>
         <li><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></li>
+        <li>37_Zufallszahlen generieren</li>
       </ul>
     </div>
   </section>
