@@ -17,7 +17,7 @@
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. mt_srand mit mt_rand und mt_getrandmax</a></li>
-        <li><a href="#2">02.</a></li>
+        <li><a href="#2">02. Random/Randomizer Klasse (ab PHP 8.2)</a></li>
         <li><a href="#3">03.</a></li>
         <li><a href="#4">04.</a></li>
         <li><a href="#5">05.</a></li>
@@ -56,7 +56,7 @@
       <h4>Variablen</h4>
         <?php
           $zahl_min = NULL;
-          $random = NULL;
+          $randFloat = NULL;
           $srand = NULL;
 
           if(isset($_POST["srand"]) && $_POST["srand"] !== ""){
@@ -97,7 +97,7 @@
           <table> 
             <tr>
               <td><p>
-                <label for="zahl13"><span class="orange">mt_rand</span></label>
+                <label for="zahl_min"><span class="orange">mt_rand</span></label>
                 (<input
                   type="number"
                   name="zahl_min"
@@ -109,7 +109,7 @@
                 >, 
                 <span class="orange"> mt_getrandmax()</span> )</p>
               </td>
-              <td><label for="zahl13"><span class="orange">mt_srand</span></label>
+              <td><label for="srand"><span class="orange">mt_srand</span></label>
                 (<input
                   type="number"
                   name="srand"
@@ -137,6 +137,181 @@
             </tr>
           </table>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. Random/Randomizer Klasse (ab PHP 8.2) -->
+  <section id="2" class="section">
+    <div class="text-box">
+      <h2>02. Random/Randomizer Klasse (ab PHP 8.2)</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php
+          $randomizer = new \Random\Randomizer();
+          $zahlMin = NULL;
+          $zahlMax = NULL;
+          $randInt = Null;
+
+          // Float
+          
+          if((isset($_POST["zahlMin"]) && $_POST["zahlMin"] !== "") && (isset($_POST["zahlMax"]) && $_POST["zahlMax"] !== "") ){
+            $clean_input_min = str_replace(",", ".", $_POST["zahlMin"]);
+            $clean_input_max = str_replace(",", ".", $_POST["zahlMax"]);
+            $clean_inputrandint = [$clean_input_min, $clean_input_max];
+
+            if ((is_numeric($clean_input_min)) && (is_numeric($clean_input_max))){
+            $randInt = $randomizer->getInt((float)$clean_inputrandint[0], (float)$clean_inputrandint[1]);
+            } else {
+              $randFloat = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+
+          // Float
+
+          if((isset($_POST["zahlMini"]) && $_POST["zahlMini"] !== "") && (isset($_POST["zahlMaxi"]) && $_POST["zahlMaxi"] !== "") ){
+            $clean_input_mini = str_replace(",", ".", $_POST["zahlMini"]);
+            $clean_input_maxi = str_replace(",", ".", $_POST["zahlMaxi"]);
+            $clean_inputrandfloat = [$clean_input_mini, $clean_input_maxi];
+          
+            if ((is_numeric($clean_input_mini)) && (is_numeric($clean_input_maxi))){
+
+              if($clean_input_mini <= $clean_input_maxi ){
+                $randFloat = $randomizer->getFloat((float)$clean_inputrandfloat[0], (float)$clean_inputrandfloat[1], \Random\IntervalBoundary::ClosedClosed);
+              }else{
+                  $randFloat = htmlspecialchars("Zahl Min muss kleiner oder Gleich Zahl Max sein");
+                }
+                
+            } else {
+              $randFloat = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+        ?>
+        <p>$randomizer = new \Random\Randomizer();</p>
+        <p>------ Int ------</p>
+        <p>$zahlMin = NULL;<br>$zahlMax = NULL;<br>$randInt = Null;</p>
+        <p>------ Float ------</p>
+        <p>$zahlMini = NULL;<br>$zahlMaxi = NULL;<br>$randFloat = Null;</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Randomizer -->
+      <div class="box">
+        
+
+        <h4>Randomizer</h4>
+        <table>
+          <tbody >
+           <tr>
+            <td class="noFlex">$randomizer =</td>
+            <td class="noFlex">new \Random\Randomizer();</td>
+          </tr>
+          <tr>
+            <td class="noFlex">var_dump ($randomizer); =</td>
+            <td class="noFlex"><span><?php var_dump ($randomizer); ?></span></td>
+          </tr></tbody>
+        </table>
+
+        <!-- randInt -->
+        <h4>randInt</h4>
+        <form action="./index.php#2" method="POST">
+          <table> 
+            <tr>
+              <td>
+                <p><span class="orange">$randomizer->getInt</span> (</p>
+                <input
+                  type="number"
+                  name="zahlMin"
+                  id="zahlMin"
+                  placeholder="Zahl Min"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_min) ? htmlspecialchars($clean_input_min) : ""; ?>"
+                >,
+                <input
+                  type="number"
+                  name="zahlMax"
+                  id="zahlMax"
+                  placeholder="Zahl Max"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_max) ? htmlspecialchars($clean_input_max) : ""; ?>"
+                >)
+              </td>
+
+              <td>
+                <input type="submit" value="Zufallszahl Ermitteln">
+                
+              </td>
+              <td><p>Zufalls Zahl zwischen <?php echo isset($clean_input_min,$clean_input_max) ? htmlspecialchars($clean_input_min . " und " . $clean_input_max) : ""; ?></p></td>
+              <td>
+                <p> Zufalls Zahl = 
+                  <span>
+                    <?php if ($randInt !== NULL){
+                      echo htmlspecialchars($randInt);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="?#2">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+
+        <!-- randFloat -->
+
+        <h4 id="randFloat">randFloat</h4>
+
+        <form action="./index.php#randFloat" method="POST">
+          <table> 
+            <tr>
+              <td>
+                <p><span class="orange">$randomizer->getFloat</span> (</p>
+                <input
+                  type="number"
+                  name="zahlMini"
+                  id="zahlMini"
+                  placeholder="Zahl Mini"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_mini) ? htmlspecialchars($clean_input_mini) : ""; ?>"
+                >,
+                <input
+                  type="number"
+                  name="zahlMaxi"
+                  id="zahlMaxi"
+                  placeholder="Zahl Max"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_maxi) ? htmlspecialchars($clean_input_maxi) : ""; ?>"
+                >,
+              </td>
+              <td>\Random\ IntervalBoundary: :ClosedClosed )</td>
+
+              <td>
+                <input type="submit" value="Zufallszahl Ermitteln">
+                
+              </td>
+              <td><p>Zufalls Zahl zwischen <?php echo isset($clean_input_mini,$clean_input_maxi) ? htmlspecialchars($clean_input_mini . " und " . $clean_input_maxi) : ""; ?></p></td>
+              <td>
+                <p> Zufalls Zahl = 
+                  <span>
+                    <?php if ($randFloat !== NULL){
+                      echo htmlspecialchars($randFloat);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="?#randFloat">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+        
+          
+        
       </div>
     </div>
   </section>

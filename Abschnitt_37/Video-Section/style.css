@@ -164,11 +164,13 @@ body {
           justify-content: center;
         }
 
+        table tbody tr td.noFlex {
+          display: revert;
+        }
+
         table {
           border-collapse: collapse;
           margin: 1rem;
-          display: flex;
-          justify-content: center;
 
           td {
             padding: 1rem;
