@@ -18,8 +18,8 @@
       <ul>
         <li><a href="#1">01. mt_srand mit mt_rand und mt_getrandmax</a></li>
         <li><a href="#2">02. Random/Randomizer Klasse (ab PHP 8.2)</a></li>
-        <li><a href="#3">03.</a></li>
-        <li><a href="#4">04.</a></li>
+        <li><a href="#3">03. getBytes</a></li>
+        <li><a href="#4">04. getBytesFromString</a></li>
         <li><a href="#5">05.</a></li>
         <li><a href="#6">06.</a></li>
         <li><a href="#7">07.</a></li>
@@ -54,10 +54,11 @@
       
       <!-- Variablen -->
       <h4>Variablen</h4>
-        <?php
+        <?php 
           $zahl_min = NULL;
           $randFloat = NULL;
           $srand = NULL;
+          $random = NULL;
 
           if(isset($_POST["srand"]) && $_POST["srand"] !== ""){
             $clean_input_srand = str_replace(",", ".", $_POST["srand"]);
@@ -168,6 +169,7 @@
               $randFloat = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
             }
           }
+          
 
           // Float
 
@@ -309,11 +311,173 @@
             </tr>
           </table>
         </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. getBytes -->
+  <section id="3" class="section">
+    <div class="text-box">
+      <h2>03. getBytes()</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $zahl = NULL;
+          $randBytes = NULL;
+          $random = NULL;
+
+          if(isset($_POST["zahl"]) && $_POST["zahl"] !== ""){
+            $clean_input_zahl = str_replace(",", ".", $_POST["zahl"]);
+
+            if (is_numeric($clean_input_zahl)){
+            $random = $randomizer->getBytes((float)$clean_input_zahl);
+            } else {
+              $random = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+        ?>
+        <p>$zahl = NULL; <br> $randBytes = NULL;<br> $random = NULL;</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- getBytes() -->
+      <div class="box">
         
+
+        <h4>getBytes()</h4>
+        <form action="./index.php#3" method="POST">
+          <table> 
+            <tr>
+              <td><p>
+                <label for="zahl"><span class="orange">randomizer->getBytes</span></label>
+                (<input
+                  type="number"
+                  name="zahl"
+                  id="zahl"
+                  placeholder="Zahl*"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_zahl) ? htmlspecialchars($clean_input_zahl) : ""; ?>"
+                >)
+                </p>
+              </td>
+              <td>
+                <input type="submit" value="Zufallszahl Ermitteln">
+                
+              </td>
+              
+              <td>
+                <p> Zufalls Bytes = 
+                  <span>
+                    <?php if ($random !== NULL){
+                      echo htmlspecialchars($random);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td>
+                <p> Zufalls Bytes in Hex (bin2hex) = 
+                  <span>
+                    <?php if ($random !== NULL){
+                      echo htmlspecialchars (bin2hex($random));}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="./?#3">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. getBytesFromString -->
+  <section id="4" class="section">
+    <div class="text-box">
+      <h2>04. getBytesFromString</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php
           
+          $sourcestring = NULL;
+          $zahlbytes = NULL;
+          $randstring = Null;
+
+          // getBytesFromString
+          
+          if((isset($_POST["sourcestring"]) && $_POST["sourcestring"] !== "") && (isset($_POST["zahlbytes"]) && $_POST["zahlbytes"] !== "") ){
+            $clean_input_string = str_replace(",", ".", $_POST["sourcestring"]);
+            $clean_input_zahlbytes = str_replace(",", ".", $_POST["zahlbytes"]);
+
+            if ((is_string($clean_input_string)) && (is_numeric($clean_input_zahlbytes))){
+            $randstring = $randomizer->getBytesFromString((string)$clean_input_string, (float)$clean_input_zahlbytes);
+            } else {
+              $randstring = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+          }
+        ?>
+      <p>$sourcestring = NULL; <br> $zahlbytes = NULL; <br> $randstring = Null;</p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+      
+        <!-- getBytesFromString -->
+        <h4>getBytesFromString</h4>
+        <form action="./index.php#4" method="POST">
+          <table> 
+            <tr>
+              <td>
+                <p><span class="orange">$randomizer->getBytesFromString</span> (</p>
+                <input
+                  type="text"
+                  name="sourcestring"
+                  id="sourcestring"
+                  placeholder="Sourcestring*"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_string) ? htmlspecialchars($clean_input_string) : ""; ?>"
+                >,
+                <input
+                  type="number"
+                  name="zahlbytes"
+                  id="zahlbytes"
+                  placeholder="Anzahl Bytes*"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_zahlbytes) ? htmlspecialchars($clean_input_zahlbytes) : ""; ?>"
+                >)
+              </td>
+
+              <td>
+                <input type="submit" value="Zufallszahl Ermitteln">
+                
+              </td>
+              <td><p>Von diesen Wert <?php echo isset($clean_input_string,$clean_input_zahlbytes) ? htmlspecialchars($clean_input_string . " erstellt daraus " . $clean_input_zahlbytes . " bytes") : ""; ?></p></td>
+              <td>
+                <p> Zufall String = 
+                  <span>
+                    <?php if ($randstring !== NULL){
+                      echo htmlspecialchars($randstring);}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="?#4">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
+
         
       </div>
     </div>
   </section>
+
 </body>
 </html>
