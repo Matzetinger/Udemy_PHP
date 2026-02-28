@@ -20,7 +20,7 @@
         <li><a href="#2">02. Random/Randomizer Klasse (ab PHP 8.2)</a></li>
         <li><a href="#3">03. getBytes</a></li>
         <li><a href="#4">04. getBytesFromString</a></li>
-        <li><a href="#5">05.</a></li>
+        <li><a href="#5">05. pickArrayKeys</a></li>
         <li><a href="#6">06.</a></li>
         <li><a href="#7">07.</a></li>
         <li><a href="#8">08.</a></li>
@@ -338,6 +338,7 @@
             }
           }
         ?>
+        <p>$randomizer = new \Random\Randomizer();</p>
         <p>$zahl = NULL; <br> $randBytes = NULL;<br> $random = NULL;</p>
     </div>
 
@@ -422,6 +423,7 @@
             }
           }
         ?>
+        <p>$randomizer = new \Random\Randomizer();</p>
       <p>$sourcestring = NULL; <br> $zahlbytes = NULL; <br> $randstring = Null;</p>
     </div>
 
@@ -473,8 +475,120 @@
             </tr>
           </table>
         </form>
+      </div>
+    </div>
+  </section>
 
-        
+  <!-- 05. pickArrayKeys -->
+  <section id="5" class="section">
+    <div class="text-box">
+      <h2>05. pickArrayKeys</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php
+          
+          $array = ['red' => '🍎', 'green' => '🥝', 'yellow' => '🍌', 'pink' => '🍑', 'purple' => '🍇'];
+          $newarray = $array;
+          $anzahl = NULL;
+          $randarraykeys = NULL;
+
+          // pickArrayKeys
+          
+          if((isset($_POST["arraypush"]) && $_POST["arraypush"] !== "") && (isset($_POST["anzahl"]) && $_POST["anzahl"] !== "") ){
+            $clean_input_anzahl = str_replace(",", ".", $_POST["anzahl"]);
+            
+            if ((is_array($array)) && (is_numeric($clean_input_anzahl))){
+              $arraypush = array_push($newarray, $_POST["arraypush"]);
+              $randarraykeys = $randomizer->pickArrayKeys($newarray, (int)$clean_input_anzahl);
+            }else {
+              $randarraykeys = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
+            }
+
+          }else{
+            
+              if (isset($_POST["anzahl"]) && $_POST["anzahl"] !== ""){
+                $clean_input_anzahl = str_replace(",", ".", $_POST["anzahl"]);
+              $randarraykeys = $randomizer->pickArrayKeys($array, (int)$clean_input_anzahl);
+            }else {
+              $randarraykeys = NULL;
+            } 
+          }
+        ?>
+        <p>$randomizer = new \Random\Randomizer();</p>
+      <p>$array = ['red' => '🍎', 'green' => '🥝', 'yellow' => '🍌', 'pink' => '🍑', 'purple' => '🍇'];<br>
+          $newarray = $array;<br>
+          $anzahl = NULL;<br>
+          $randarraykeys = NULL;</p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+      
+        <!-- pickArrayKeys -->
+        <h4>pickArrayKeys</h4>
+        <form action="./index.php#5" method="POST">
+          <table> 
+            <tr>
+              <td>$array = <span><?php print_r($array); ?></span></td>
+              <td>
+                <p><label for="arraypush"> Wert zu Array hinzufügen</label> 
+                <input
+                  type="text"
+                  name="arraypush"
+                  id="arraypush"
+                  placeholder="Wert hinzufügen"
+                  max="1000"
+                  value="<?php echo isset($arraypush) ? htmlspecialchars(end($newarray)) : ""; ?>"
+                ></p>
+              </td>
+              <td>$newarray = <span><?php print_r($newarray); ?></span></td>
+
+              <td>
+                <p><span class="orange">$randomizer->pickArrayKeys</span> ( $array ,
+                
+                <input
+                  type="number"
+                  name="anzahl"
+                  id="anzahl"
+                  placeholder="Anzahl*"
+                  required 
+                  max="1000"
+                  value="<?php echo isset($clean_input_anzahl) ? htmlspecialchars($clean_input_anzahl) : ""; ?>"
+                  
+                >)</p>
+              </td>
+
+              <td>
+                <input type="submit" value="Zufall Key / Wert ermitteln">
+                
+              </td>
+              <td>
+                <p> Zufall keys = 
+                  <span>
+                    <?php if ($randarraykeys !== NULL){
+                      echo htmlspecialchars (implode(", ",$randarraykeys));}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td>
+                <p> Zufall Werte = 
+                  <span>
+                    <?php if ($randarraykeys !== NULL){
+                      $value = array_map(
+                        static fn ($key) => $newarray[$key],
+                        $randarraykeys);
+                      echo htmlspecialchars (implode(", ", $value));}
+                    ?>
+                  </span>
+                </p>
+              </td>
+              <td><a href="?#5">Zurücksetzen</a></td>
+            </tr>
+          </table>
+        </form>
       </div>
     </div>
   </section>
