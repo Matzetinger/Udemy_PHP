@@ -17,10 +17,10 @@
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. mt_srand mit mt_rand und mt_getrandmax</a></li>
-        <li><a href="#2">02. Random/Randomizer Klasse (ab PHP 8.2)</a></li>
+        <li><a href="#2">02. Random/Randomizer Klasse (ab PHP 8.2) / getInt / GetFloat / nextInt / nextFloat</a></li>
         <li><a href="#3">03. getBytes</a></li>
-        <li><a href="#4">04. getBytesFromString</a></li>
-        <li><a href="#5">05. pickArrayKeys</a></li>
+        <li><a href="#4">04. getBytesFromString und shufflebytes</a></li>
+        <li><a href="#5">05. pickArrayKeys und shuffleArray</a></li>
         <li><a href="#6">06.</a></li>
         <li><a href="#7">07.</a></li>
         <li><a href="#8">08.</a></li>
@@ -142,10 +142,10 @@
     </div>
   </section>
 
-  <!-- 02. Random/Randomizer Klasse (ab PHP 8.2) -->
+  <!-- 02. Random/Randomizer Klasse (ab PHP 8.2) / getInt / GetFloat / nextInt / nextFloat -->
   <section id="2" class="section">
     <div class="text-box">
-      <h2>02. Random/Randomizer Klasse (ab PHP 8.2)</h2>
+      <h2>02. Random/Randomizer Klasse (ab PHP 8.2) / getInt / GetFloat / nextInt / nextFloat</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
@@ -156,7 +156,7 @@
           $zahlMax = NULL;
           $randInt = Null;
 
-          // Float
+          // Int
           
           if((isset($_POST["zahlMin"]) && $_POST["zahlMin"] !== "") && (isset($_POST["zahlMax"]) && $_POST["zahlMax"] !== "") ){
             $clean_input_min = str_replace(",", ".", $_POST["zahlMin"]);
@@ -169,7 +169,10 @@
               $randFloat = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
             }
           }
-          
+
+          // nextInt
+
+          $nextInt = $randomizer->nextInt();
 
           // Float
 
@@ -190,6 +193,11 @@
               $randFloat = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
             }
           }
+
+        // nextFloat
+
+          $nextFloat = $randomizer->nextFloat();
+
         ?>
         <p>$randomizer = new \Random\Randomizer();</p>
         <p>------ Int ------</p>
@@ -217,8 +225,8 @@
           </tr></tbody>
         </table>
 
-        <!-- randInt -->
-        <h4>randInt</h4>
+        <!-- getInt -->
+        <h4>getInt</h4>
         <form action="./index.php#2" method="POST">
           <table> 
             <tr>
@@ -263,11 +271,11 @@
           </table>
         </form>
 
-        <!-- randFloat -->
+        <!-- getfloat -->
 
-        <h4 id="randFloat">randFloat</h4>
+        <h4 id="getFloat">getfloat</h4>
 
-        <form action="./index.php#randFloat" method="POST">
+        <form action="./index.php#getFloat" method="POST">
           <table> 
             <tr>
               <td>
@@ -307,10 +315,26 @@
                   </span>
                 </p>
               </td>
-              <td><a href="?#randFloat">Zurücksetzen</a></td>
+              <td><a href="?#getFloat">Zurücksetzen</a></td>
             </tr>
           </table>
         </form>
+
+        <h4>nextInt</h4>
+        <table> 
+          <tr>
+            <td><p>$nextInt = <span class="orange">$randomizer->nextInt</span>(); = <span><?php echo $nextInt ?></span></p></td>
+          </tr>
+        </table>
+
+        <h4>nextFloat</h4>
+        <table> 
+          <tr>
+            <td><p>$nextFloat = <span class="orange">$randomizer->nextFloat</span>(); = <span><?php echo $nextFloat ?></span></p></td>
+            <td><button onclick="window.location.reload();" class="btn"> Reload </button></td>
+          </tr>
+        </table>
+        
       </div>
     </div>
   </section>
@@ -396,10 +420,10 @@
     </div>
   </section>
 
-  <!-- 04. getBytesFromString -->
+  <!-- 04. getBytesFromString und shufflebytes -->
   <section id="4" class="section">
     <div class="text-box">
-      <h2>04. getBytesFromString</h2>
+      <h2>04. getBytesFromString und shufflebytes</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
@@ -422,6 +446,9 @@
               $randstring = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
             }
           }
+
+          // shufflebytes 
+         $shuffleBytes = $randomizer->shufflebytes("Hallo Welt");
         ?>
         <p>$randomizer = new \Random\Randomizer();</p>
       <p>$sourcestring = NULL; <br> $zahlbytes = NULL; <br> $randstring = Null;</p>
@@ -461,7 +488,7 @@
                 <input type="submit" value="Zufallszahl Ermitteln">
                 
               </td>
-              <td><p>Von diesen Wert <?php echo isset($clean_input_string,$clean_input_zahlbytes) ? htmlspecialchars($clean_input_string . " erstellt daraus " . $clean_input_zahlbytes . " bytes") : ""; ?></p></td>
+              <td><p>Von diesen Wert <?php echo isset($clean_input_string,$clean_input_zahlbytes) ? ("<span>$clean_input_string</span>" . " erstellt daraus " . "<span>$clean_input_zahlbytes</span>" . " bytes") : ""; ?></p></td>
               <td>
                 <p> Zufall String = 
                   <span>
@@ -471,6 +498,10 @@
                   </span>
                 </p>
               </td>
+
+              <!-- shufflebytes -->
+
+              <td><p>$shuffleBytes = <span class="orange">$randomizer->shufflebytes</span>("Hallo Welt") = <span><?php echo $shuffleBytes; ?></span></p></td>
               <td><a href="?#4">Zurücksetzen</a></td>
             </tr>
           </table>
@@ -482,7 +513,7 @@
   <!-- 05. pickArrayKeys -->
   <section id="5" class="section">
     <div class="text-box">
-      <h2>05. pickArrayKeys</h2>
+      <h2>05. pickArrayKeys und shuffleArray</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
@@ -502,6 +533,7 @@
             if ((is_array($array)) && (is_numeric($clean_input_anzahl))){
               $arraypush = array_push($newarray, $_POST["arraypush"]);
               $randarraykeys = $randomizer->pickArrayKeys($newarray, (int)$clean_input_anzahl);
+              
             }else {
               $randarraykeys = "Gib was Anständiges ein, und versuch hier nicht zu Hacken";
             }
@@ -511,6 +543,7 @@
               if (isset($_POST["anzahl"]) && $_POST["anzahl"] !== ""){
                 $clean_input_anzahl = str_replace(",", ".", $_POST["anzahl"]);
               $randarraykeys = $randomizer->pickArrayKeys($array, (int)$clean_input_anzahl);
+               
             }else {
               $randarraykeys = NULL;
             } 
@@ -579,7 +612,7 @@
                     <?php if ($randarraykeys !== NULL){
                       $value = array_map(
                         static fn ($key) => $newarray[$key],
-                        $randarraykeys);
+                        $randarraykeys);  
                       echo htmlspecialchars (implode(", ", $value));}
                     ?>
                   </span>
@@ -588,7 +621,18 @@
               <td><a href="?#5">Zurücksetzen</a></td>
             </tr>
           </table>
-        </form>
+         </form>
+
+      <!-- shuffleArray -->
+         <h4>shuffleArray</h4>
+         
+          <table>
+            <tr>
+              <td><p>$mixedArray = <span class="orange">$randomizer->shuffleArray</span>($newarray);</p></td>
+              <td><p>print_r ($mixedArray); =; = <span><?php $mixedArray = $randomizer->shuffleArray($newarray); print_r ($mixedArray); ?></span></p></td>
+              <td><button onclick="window.location.reload();" class="btn"> Reload </button></td>
+            </tr>
+          </table>
       </div>
     </div>
   </section>
