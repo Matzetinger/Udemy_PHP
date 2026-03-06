@@ -49,6 +49,7 @@
         <li><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></li>
         <li>36_Mathematische Funktionen</li>
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
+        <li><a href="../../Abschnitt_38/Video-Section/index.php">38_Funktionen in PHP</a></li>
       </ul>
     </div>
   </section>

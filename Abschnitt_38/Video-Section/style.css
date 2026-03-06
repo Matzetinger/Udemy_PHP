@@ -83,7 +83,7 @@ body {
     }
     .box_abschnitte {
       ul {
-        li:nth-child(8) {
+        li:nth-child(9) {
           color: #e1801f;
           transform: translateX(-1.2rem);
         }

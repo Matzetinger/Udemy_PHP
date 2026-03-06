@@ -21,14 +21,6 @@
         <li><a href="#3">03. getBytes</a></li>
         <li><a href="#4">04. getBytesFromString und shufflebytes</a></li>
         <li><a href="#5">05. pickArrayKeys und shuffleArray</a></li>
-        <li><a href="#6">06.</a></li>
-        <li><a href="#7">07.</a></li>
-        <li><a href="#8">08.</a></li>
-        <li><a href="#9">09.</a></li>
-        <li><a href="#10">10.</a></li>
-        <li><a href="#11">11.</a></li>
-        <li><a href="#12">12.</a></li>
-        <li><a href="#13">13.</a></li>
       </ul>
     </div>
     <div class="box_abschnitte">
@@ -42,6 +34,7 @@
         <li><a href="../../Abschnitt_35/Video-Section/index.php">35_Superglobale Arrays</a></li>
         <li><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></li>
         <li>37_Zufallszahlen generieren</li>
+        <li><a href="../../Abschnitt_38/Video-Section/index.php">38_Funktionen in PHP</a></li>
       </ul>
     </div>
   </section>
@@ -49,7 +42,7 @@
 <!-- 01. mt_srand mit mt_rand und mt_getrandmax-->
   <section id="1" class="section">
     <div class="text-box">
-      <h2>01.</h2>
+      <h2>01. mt_srand mit mt_rand und mt_getrandmax</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
       
       <!-- Variablen -->
