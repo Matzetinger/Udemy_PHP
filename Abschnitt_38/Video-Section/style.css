@@ -162,17 +162,24 @@ body {
 
       .box {
         border: 1px solid #333;
-        padding: 15px;
+        padding: 2rem;
         margin-bottom: 20px;
         border-radius: 8px;
         border: 3px solid rgb(135, 130, 130);
 
-        pre {
-          text-align: left;
-          white-space: pre-wrap; /* Behält Zeilenumbrüche von var_dump bei */
-          word-break: break-all; /* Erzwingt Umbruch mitten im Wort (z.B. bei langen Pfaden) */
-          max-width: 80%; /* Oder ein fester Wert wie 600px */
-          margin: 0 auto; /* Jetzt gibt es Platz zum Zentrieren */
+        .code-container {
+          border: 3px solid rgb(64, 67, 59);
+          padding: 1rem;
+          border-radius: 1rem;
+
+          pre {
+            padding-right: 3.3rem;
+            /* text-align: left;
+            /* white-space: pre-wrap;  Behält Zeilenumbrüche von var_dump bei */
+            /* word-break: break-all;  Erzwingt Umbruch mitten im Wort (z.B. bei langen Pfaden) */
+            /* max-width: 80%;  Oder ein fester Wert wie 600px */
+            /* margin: 0 auto;  Jetzt gibt es Platz zum Zentrieren */
+          }
         }
 
         form {

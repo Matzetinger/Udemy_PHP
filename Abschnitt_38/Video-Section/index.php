@@ -56,19 +56,124 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-          
+          $name = "Matthias";
         ?>
-        <p></p>
+        <p>$name = "Matthias"</p>
     </div>
 
     <div class="inhalt-container">
 
-      <!-- mt_rand() -->
+      <!-- function -->
       <div class="box">
-        
+      <h4>function</h4>
 
-        <h4>Funktion</h4>
-       
+        <?php 
+
+        function greets($name){
+          echo "Hallo $name";
+        } 
+
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function greets($name){
+              echo "Hallo $name";
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+  
+          <tr>
+            <td class="noFlex"><p>greets($name)</p></td>
+            <td><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                greets($name);
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p>greets("JOSEF")</p></td>
+            <td><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                greets("JOSEF");
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+
+        function addieren($num1, $num2){
+          $res = $num1 + $num2;
+
+          return $res;
+        } 
+        
+        $value = addieren(12, 18);
+        $value2 = addieren(2, 2,);
+        $val1u2 = addieren($value, $value2);
+        
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function addieren($num1, $num2){
+              $res = $num1 + $num2;
+
+              return $res;
+            } 
+        
+            $value = addieren(12, 18);
+            $value2 = addieren(2, 2,);
+            $val1u2 = addieren($value, $value2);
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo $value;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $value;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo $value2;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $value2;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo $val1u2;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $val1u2;
+              ?></span>
+            </td>
+          </tr>
+            
+          
+        </table>
       </div>
     </div>
   </section>
