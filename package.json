@@ -4,7 +4,8 @@
   "description": "Kurs-Abschnitte im Bereich PHP",
   "main": "index.js",
   "scripts": {
-    "liveserver": "browser-sync start --proxy \"localhost/UDEMY_PHP\" --files \"**/*.php,**/*.css,\" --browser \"chrome\""
+    "liveserver": "browser-sync start --proxy \"localhost/UDEMY_PHP\" --files \"**/*.php,**/*.css,\" --browser \"chrome\"",
+    "gitpushupdate": "git add . && git commit -m\"Update\" && git push"
   },
   "repository": {
     "type": "git",

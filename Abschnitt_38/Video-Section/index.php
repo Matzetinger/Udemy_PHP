@@ -17,8 +17,8 @@
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. Funktion deklarieren und verwenden</a></li>
-        <li><a href="#2">02.</a></li>
-        <li><a href="#3">03.</a></li>
+        <li><a href="#2">02. Standartwerte für Parameter</a></li>
+        <li><a href="#3">03. Splat-Operator - Variable Anzahl von Parametern</a></li>
         <li><a href="#4">04. </a></li>
         <li><a href="#5">05.</a></li>
         <li><a href="#6">06.</a></li>
@@ -58,7 +58,14 @@
         <?php 
           $name = "Matthias";
         ?>
-        <p>$name = "Matthias"</p>
+        <p>$name = "<span class="grün">Matthias</span>"</p>
+
+        <h4>Hinweis Paramenter und Argumente</h4>
+        <p>Function "Name der funktion"(<span class="orange">Parameterfeld</span>)</p>
+        <p>Argument ist ein tatsächlicher Wert</p>
+        <p>"name der funcion"(<span class="grün">Argument = Tatsächliche Werte</span>)</p>
+
+
     </div>
 
     <div class="inhalt-container">
@@ -77,7 +84,7 @@
 
         <div class="code-container">
           <pre>
-            function greets($name){
+            function greets(<span class="orange">$name</span>){
               echo "Hallo $name";
             }
           </pre>
@@ -88,7 +95,7 @@
         <table>
   
           <tr>
-            <td class="noFlex"><p>greets($name)</p></td>
+            <td class="noFlex"><p>greets(<span class="grün">$name</span>)</p></td>
             <td><p> = </p></td>
             <td class="noFlex">
               <span><?php 
@@ -98,7 +105,7 @@
           </tr>
 
           <tr>
-            <td class="noFlex"><p>greets("JOSEF")</p></td>
+            <td class="noFlex"><p>greets("<span class="grün">JOSEF</span>")</p></td>
             <td><p> = </p></td>
             <td class="noFlex">
               <span><?php 
@@ -129,15 +136,15 @@
 
         <div class="code-container">
           <pre>
-            function addieren($num1, $num2){
-              $res = $num1 + $num2;
+            function addieren(<span class="orange">$num1, $num2</span>){
+              $res = <span class="orange">$num1</span> + <span class="orange">$num2</span>;
 
               return $res;
             } 
         
-            $value = addieren(12, 18);
-            $value2 = addieren(2, 2,);
-            $val1u2 = addieren($value, $value2);
+            $value = addieren(<span class="grün">12, 18</span>);
+            $value2 = addieren(<span class="grün">2, 2</span>);
+            $val1u2 = addieren(<span class="grün">$value, $value2</span>);
           </pre>
         </div>
 
@@ -173,6 +180,148 @@
           </tr>
             
           
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. Standartwerte für Parameter -->
+  <section id="2" class="section">
+    <div class="text-box">
+      <h2>02. Standartwerte für Parameter</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Hinweis</h4>
+        <p>Standartwerte vergeben(<span class="pink">= Wert</span>)</p>
+        <p>Falls Argumente nicht gesetzt wurden, wird das Standard Argument(Wert) verwendet</p>
+        <p>Eine function kann auch ein Wert sein</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+
+        function calc($num3 = 0, $num4 = 0, $num5 = 0){
+          $res = $num3 + $num4 + $num5;
+
+          return $res;
+        }
+
+        $summe = calc();
+        $summe1 = calc(12, 18, 4);
+        
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function calc($num3 <span class="pink">= 0</span>, $num4 <span class="pink">= 0</span>, $num5 <span class="pink">= 0</span>){
+              $res = $num3 + $num4 + $num5;
+
+              return $res;
+            }
+
+            $summe = calc()
+            $summe1 = calc(12, 18, 4);
+           
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo $summe;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $summe;
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p>$summe1;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $summe1;
+              ?></span>
+            </td>
+          </tr>
+        </table>
+
+      
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. Splat-Operator - Variable Anzahl von Parametern -->
+  <section id="3" class="section">
+    <div class="text-box">
+      <h2>03. Splat-Operator - Variable Anzahl von Parametern</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Hinweis</h4>
+      <p>Splat-operator =<span class="orange"> ... </span></p>
+        
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function calculator($a, $b, $c){
+          return $a + $b + $c;
+        }
+
+        $zahlen = [12, 18, 4];
+        
+
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function calculator($a, $b, $c){
+              return $a + $b + $c;
+            }
+
+            $zahlen = [12, 18, 4];
+            
+           
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo calculator($zahlen[0], $zahlen[1], $zahlen[2]);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+              echo calculator($zahlen[0], $zahlen[1], $zahlen[2]);
+                
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex" colspan="3">Splat-Operator</td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo calculator(<span class="orange">...</span>$zahlen);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+              echo calculator(...$zahlen);
+                
+              ?></span>
+            </td>
+          </tr>
         </table>
       </div>
     </div>

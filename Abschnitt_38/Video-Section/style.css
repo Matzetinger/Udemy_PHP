@@ -109,6 +109,16 @@ body {
       font-family: system-ui;
     }
 
+    .grün {
+      color: rgb(0, 176, 0);
+      text-decoration: none;
+    }
+
+    .pink {
+      color: rgb(255, 0, 174);
+      text-decoration: none;
+    }
+
     .grau {
       color: gray;
       text-decoration: none;
