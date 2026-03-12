@@ -1421,7 +1421,7 @@
         </p>
         
         <h4> Array ohne Variable</h4>
-        <p>echo ["A5", "Clio"][0]; =
+        <p>echo ["A5", "Clio"][1]; =
           <span>
             <?php 
             echo ["A5", "Clio"][1];

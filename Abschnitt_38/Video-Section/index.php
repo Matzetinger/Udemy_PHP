@@ -18,7 +18,8 @@
       <ul>
         <li><a href="#1">01. Funktion deklarieren und verwenden</a></li>
         <li><a href="#2">02. Standartwerte für Parameter</a></li>
-        <li><a href="#3">03. Splat-Operator - Variable Anzahl von Parametern</a></li>
+        <li><a href="#3">03. Splat / Spread-Operator - Variable Anzahl von Parametern</a></li>
+        <li><a href="#3">03_1. func_num_args und func_get_args</a></li>
         <li><a href="#4">04. </a></li>
         <li><a href="#5">05.</a></li>
         <li><a href="#6">06.</a></li>
@@ -258,13 +259,26 @@
     </div>
   </section>
 
-  <!-- 03. Splat-Operator - Variable Anzahl von Parametern -->
+  <!-- 03. Splat / Spread-Operator - Variable Anzahl von Parametern // func_num-args und func_get_args -->
   <section id="3" class="section">
     <div class="text-box">
-      <h2>03. Splat-Operator - Variable Anzahl von Parametern</h2>
+      <h2>03. Splat / Spread-Operator - Variable Anzahl von Parametern</h2>
+      
       <p><a href="#0">Inhaltsverzeichnis</a></p>
+
+      <h4>Variablen</h4>
+      <p>$paket = [1,2,3,4];<br>
+         $zahlen = [12, 18, 4];
+      </p>
+
       <h4>Hinweis</h4>
-      <p>Splat-operator =<span class="orange"> ... </span></p>
+      <p>Splat-operator (Entpacken) =<span class="orange"> ... </span></p>
+      <p>aber auch Spread-operator (Einpacken) =<span class="pink"> ... </span></p>
+
+      <h2>03_1. func_num_args und func_get_args</h2>
+      <h4>Hinweis</h4>
+      <p><span class="lila">func_num_args</span></p>
+      <p><span class="türkis">func_get_args</span></p>
         
     </div>
 
@@ -322,6 +336,63 @@
               ?></span>
             </td>
           </tr>
+        </table>
+      </div>
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function plus(...$numbers){
+          echo 'Anzahl der Argumente: <span class="pink">' .  func_num_args() . "</span> <br>";
+
+          return "Ergebnis: " . array_sum($numbers);
+        }
+
+        $paket = [1,2,3,4];
+        
+
+        ?>
+
+        <div class="code-container">
+          <pre>
+
+            function plus(<span class="pink">...</span>$numbers){
+              echo 'Anzahl der Argumente :' .  <span class="lila">func_num_args()</span> . "<br>";
+
+              return "Ergebnis: " . array_sum($numbers);
+            }
+
+            $paket = [1,2,3,4];
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo plus(1,2,3,4,5);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+              echo plus(1,2,3,4,5);
+                
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex" colspan="3"><p>Splat-Operator</p></td>
+          </tr>
+          <td class="noFlex"><p>echo plus(<span class="orange">...</span>$paket);</p></td>
+            <td class="noFlex"><p> = </p></td>
+          <td class="noFlex">
+              <span><?php 
+              echo plus(...$paket);
+                
+              ?></span>
+            </td>
+          
         </table>
       </div>
     </div>
