@@ -20,8 +20,8 @@
         <li><a href="#2">02. Standartwerte für Parameter</a></li>
         <li><a href="#3">03. Splat / Spread-Operator - Variable Anzahl von Parametern</a></li>
         <li><a href="#3">03_1. func_num_args und func_get_args</a></li>
-        <li><a href="#4">04. </a></li>
-        <li><a href="#5">05.</a></li>
+        <li><a href="#4">04. Benannte Parameter</a></li>
+        <li><a href="#5">05. Gültigkeit von Variablen - global & local</a></li>
         <li><a href="#6">06.</a></li>
         <li><a href="#7">07.</a></li>
         <li><a href="#8">08.</a></li>
@@ -272,13 +272,14 @@
       </p>
 
       <h4>Hinweis</h4>
-      <p>Splat-operator (Entpacken) =<span class="orange"> ... </span></p>
-      <p>aber auch Spread-operator (Einpacken) =<span class="pink"> ... </span></p>
+      <p><span class="orange">Splat</span>-operator (Entpacken) =<span class="orange"> ... </span></p>
+      <p>aber auch <span class="pink">Spread</span>-operator (Einpacken) =<span class="pink"> ... </span></p>
 
       <h2>03_1. func_num_args und func_get_args</h2>
       <h4>Hinweis</h4>
-      <p><span class="lila">func_num_args</span></p>
-      <p><span class="türkis">func_get_args</span></p>
+      <p><span class="lila">func_num_args</span> gibt die Anzahl der übergebenen Argumente zurück.</p> 
+      <p><span class="türkis">func_get_args</span> erstellt ein Array aus den Argumenten die an die function übergeben wurden. <br> 
+          Funktioniert wie ein <span class="pink">Spread</span>-operator ist aber ein älteres PHP-Feature, das vor allem vor PHP 5.6 benutzt wurde.</p> 
         
     </div>
 
@@ -324,7 +325,7 @@
             </td>
           </tr>
           <tr>
-            <td class="noFlex" colspan="3">Splat-Operator</td>
+            <td class="noFlex" colspan="3"><span class="orange">Splat</span>-Operator</td>
           </tr>
           <tr>
             <td class="noFlex"><p>echo calculator(<span class="orange">...</span>$zahlen);</p></td>
@@ -339,9 +340,9 @@
         </table>
       </div>
 
-      <!-- function -->
+      <!-- function mit func_num_args() -->
       <div class="box">
-      <h4>function</h4>
+      <h4>function mit <span class="pink">Spread</span>-operator und <span class="lila">func_num_args()</span>  </h4>
 
         <?php 
         function plus(...$numbers){
@@ -359,7 +360,7 @@
           <pre>
 
             function plus(<span class="pink">...</span>$numbers){
-              echo 'Anzahl der Argumente :' .  <span class="lila">func_num_args()</span> . "<br>";
+              echo 'Anzahl der Argumente :' .  <span class="lila">func_num_args()</span> . "< br >";
 
               return "Ergebnis: " . array_sum($numbers);
             }
@@ -382,8 +383,9 @@
             </td>
           </tr>
           <tr>
-            <td class="noFlex" colspan="3"><p>Splat-Operator</p></td>
+            <td class="noFlex" colspan="3"><p><span class="orange">Splat</span>-Operator</p></td>
           </tr>
+          <tr>
           <td class="noFlex"><p>echo plus(<span class="orange">...</span>$paket);</p></td>
             <td class="noFlex"><p> = </p></td>
           <td class="noFlex">
@@ -392,7 +394,232 @@
                 
               ?></span>
             </td>
-          
+          </tr>
+        </table>
+      </div>
+
+      <!-- function func_get_args veraltet -->
+      <div class="box">
+      <h4>function mit <span class="türkis">func_get_args</span> veraltet</h4>
+
+        <?php 
+        function summieren(){
+          $args = func_get_args();
+
+          return array_sum($args);
+        }
+        
+        $args = [12,18,4];
+
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function summieren(){
+              $args = <span class="türkis">func_get_args()</span>;
+
+              return array_sum($args);
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo summieren(50, 50);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+              echo summieren(50, 50);
+                
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. Benannte Parameter -->
+  <section id="4" class="section">
+    <div class="text-box">
+      <h2>04. Benannte Parameter</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Hinweis</h4>
+      <p>Mit den <span class="orange">Benannten</span> Parameter muss ich mich nicht an die Reihenfolge der Parameter halten</p>
+        
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function createUser($username, $email, $role = "Mitglied"){
+          echo "Username: $username <br>";
+          echo "Email: $email <br>";
+          echo "Role: $role <br>";
+        }
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function createUser($<span class="orange">username</span>, $<span class="orange">email</span>, $<span class="orange">role</span> = "subscriber"){
+              echo "Username: $username < br >";
+              echo "Email: $email < br >";
+              echo "Role: $role < br >";
+            }
+            
+           
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>createUser("JOSEF","info@menschenort.de","Weltrichter");</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                createUser("JOSEF","info@menschenort.de","Weltrichter");
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p>createUser(<span class="orange">email:</span> "muehlenderm@hotmail.de", <span class="orange">role:</span>"Vizepräsident", <span class="orange">username:</span>"Matthias");</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                createUser(email: "muehlender@hotmail.de", role:"Vizepräsident", username:"Matthias");
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. Gültigkeit von Variablen - global & local -->
+  <section id="5" class="section">
+    <div class="text-box">
+      <h2>05. Gültigkeit von Variablen - global & local</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <?php 
+      $gericht = "Kartoffelauflauf"
+      ?>
+      <p><span class="orange">$gericht</span> = "Kartoffelauflauf"<span class="orange"> <--  Globale Variable</span> sind außerhalb von Funktionen</p>
+      <p>Im gesamten code verwendbar außer in Funktionen </p>
+      <h4>Hinweis</h4>
+      <p><span class="türkis">Locale Variable</span> sind die innerhalb von funktionen</p>
+      <p>würde die Variable <span class="türkis">$gericht</span> nicht in der funktion sein dann würde es ein Warning geben</p>
+      <p>Mit <span class="orange">global</span> kann ich auf Variablen außerhalb der funktion zugreifen um sie zu verwenden</p>
+      <p>Um Global auf eine Lokale Variable zuzugreifen muss <span class="rot">return</span> gesetzt sein</p>
+      
+        
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function getGericht(){
+          $gericht = "Nudelauflauf";
+          $gericht1 = "Hackbraten";
+          echo $gericht . "<br>";
+          return $gericht1;
+        }
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function getGericht(){
+              <span class="türkis">$gericht</span> = "Nudelauflauf";
+              <span class="türkis">$gericht1</span> = "Hackbraten";
+               echo <span class="türkis">$gericht</span> . "< br >";
+              <span class="rot">return</span> <span class="türkis">$gericht1</span>;
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>getGericht()</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                getGericht()
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p>echo <span class="orange">$gericht</span>;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $gericht;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo getGericht()</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo getGericht();
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- function mit global -->
+      <div class="box">
+      <h4>function mit global</h4>
+
+        <?php 
+        function echoGlobalGericht(){
+          global $gericht;
+          echo $gericht;
+        }
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function echoGlobalGericht(){
+              <span class="orange">global</span> $gericht;
+              echo <span class="orange">$gericht</span>;
+            }
+            
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echoGlobalGericht()</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echoGlobalGericht()
+              ?></span>
+            </td>
+          </tr>
         </table>
       </div>
     </div>
