@@ -23,7 +23,7 @@
         <li><a href="#4">04. Benannte Parameter</a></li>
         <li><a href="#5">05. Gültigkeit von Variablen - global & local</a></li>
         <li><a href="#6">06. Return - Rückgabewerte von functionen</a></li>
-        <li><a href="#7">07.</a></li>
+        <li><a href="#7">07. Rekursive Funktionen - die sich selbst Aufruft</a></li>
         <li><a href="#8">08.</a></li>
         <li><a href="#9">09.</a></li>
         <li><a href="#10">10.</a></li>
@@ -638,7 +638,8 @@
       <h4>Hinweis</h4>
       <p><span class="rot">return</span> = Code-Block beenden und Werte zurückgeben </p>
       <p>Jeden Datentyp wie Array, String, Integer, Funktionen, Klasse usw. kann zurückgegeben werden</p>
-      <p>Closure = Hat Zugriff auf direkten äußeren Scope der <span class="grün">function</span> in diesem Fall <span class="orange">getName()</span> und ist eine anonyme <span class="dunkelgrün">function</span> </p>
+      <p>Closure = Hat Zugriff auf direkten äußeren Scope der <span class="grün">function</span> in diesem Fall <span class="orange">getName()</span> und ist eine anonyme <span class="dunkelgrün">function</span></p>
+      <p>Eine anonyme <span class="dunkelgrün">function</span> gespeichert in einer Variable kann mit <span class="dunkelgrün">function</span>() <span class="türkis">use</span>() auf den global-scope zugreifen </p>
       
     </div>
 
@@ -757,7 +758,66 @@
           </tr>
         </table>
       </div>
+    </div>
+  </section>
 
+  <!-- 07. Rekursive Funktionen - die sich selbst aufruft -->
+  <section id="7" class="section">
+    <div class="text-box">
+      <h2>07. Rekursive Funktionen - die sich selbst aufruft</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <?php 
+      
+      ?>
+      
+      <h4>Hinweis</h4>
+    
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p></span></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+        </table>
+      </div>
     </div>
   </section>
 
