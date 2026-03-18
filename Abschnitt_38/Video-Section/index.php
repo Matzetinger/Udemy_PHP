@@ -22,7 +22,7 @@
         <li><a href="#3">03_1. func_num_args und func_get_args</a></li>
         <li><a href="#4">04. Benannte Parameter</a></li>
         <li><a href="#5">05. Gültigkeit von Variablen - global & local</a></li>
-        <li><a href="#6">06.</a></li>
+        <li><a href="#6">06. Return - Rückgabewerte von functionen</a></li>
         <li><a href="#7">07.</a></li>
         <li><a href="#8">08.</a></li>
         <li><a href="#9">09.</a></li>
@@ -622,6 +622,142 @@
           </tr>
         </table>
       </div>
+    </div>
+  </section>
+
+  <!-- 06. Return - Rückgabewerte von functionen -->
+  <section id="6" class="section">
+    <div class="text-box">
+      <h2>06. Return - Rückgabewerte von functionen</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <p><span class="orange">$sayName</span> = <span class="orange">getName()</span>; → führt die Funktion aus und speichert das Ergebnis</p>
+      <p><span class="lila">$sayNameNoRun</span> = <span class="orange">"getName"</span>; → speichert nur den Namen, nichts wird ausgeführt</p>
+      <p>$function = <span class="dunkelgrün">function</span>() {} → speichert die Funktion selbst (Closure)</p>
+      
+      <h4>Hinweis</h4>
+      <p><span class="rot">return</span> = Code-Block beenden und Werte zurückgeben </p>
+      <p>Jeden Datentyp wie Array, String, Integer, Funktionen, Klasse usw. kann zurückgegeben werden</p>
+      <p>Closure = Hat Zugriff auf direkten äußeren Scope der <span class="grün">function</span> in diesem Fall <span class="orange">getName()</span> und ist eine anonyme <span class="dunkelgrün">function</span> </p>
+      
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function bezug auf Return -->
+      <div class="box">
+      <h4>function bezug auf Return</h4>
+
+        <?php 
+        function getName(){
+          $name1 = "Matze";
+
+          return function() use($name1){
+            echo "Hallo " . $name1 ;
+          };
+          
+        }
+
+        $sayNameNoRun = "getName";
+
+        $sayName = getName();
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            <span class="grün">function</span> <span class="orange">getName()</span>{
+
+              <span class="rot">return</span> <span class="dunkelgrün">function</span>() use($name1){
+                echo "Hallo " . $name1 ;
+              };
+          
+            }
+
+            <span class="lila">$sayNameNoRun</span> = <span class="orange">"getName"</span>;
+
+            <span class="orange">$sayName</span> = <span class="orange">getName()</span>;
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+
+        <tr>
+            <td class="noFlex"><p>echo <span class="lila">$sayNameNoRun</span>;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $sayNameNoRun;
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p>var_dump (<span class="orange">getName()</span>);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump (getName());
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p><span class="orange">$sayName()</span>;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                $sayName();
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- function bezug auf Return mit Array -->
+      <div class="box">
+      <h4>function bezug auf Return mit Array</h4>
+
+        <?php 
+        function returnArray(){
+
+          return ["alter" => 19, "name" => "Jessica" ];
+          
+        }
+
+        $returnArr = returnArray();
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function returnArray(){
+
+            <span class="rot">return</span> ["alter" => 19, "name" => "Jessica" ];
+          
+            }
+
+            $returnArr = returnArray();
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo $returnArr["name"];</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $returnArr["name"];
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
     </div>
   </section>
 
