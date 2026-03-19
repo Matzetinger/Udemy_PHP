@@ -23,9 +23,9 @@
         <li><a href="#4">04. Benannte Parameter</a></li>
         <li><a href="#5">05. Gültigkeit von Variablen - global & local</a></li>
         <li><a href="#6">06. Return - Rückgabewerte von functionen</a></li>
-        <li><a href="#7">07. Rekursive Funktionen - die sich selbst Aufruft</a></li>
-        <li><a href="#8">08.</a></li>
-        <li><a href="#9">09.</a></li>
+        <li><a href="#7">07. Rekursive Funktionen - die sich selbst ausführt bis das Ziel erreicht ist</a></li>
+        <li><a href="#8">08. Generatoren</a></li>
+        <li><a href="#9">09. Statische Variablen in funktionen</a></li>
         <li><a href="#10">10.</a></li>
         <li><a href="#11">11.</a></li>
         <li><a href="#12">12.</a></li>
@@ -658,10 +658,12 @@
           };
           
         }
+        
 
         $sayNameNoRun = "getName";
 
         $sayName = getName();
+      
         
         ?>
  
@@ -693,6 +695,16 @@
                 echo $sayNameNoRun;
               ?></span>
             </td>
+        </tr>
+        
+          <tr>
+            <td class="noFlex"><p><span class="orange">$sayName()</span>;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                $sayName();
+              ?></span>
+            </td>
           </tr>
 
           <tr>
@@ -706,11 +718,11 @@
           </tr>
 
           <tr>
-            <td class="noFlex"><p><span class="orange">$sayName()</span>;</p></td>
+            <td class="noFlex"><p>var_dump(<span class="orange">$sayName</span>);</p></td>
             <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
-                $sayName();
+                var_dump($sayName);
               ?></span>
             </td>
           </tr>
@@ -761,18 +773,217 @@
     </div>
   </section>
 
-  <!-- 07. Rekursive Funktionen - die sich selbst aufruft -->
+  <!-- 07. Rekursive Funktionen - die sich selbst ausführt bis das Ziel erreicht ist -->
   <section id="7" class="section">
     <div class="text-box">
-      <h2>07. Rekursive Funktionen - die sich selbst aufruft</h2>
+      <h2>07. Rekursive Funktionen - die sich selbst ausführt bis das Ziel erreicht ist</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function rekursive($start, $end){
+          echo "Start = " . $start . " End = " . $end . "<br>";
+
+          if ($start >= $end){
+            return;
+          }
+           
+          echo $start . "+1 ";
+          rekursive($start + 1, $end);
+            
+        }
+        
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function rekursive($start, $end){
+              echo "Start = " . $start . " End = " . $end . "< br >";
+
+              if ($start >= $end){
+              return;
+              }
+          
+              echo $start . "+1 ";
+              <span class="orange">rekursive($start + 1, $end)</span>;
+            
+            }
+            
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>rekursive(1, 10);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                rekursive(1, 10);
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. Generatoren -->
+  <section id="8" class="section">
+    <div class="text-box">
+      <h2>08. Generatoren</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <h4>Hinweis</h4>
+      <p>Alternative zu return: Während return einen Wert zurückgibt und die Funktion beendet, gibt <span class="rot">yield</span> einen Wert zurück, pausiert die Funktion aber und merkt sich ihren Zustand.</p>
+      <p>Iteratoren ohne Speicheraufwand: Eine Funktion, die <span class="rot">yield</span> enthält, gibt ein Generator-Objekt zurück, das durchlaufen (iteriert) werden kann.</p>
+      <p>Lazy Loading: Die Werte werden nicht alle auf einmal im Voraus berechnet und im Speicher abgelegt, sondern erst dann generiert, wenn sie in einer foreach-Schleife benötigt werden</p>
+      
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php
+        function gen(){
+          yield 1;
+          yield 2;
+          yield 3;
+        }
+        
+        ?>
+        
+        <div class="code-container">
+          <pre>
+            function gen(){
+              <span class="rot">yield</span> 1;
+              <span class="rot">yield</span> 2;
+              <span class="rot">yield</span> 3;
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex">
+              <pre>
+                foreach (gen() as $wert) {
+                  echo $wert;
+                  $wert = $wert;
+                }
+              </pre>
+              
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               foreach (gen() as $wert) {
+                  echo $wert;
+                  $wert = $wert;
+                }
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex"><p>echo $wert;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               echo $wert;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump(gen()) 
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php
+        function numGen($starten, $ende){
+          for($i = $starten; $i <= $ende; $i++){
+            yield $i;
+          }
+        }
+        
+        ?>
+        
+        <div class="code-container">
+          <pre>
+            function numGen($starten, $ende){
+              for($i = $starten; $i <= $ende; $i++){
+              <span class="rot">yield</span> $i;
+              }
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex">
+              <pre>
+                foreach (numGen(1, 10) as $value) {
+                  echo $value . " ";
+                }
+              </pre>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+              foreach (numGen(1, 10) as $value) {
+                echo $value . " ";
+              }
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+    <!-- 09. Statische Variablen in funktionen -->
+  <section id="9" class="section">
+    <div class="text-box">
+      <h2>09. Statische Variablen in funktionen</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
       <h4>Variablen</h4>
       <?php 
       
       ?>
-      
+      <p></p>
+
       <h4>Hinweis</h4>
-    
+      <p></p>
+      
+        
     </div>
 
     <div class="inhalt-container">
@@ -806,7 +1017,7 @@
           </tr>
 
           <tr>
-            <td class="noFlex"><p></span></p></td>
+            <td class="noFlex"><p></p></td>
             <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
@@ -814,12 +1025,12 @@
               ?></span>
             </td>
           </tr>
-        </table>
-      </div>
+          
         </table>
       </div>
     </div>
   </section>
+  
 
 </body>
 </html>

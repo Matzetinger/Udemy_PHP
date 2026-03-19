@@ -241,6 +241,9 @@ body {
               width: 23%;
             }
           }
+          td > pre {
+            text-align: start;
+          }
         }
 
         a {
