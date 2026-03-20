@@ -26,10 +26,11 @@
         <li><a href="#7">07. Rekursive Funktionen - die sich selbst ausführt bis das Ziel erreicht ist</a></li>
         <li><a href="#8">08. Generatoren</a></li>
         <li><a href="#9">09. Statische Variablen in funktionen</a></li>
-        <li><a href="#10">10.</a></li>
-        <li><a href="#11">11.</a></li>
-        <li><a href="#12">12.</a></li>
-        <li><a href="#13">13.</a></li>
+        <li><a href="#10">10. function_exists</a></li>
+        <li><a href="#11">11. Aufgabe und Lösung zu functionen</a></li>
+        <li><a href="../../Abschnitt_38/Lösung/index.php">Zur Lösung Abschnitt_38</a></li>
+        
+        
       </ul>
     </div>
     <div class="box_abschnitte">
@@ -44,6 +45,7 @@
         <li><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></li>
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
         <li>38_Funktionen in PHP</li>
+        <li><a href="../../Abschnitt_39/Video-Section/index.php">39_Typedeklaration in Funktionen</a></li>
       </ul>
     </div>
   </section>
@@ -974,14 +976,9 @@
     <div class="text-box">
       <h2>09. Statische Variablen in funktionen</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
-      <h4>Variablen</h4>
-      <?php 
       
-      ?>
-      <p></p>
-
       <h4>Hinweis</h4>
-      <p></p>
+      <p><span class="orange">static</span> Speichert über funktions Aufrufe hinweg ihren aktuellen Wert </p>
       
         
     </div>
@@ -993,12 +990,21 @@
       <h4>function</h4>
 
         <?php 
-        
+        function counts(){
+          static $cache = 0;
+          $cache++;
+          echo $cache . "<br>";
+        }
         
         ?>
  
         <div class="code-container">
           <pre>
+            function counts(){
+              <span class="orange">static</span> $cache = 0;
+              $cache++;
+              echo $cache . "< br >";
+            }
             
           </pre>
         </div>
@@ -1007,25 +1013,198 @@
 
         <table>
           <tr>
-            <td class="noFlex"><p></p></td>
-            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex"><p>counts();<br>counts();<br>echo "Wort"; <br> counts();<br>counts();</p></td>
+            <td class="noFlex"><p> = <br> = <br> = <br> = <br> = </p></td>
             <td class="noFlex">
               <span><?php 
-                
+                counts();
+                counts();
+                echo "Wort <br>";
+                counts();
+                counts();
+              ?></span>
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function stati(){
+          static $cache1 = 0;
+          $cache1++;
+
+            if($cache1 >= 3){
+            
+              echo "limit erreicht <br>";
+              return;
+            }
+
+          echo $cache1 . "<br>";
+        }
+        
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function stati(){
+              <span class="orange">static</span> $cache1 = 0;
+              $cache1++;
+          
+            if ($cache1 >= 3){
+            
+              echo "limit erreicht < br >";
+              return;
+            }
+
+            echo $cache1 . "< br >";
+            }
+            
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>stati();<br>echo "Wort";<br>stati(); <br> stati();<br>stati();</p></td>
+            <td class="noFlex"><p> = <br> = <br> = <br> = <br> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                stati();
+                echo "Wort <br>";
+                stati();
+                stati();
+                stati();
+              ?></span>
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. function_exists -->
+  <section id="10" class="section">
+    <div class="text-box">
+      <h2>10. function_exists</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function existiert(){
+          echo "ich bin eine Funktion die Existiert";
+        }
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function existiert(){
+              echo "ich bin eine Funktion die Existiert";
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>var_dump(function_exists("existiert"));</p></td>
+            <td class="noFlex"><p> =</p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump(function_exists("existiert"));
+              ?></span>
+            </td>
+            
+          </tr>
+          <tr>
+            <td class="noFlex">
+              <pre>
+                echo function_exists("existiert") ? existiert() : " existiert nicht";
+              </pre>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex"><span>
+              <?php
+                echo function_exists("existiert") ? existiert() : " existiert nicht";
               ?></span>
             </td>
           </tr>
 
           <tr>
-            <td class="noFlex"><p></p></td>
-            <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
-              <span><?php 
-                
+              <pre>
+                echo function_exists("hallo") ? hallo() : " existiert nicht";
+              </pre>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex"><span>
+              <?php
+                echo function_exists("hallo") ? hallo() : " existiert nicht";
               ?></span>
             </td>
           </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Aufgabe und Lösung zu functionen -->
+  <section id="11" class="section">
+    <div class="text-box">
+      <h2>11. Aufgabe und Lösung zu functionen</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+       function division($zahl, $zahl2){
+          return $zahl2 == 0 ? "Teilen durch 0 nicht möglich" : $zahl / $zahl2;
+       }
+
+        $result = division(10, 0);
+        ?>
+ 
+        <div class="code-container">
+          <pre>
+            function division($zahl, $zahl2){
+              return $zahl2 == 0 ? "Teilen durch 0 nicht möglich" : $zahl / $zahl2;
+            }
           
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo $result;</p></td>
+            <td class="noFlex"><p> =</p></td>
+            <td class="noFlex">
+              <span><?php
+               echo $result;
+              ?></span>
+            </td>
+          </tr>
+
         </table>
       </div>
     </div>
