@@ -34,6 +34,7 @@
         <li><a href="../../Abschnitt_36/Video-Section/index.php">36_Mathematische Funktionen</a></li>
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
         <li><a href="../../Abschnitt_38/Video-Section/index.php">38_Funktionen in PHP</a></li>
+        <li><a href="../../Abschnitt_39/Video-Section/index.php">39_Typedeklaration in Funktionen</a></li>
       </ul>
     </div>
   </section>
