@@ -56,16 +56,26 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-         
+         $text = text(38, "Matthias");
         ?>
-        <p></p>
+        <p>$text = text(38, "Matthias");</p>
 
-        <h4>Hinweis</h4>
-        <p></p>
-       
-
-
-    </div>
+        <h4>welchen Datentyp die function <br> zurückgeben erlaubt = doppelpunkt <span class="grün">:</span> und Typ</h4>
+        <h4>Typdeklarationen</h4>
+        <p><span class="rot">string</span> – Zeichenketten/Text (z. B. "Matthias")</p>
+        <p><span class="rot">int</span> – Ganzzahlen (z. B. 38 oder -5)</p>
+        <p><span class="rot">float</span> – Gleitkommazahlen (z. B. 3.8 oder 10.5)</p>
+        <p><span class="rot">bool</span> – Wahrheitswerte (true oder false)</p>
+        <p><span class="rot">array</span> – Listen von Daten</p>
+        <p><span class="rot">object</span> – Instanzen von Klassen</p>
+        <p><span class="rot">callable</span> – Funktionen oder Methoden (Callbacks)</p>
+        <p><span class="rot">iterable</span> – Alles, was mit foreach durchlaufbar ist (Arrays/Generatoren)</p>
+        <p><span class="rot">mixed</span> – Akzeptiert jeden Datentyp (PHP 8.0+)</p>
+        <p><span class="rot">void</span> – Gibt absolut nichts zurück (nur als Rückgabetyp)</p>
+        <p><span class="rot">never</span> – Bricht das Skript hart ab (nur als Rückgabetyp, PHP 8.1+)</p>
+        <p><span class="rot">null</span> – Repräsentiert eine leere Variable</p>
+        <p><span class="rot">false</span> – Kann als spezifischer Rückgabetyp genutzt werden (PHP 8.0+)</p>
+       </div>
 
     <div class="inhalt-container">
 
@@ -74,12 +84,18 @@
       <h4>function</h4>
 
         <?php 
+        function text(int $alter, string $name) :string {
+          return "Hallo, ich bin $alter und mein Name ist $name";
+        }
 
+            
         ?>
 
         <div class="code-container">
           <pre>
-            
+            function text(<span class="rot">int</span> $alter, <span class="rot">string</span> $name) <span class="grün">:</span><span class="rot">string</span>{
+              return "Hallo, ich bin $alter und mein Name ist $name";
+            }
           </pre>
         </div>
 
@@ -88,21 +104,11 @@
         <table>
   
           <tr>
-            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p>echo $text</p></td>
             <td><p> = </p></td>
             <td class="noFlex">
               <span><?php 
-                
-              ?></span>
-            </td>
-          </tr>
-
-          <tr>
-            <td class="noFlex"><p></p></td>
-            <td><p> = </p></td>
-            <td class="noFlex">
-              <span><?php 
-               
+                echo $text
               ?></span>
             </td>
           </tr>
