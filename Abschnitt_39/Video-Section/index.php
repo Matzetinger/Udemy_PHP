@@ -17,7 +17,7 @@
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. Typedeklaration in Funktionen</a></li>
-        <li><a href="#2">02. </a></li>
+        <li><a href="#2">02. Sensitive Parameter</a></li>
         <li><a href="#3">03.</a></li>
         <li><a href="#4">04.</a></li>
         <li><a href="#5">05.</a></li>
@@ -105,10 +105,86 @@
   
           <tr>
             <td class="noFlex"><p>echo $text</p></td>
-            <td><p> = </p></td>
+            <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
                 echo $text
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. Sensitive Parameter -->
+  <section id="2" class="section">
+    <div class="text-box">
+      <h2>02. Sensitive Parameter</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <p>$errorMessage = "";<br> $errorTrace = "";</p>
+      <h4>Hinweis</h4>
+      <p><span class="orange">Sensitiv</span> Parameter erscheinen nicht in der Fehlermeldung</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function login(string $username, #[SensitiveParameter] string $password) {
+          // Simuliere einen Fehler
+          throw new Exception("Fehler beim Login");
+        }
+
+        try{
+          login("benutzer", "geheim");
+        } catch (Exception $e){
+          $errorMessage = $e->getMessage() . "\n";
+          $errorTrace = $e->getTraceAsString();
+        }
+
+            
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function login(string $username, <span class="orange">#[SensitiveParameter]</span> string $password) {
+              // Simuliere einen Fehler
+              throw new Exception("Fehler beim Login");
+            }
+
+            try{
+              login("benutzer", "geheim");
+            } catch (Exception $e){
+              $errorMessage = $e->getMessage() . "\n";
+              $errorTrace = $e->getTraceAsString();
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+  
+          <tr>
+            <td class="noFlex"><p>echo $errorMessage;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $errorMessage;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo $errorTrace;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $errorTrace;
               ?></span>
             </td>
           </tr>
