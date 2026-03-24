@@ -9,7 +9,6 @@ body {
   font-size: 1.2em;
   background: #1e1e1e;
   color: #ddd;
-  font-family: Consolas, monospace;
 
   .btn {
     padding: 0px 30px 0px 30px;
@@ -106,7 +105,6 @@ body {
     span {
       color: #ffd700;
       text-decoration: underline;
-      font-family: system-ui;
     }
 
     .grün {
@@ -159,11 +157,18 @@ body {
       text-decoration: none;
     }
 
+    .bomb-shake {
+      display: inline-block; /* Wichtig für Animation */
+      animation: shake 0.5s infinite;
+      filter: drop-shadow(0 0 8px orange); /* Macht sie im Dunkeln sichtbar */
+      text-decoration: none;
+    }
     .text-box {
       width: 50%;
       display: flex;
       flex-direction: column;
       gap: 1em;
+      padding: 0.5rem;
 
       a {
         text-decoration: none;
@@ -172,6 +177,19 @@ body {
           color: #4fc1ff;
         }
       }
+    }
+
+    .error-throw {
+      font-family: Consolas, monospace;
+      background: #333;
+      padding: 2px 8px;
+      border-radius: 5px;
+      color: #ff4d4d; /* Ein leichtes Error-Rot für den Smiley */
+      border: 1px solid #444;
+      display: inline-block;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.2),
+        /* Weißes Grundleuchten */ 0 0 12px rgba(255, 165, 0, 0.4);
     }
 
     .inhalt-container {
@@ -199,6 +217,7 @@ body {
 
           pre {
             padding-right: 3.3rem;
+            font-family: Consolas, "Courier New", monospace;
             /* text-align: left;
             /* white-space: pre-wrap;  Behält Zeilenumbrüche von var_dump bei */
             /* word-break: break-all;  Erzwingt Umbruch mitten im Wort (z.B. bei langen Pfaden) */
@@ -260,5 +279,26 @@ body {
         }
       }
     }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  60% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  80% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(-1px, 2px) rotate(-1deg);
   }
 }

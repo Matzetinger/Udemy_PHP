@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -10,7 +11,7 @@
   <nav>
     <p><a href="../../Abschnitt_38/Video-Section/index.php">37</a></p>
     <h1>Abschnitt 39</h1>
-    <p><a href="../../Abschnitt_40/Video-Section/index.php">39</a></p>
+    <p><a href="../../Abschnitt_40/Video-Section/index.php">40</a></p>
   </nav>
   <section id="0" class="section_index">
     <div>
@@ -18,10 +19,10 @@
       <ul>
         <li><a href="#1">01. Typedeklaration in Funktionen</a></li>
         <li><a href="#2">02. Sensitive Parameter</a></li>
-        <li><a href="#3">03.</a></li>
-        <li><a href="#4">04.</a></li>
-        <li><a href="#5">05.</a></li>
-        <li><a href="#6">06. </a></li>
+        <li><a href="#3">03. Typdeklaration mit null (?)</a></li>
+        <li><a href="#4">04. Union Types in PHP</a></li>
+        <li><a href="#5">05. Der Typ never</a></li>
+        <li><a href="#6">06. Enumerations(Enums) als typen von Funktionen</a></li>
         <li><a href="#7">07. </a></li>
         <li><a href="#8">08. </a></li>
         <li><a href="#9">09. </a></li>
@@ -185,6 +186,280 @@
             <td class="noFlex">
               <span><?php 
                 echo $errorTrace;
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. Typdeklaration mit null (?) -->
+  <section id="3" class="section">
+    <div class="text-box">
+      <h2>03. Typdeklaration mit null (?)</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Hinweis</h4>
+      <p><span class="orange">?</span> vor der Typdeklaration sagt das neben dem Datentyp den ich erwarte auch NULL sein kann</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function findPerson(?string $name): ?array{
+          $personen = [
+            "Josef" => ["name" => "Josef", "alter" => 54],
+            "Matthias" => ["name" => "Matthias", "alter" => 38]
+          ];
+
+          if($name === null || !isset($personen[$name])){
+            return null;
+          }
+
+          return $personen[$name];
+        }
+
+            
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function findPerson(<span class="orange">?</span>string $name): <span class="orange">?</span>array{
+              $personen = [
+                "Josef" => ["name" => "Josef", "alter" => 54],
+                "Matthias" => ["name" => "Matthias", "alter" => 38]
+              ];
+
+              if($name === null || !isset($personen[$name])){
+                return null;
+              }
+
+              return $personen[$name];
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>var_dump(findPerson(null));</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump(findPerson(null));
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>print_r(findPerson("Josef"));</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                print_r(findPerson("Josef"));
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. Union Types in PHP -->
+  <section id="4" class="section">
+    <div class="text-box">
+      <h2>04. Union Types in PHP</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <p></p>
+      <h4>Hinweis</h4>
+      <p>Wie im Beispiel function(addiere): <br> Es kann entweder dieser Datentyp(int)  ( <span class="orange">|</span> = oder) dieser Datentyp(float) sein</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function addiere(int|float $a, int|float $b): int|float{
+          return $a + $b;
+        }
+        
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function addiere(int<span class="orange">|</span>float $a, int<span class="orange">|</span>float $b): int<span class="orange">|</span>float{
+              return $a + $b;
+            }
+            
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo addiere(5, 3);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump(addiere(5, 3)) ;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo addiere(2.5, 3.5);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump(addiere(2.5, 3.5)) ;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p> echo addiere(5, 3.5);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump(addiere(5, 3.5));
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. Der Typ never -->
+  <section id="5" class="section">
+    <div class="text-box">
+      <h2>05. Der Typ never</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <?php
+        $error = "";
+      ?>
+      <p>$error = "";</p>
+      <h4>Hinweis</h4>
+      <p>Bei dem Typ <span class="rot">never</span> darf nichts ausgegeben werden weder mit return noch mit echo oder sonst was</p>
+      <p>Hier darf man nur einen <span class="türkis">Fehler werfen</span> <code class="error-throw">(╯°□°)╯ ︵ <span class="bomb-shake">💣 ERROR</span></code></p>
+      <p>Man kann auch <span class="pink">exit();</span> oder <span class="pink">die;</span> verwenden und davor ein echo setzen</p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        function addieren(int|float $a, int|float $b): never {
+          throw new Exception("Simulierte Fehlerausgabe (╯°□°)╯ ︵ 💣", 1);
+          }
+        
+          try{
+            addieren();
+          }catch(\Throwable $th){
+            $error = "Es wurde ein Fehler geworfen (╯°□°)╯ ︵ 💣";
+          }
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function addiere(int|float $a, int|float $b): <span class="rot">never</span>{
+              <span class="türkis">throw new Exception("Simulierte Fehlerausgabe (╯°□°)╯ ︵ 💣", 1);</span>
+          
+            }
+
+            try{
+              addiere();
+            }catch(\Throwable $th){
+              $error = "Es wurde ein Fehler geworfen (╯°□°)╯ ︵ 💣";
+            }
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo addieren(2,3);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span>Fatal error: Uncaught Exception: Simulierte Fehlerausgabe (╯°□°)╯ ︵ 💣 in C:\xampp\htdocs\Udemy_PHP\Abschnitt_39\Video-Section\index.php:363 Stack trace: #0 C:\xampp\htdocs\Udemy_PHP\Abschnitt_39\Video-Section\index.php(396): addieren(2, 3) #1 {main} thrown in C:\xampp\htdocs\Udemy_PHP\Abschnitt_39\Video-Section\index.php on line 363</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo $error;</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               echo $error;
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. Enumerations(Enums) als typen von Funktionen -->
+  <section id="6" class="section">
+    <div class="text-box">
+      <h2>06. Enumerations(Enums) als typen von Funktionen</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <?php
+        
+      ?>
+      <p></p>
+      <h4>Hinweis</h4>
+      <p></p>
+      
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- function -->
+      <div class="box">
+      <h4>function</h4>
+
+        <?php 
+        
+       
+        ?>
+
+        <div class="code-container">
+          <pre>
+           
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               
               ?></span>
             </td>
           </tr>
