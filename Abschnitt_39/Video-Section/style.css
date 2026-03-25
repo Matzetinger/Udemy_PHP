@@ -223,6 +223,10 @@ body {
             /* word-break: break-all;  Erzwingt Umbruch mitten im Wort (z.B. bei langen Pfaden) */
             /* max-width: 80%;  Oder ein fester Wert wie 600px */
             /* margin: 0 auto;  Jetzt gibt es Platz zum Zentrieren */
+
+            span {
+              font-family: Consolas, "Courier New", monospace;
+            }
           }
         }
 

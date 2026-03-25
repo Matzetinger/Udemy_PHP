@@ -23,11 +23,7 @@
         <li><a href="#4">04. Union Types in PHP</a></li>
         <li><a href="#5">05. Der Typ never</a></li>
         <li><a href="#6">06. Enumerations(Enums) als typen von Funktionen</a></li>
-        <li><a href="#7">07. </a></li>
-        <li><a href="#8">08. </a></li>
-        <li><a href="#9">09. </a></li>
-        <li><a href="#10">10. </a></li>
-        <li><a href="#11">11.</a></li>
+        <li><a href="#7">07. Backed Enums -Enums mit skalaren Werten</a></li>
         
       </ul>
     </div>
@@ -44,6 +40,7 @@
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
         <li><a href="../../Abschnitt_38/Video-Section/index.php">38_Funktionen in PHP</a></li>
         <li>39_Typedeklaration in Funktionen</li>
+        <li><a href="../../Abschnitt_40/Video-Section/index.php">40_Das Arbeiten mit Formularen</a></li>
       </ul>
     </div>
   </section>
@@ -421,24 +418,61 @@
       ?>
       <p></p>
       <h4>Hinweis</h4>
-      <p></p>
-      
+      <p>Mit <span class="türkis">enum</span> kann ich Werte festlegen die ein Parameter haben darf</p>
+      <p>Bekommt man einen anderen Wert der nicht erwartet wird, wird ein fehler geschmissen den ich mit einem "try"/"catch" - Block behandeln kann</p>
+      <p><span class="lila">::</span> ist der Bereichsoperator</p>
     </div>
 
     <div class="inhalt-container">
 
-      <!-- function -->
+      <!-- enum -->
       <div class="box">
-      <h4>function</h4>
+      <h4>enum</h4>
 
-        <?php 
-        
-       
+        <?php
+        enum Colors {
+          case Rot;
+          case Grün;
+          case Blau;
+        }
         ?>
 
         <div class="code-container">
           <pre>
-           
+            <span class="türkis">enum</span> <span class="orange">Colors</span> {
+              case Rot;
+              case Grün;
+              case Blau;
+            }
+          </pre>
+        </div>
+
+      <!-- function -->
+      <h4>function</h4>
+
+        <?php 
+        function beschreibeFarbe(Colors $farbe): string {
+          return match($farbe){
+            Colors::Rot => 'Die Farbe ist Rot',
+            Colors::Grün => 'Die Farbe ist Grün',
+            Colors::Blau => 'Die Farbe ist Blau',
+          };
+        }
+        ?>
+
+        <div class="code-container">
+          <pre>
+            function beschreibeFarbe(<span class="orange">Colors</span> $farbe): string {
+              return match($farbe){
+                <span class="grau">"Rot" => 'Die Farbe ist Rot',
+                "Grün" => 'Die Farbe ist Grün',
+                "Blau" => 'Die Farbe ist Blau',</span>
+
+                <span class="orange">Colors</span><span class="lila">::</span>Rot => 'Die Farbe ist Rot',
+                <span class="orange">Colors</span><span class="lila">::</span>Grün => 'Die Farbe ist Grün',
+                <span class="orange">Colors</span><span class="lila">::</span>Blau => 'Die Farbe ist Blau',
+              };
+            }
           </pre>
         </div>
 
@@ -446,20 +480,104 @@
 
         <table>
           <tr>
-            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p><span class="grau">echo beschreibeFarbe("Rot");</span> < schreibweise ohne <span class="türkis">enum</span> <span class="orange">Colors</span></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span>
+               Die Farbe ist Rot
+              </span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo beschreibeFarbe(<span class="orange">Colors</span><span class="lila">::</span>Rot)</p></td>
             <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
-               
+               echo beschreibeFarbe(Colors::Rot);
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. Backed Enums -Enums mit skalaren Werten -->
+  <section id="7" class="section">
+    <div class="text-box">
+      <h2>07. Backed Enums -Enums mit skalaren Werten</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      <h4>Variablen</h4>
+      <?php
+        
+      ?>
+      <p></p>
+      <h4>Hinweis</h4>
+      <p></p>
+      
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- enum -->
+      <div class="box">
+      <h4>enum</h4>
+
+        <?php
+        enum  Status: int{
+          case  Aktiv = 1;
+          case  Inaktiv = 0;
+          case  Banned = -1;
+        }
+        ?>
+
+        <div class="code-container">
+          <pre>
+            enum  <span class="orange">Status</span>: int{
+              case  <span class="grün">Aktiv</span> = <span class="türkis">1</span>;
+              case  <span class="grün">Inaktiv</span> = <span class="türkis">0</span>;
+              case  <span class="grün">Banned</span> = <span class="türkis">-1</span>;
+            }
+            
+          </pre>
+        </div>
+
+      <!-- MySQL-Query -->
+      <h4>MySQL-Query</h4>
+
+        <div class="code-container">
+          <pre>
+            "UPDATE users SET status = " . <span class="orange">Status</span><span class="lila">::</span><span class="grün">Aktiv</span>-><span class="türkis">value</span> . " WHERE id = 12354";
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo <span class="orange">Status</span><span class="lila">::</span><span class="grün">Aktiv</span>-><span class="türkis">value</span></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+              echo Status::Aktiv-> value;
               ?></span>
             </td>
           </tr>
           <tr>
-            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p>echo <span class="orange">Status</span><span class="lila">::</span><span class="grün">Inaktiv</span>-><span class="türkis">value</span></p></td>
             <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
-               
+              echo Status::Inaktiv-> value;
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo <span class="orange">Status</span><span class="lila">::</span><span class="grün">Banned</span>-><span class="türkis">value</span></p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+              echo Status::Banned-> value;
               ?></span>
             </td>
           </tr>
