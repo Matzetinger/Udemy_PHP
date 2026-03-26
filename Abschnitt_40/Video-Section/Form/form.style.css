@@ -2,16 +2,71 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: "Courier New", Courier, monospace;
 }
 
 body {
-  background-color: rgb(28, 26, 26);
+  background-color: #201e1e;
   color: aliceblue;
   height: 100vh;
   width: 100vw;
-  border: 3px solid red;
 
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  form {
+    width: 40%;
+    padding: 4rem;
+    border-radius: 50px;
+    background: linear-gradient(145deg, #1d1b1b, #222020);
+    box-shadow:
+      20px 20px 60px #1b1a1a,
+      -20px -20px 60px #252323;
+
+    .form-title {
+      margin-bottom: 3rem;
+    }
+
+    .input-container {
+      margin-bottom: 1rem;
+      label {
+        margin-bottom: 0.5rem;
+        display: block;
+      }
+      input {
+        width: 100%;
+        border-radius: 0.5rem;
+        padding: 1rem;
+      }
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+
+      button {
+        font-size: 1.1rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+        margin-top: 2rem;
+        background-color: rgb(164, 203, 239);
+        cursor: pointer;
+
+        &:hover {
+          background-color: rgb(127, 160, 191);
+        }
+        &:active {
+          background-color: rgb(43, 53, 62);
+          color: aliceblue;
+        }
+      }
+    }
+  }
+
+  small {
+    margin-top: 1rem;
+    color: rgb(227, 90, 90);
+  }
 }

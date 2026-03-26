@@ -7,7 +7,10 @@
     <title>Login</title>
   </head>
   <body>
+    
     <form action="#" method="post">
+      <h2 class="form-title">Sign Up</h2>
+      
       <div class="input-container">
         <label for="input-username">Benutzername</label>
         <input
@@ -22,9 +25,9 @@
         <label for="input-email">Email</label>
         <input
           type="email"
-          name="uemail"
+          name="email"
           id="input-email"
-          placeholder="Email"
+          placeholder="your@email.com"
         />
       </div>
 
@@ -33,7 +36,7 @@
         <input type="number" name="age" id="input-age" placeholder="Alter" />
       </div>
 
-      <div class="input-password">
+      <div class="input-container">
         <label for="input-password">Passwort</label>
         <input
           type="password"
@@ -42,8 +45,12 @@
           placeholder="Passwort"
         />
       </div>
-
-      <button type="submit">Absenden</button>
+      <div class="button-container">
+        <button type="submit" name="send-login">Absenden</button>
+      </div>
     </form>
+    <small class="error"><?php echo $errormsg;?></small>
+    <a href="http://192.168.178.28:3000/UDEMY_PHP/Abschnitt_40/Video-Section/index.php">Zurücksetzen</a>
+    
   </body>
 </html>
