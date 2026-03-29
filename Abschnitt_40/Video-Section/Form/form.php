@@ -50,7 +50,10 @@
       </div>
     </form>
     <small class="error"><?php echo $errormsg;?></small>
-    <a href="http://192.168.178.28:3000/UDEMY_PHP/Abschnitt_40/Video-Section/index.php">Zurücksetzen</a>
-    
+    <a href="../../Abschnitt_40/Video-Section/index.php">Zurücksetzen</a>
+    <a href="https://www.w3schools.com/php/php_ref_string.asp" target="_blank" rel="noopener noreferrer">Validierung Strings</a>
+    <a href="https://www.w3schools.com/php/php_filter.asp" target="_blank" rel="noopener noreferrer">Validierung mit filter</a>
+    <a href="../../Abschnitt_39/Video-Section/index.php">Zürück zu Abschnitt 39</a>
+
   </body>
 </html>

@@ -8,7 +8,7 @@
 body {
   background-color: #201e1e;
   color: aliceblue;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
 
   display: flex;
@@ -62,6 +62,31 @@ body {
           color: aliceblue;
         }
       }
+    }
+  }
+
+  a {
+    padding: 1rem;
+    text-decoration: none;
+    background-image: linear-gradient(to top, aliceblue, green);
+
+    -webkit-background-clip: text; /* Für Chrome, Safari, Edge */
+    background-clip: text; /* Standard */
+    -webkit-text-fill-color: transparent; /* Für Chrome, Safari, Edge */
+    color: transparent; /* Rückfalloption */
+
+    &:hover {
+      background-image: linear-gradient(to top, aliceblue, green);
+
+      -webkit-background-clip: text; /* Für Chrome, Safari, Edge */
+      background-clip: text; /* Standard */
+      -webkit-text-fill-color: transparent; /* Für Chrome, Safari, Edge */
+      color: transparent; /* Rückfalloption */
+
+      /* Optional: Für bessere Sichtbarkeit */
+      font-weight: bold;
+      scale: 1.5;
+      transition: all ease 0.5s;
     }
   }
 
