@@ -5,34 +5,64 @@ $errormsg= null;
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   if(isset($_POST["send-login"])){
-    switch (true) {
-      case empty($_POST["username"]):
-        $errormsg = "Username is not set yet!";
-        $ok = false;
-        break;
-        
-      case empty($_POST["email"]):
-        $errormsg = "Email is not set yet!";
+
+      $username = trim($_POST["username"]);
+      $email = trim($_POST["email"]);
+      $age = (int)trim($_POST["age"]);
+      $password = trim($_POST["password"]);
+    
+  
+  
+  
+      switch (true) {
+
+      # Username
+      case empty($username):
+        $errormsg = "Der Benutzername ist noch nicht eingetragen!";
         $ok = false;
         break;
 
-      case empty($_POST["age"]):
-        $errormsg = "Age is not set yet!";
+      case !ctype_alpha($username):
+        $errormsg = "Nur Buchstaben sind erlaubt";
         $ok = false;
         break;
 
-      case empty($_POST["password"]):
-        $errormsg = "Password is not set yet!";
-        $ok = false;
-        break;
-
-      case strlen(trim($_POST["password"])) < 8:
-        $errormsg = "Passwort ist zu kurz (Benötigt mindestens 8 Zeichen)";
+      
+      # Email 
+      case empty($email):
+        $errormsg = "Die Email ist noch nicht eingetragen";
         $ok = false;
         break;
 
       case !filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL):
         $errormsg = "Die Email hat kein Korrektes Format";
+        $ok = false;
+        break;
+
+      # Age
+      // case empty($age):
+      //  $errormsg = "Das Alter ist nicht eingetragen";
+      //  $ok = false;
+      //  break;
+
+      case $_POST["age"] !== "":
+        switch (true) {
+          case !filter_var($age, FILTER_VALIDATE_INT, ["options" => ["min_range" => 0, "max_range" => 120]]):
+            $errormsg = "Dieses Alter liegt nicht im richtigen Alters-Bereich oder hat falsches Format.";
+            $ok = false;
+            break;
+        }
+        
+        break;  
+
+      #Password
+      case empty($password):
+        $errormsg = "Das Passwort ist nicht eingetragen";
+        $ok = false;
+        break;
+
+      case strlen(trim($password)) < 8:
+        $errormsg = "Passwort ist zu kurz (Benötigt mindestens 8 Zeichen)";
         $ok = false;
         break;
       
@@ -46,10 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if($ok){
       $errormsg = "Formular korrekt abgesendet";
 
-      $username = trim($_POST["username"]);
-      $email = $_POST["email"];
-      $age = (int)$_POST["age"];
-      $password = $_POST["password"];
+      
 
     // Validierung
     // echo htmlspecialchars($username, ENT_QUOTES, "UTF-8");

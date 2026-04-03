@@ -9,7 +9,7 @@
   <body>
     
     <form action="#" method="post">
-      <h2 class="form-title">Sign Up</h2>
+      <h3 class="form-title">Sign Up</h3>
       
       <div class="input-container">
         <label for="input-username">Benutzername</label>
@@ -18,6 +18,7 @@
           name="username"
           id="input-username"
           placeholder="Benutzername"
+          required
         />
       </div>
 
@@ -28,6 +29,7 @@
           name="email"
           id="input-email"
           placeholder="your@email.com"
+          required
         />
       </div>
 
@@ -43,6 +45,7 @@
           name="password"
           id="input-password"
           placeholder="Passwort"
+          required
         />
       </div>
       <div class="button-container">
