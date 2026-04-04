@@ -10,7 +10,10 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $email = trim($_POST["email"]);
       $age = (int)trim($_POST["age"]);
       $password = trim($_POST["password"]);
+      $password_pattern = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$!.*?%&§])(?=.*\d)[A-Za-z\d@$!.*?%&§]{8,16}$/';
     
+
+     
   
   
   
@@ -39,21 +42,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $ok = false;
         break;
 
-      # Age
-      // case empty($age):
-      //  $errormsg = "Das Alter ist nicht eingetragen";
-      //  $ok = false;
-      //  break;
+      
 
-      case $_POST["age"] !== "":
-        switch (true) {
-          case !filter_var($age, FILTER_VALIDATE_INT, ["options" => ["min_range" => 0, "max_range" => 120]]):
-            $errormsg = "Dieses Alter liegt nicht im richtigen Alters-Bereich oder hat falsches Format.";
-            $ok = false;
-            break;
-        }
-        
-        break;  
+      
 
       #Password
       case empty($password):
@@ -61,11 +52,26 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $ok = false;
         break;
 
-      case strlen(trim($password)) < 8:
-        $errormsg = "Passwort ist zu kurz (Benötigt mindestens 8 Zeichen)";
+      case !(bool)preg_match($password_pattern, $password):
+        $errormsg = "Das Passwort ist nicht im richtigen Format <br>
+                      8-16 Zeichen <br>
+                      Mindestens ein Großbuchstaben <br>
+                      Mindestens ein Kleinbuchstabe <br>
+                      Mindestens eine Zahl <br>
+                      Mindestens ein Sonderzeichen" ;
         $ok = false;
         break;
       
+        case $_POST["age"] !== "":
+        switch (true) {
+          case !filter_var($age, FILTER_VALIDATE_INT, ["options" => ["min_range" => 0, "max_range" => 120]]):
+            $errormsg = "Dieses Alter liegt nicht im richtigen Alters-Bereich oder hat falsches Format.";
+            $ok = false;
+           
+            break;
+        }
+
+        break;  
             
     default:
         $ok = true;
@@ -75,16 +81,57 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     if($ok){
       $errormsg = "Formular korrekt abgesendet";
+      $username = null;
+      $email = null;
+      $age = null;
+      $password = null;
 
       
 
-    // Validierung
+    
     // echo htmlspecialchars($username, ENT_QUOTES, "UTF-8");
-    // Datenbank ->
+    
 
     }
   }
 }
+
+
+
+
+
+// PASSWORD 
+// 8-16 Zeichen
+// Mindestens ein Großbuchstaben
+// Mindestens ein Kleinbuchstabe
+// Mindestens eine Zahl
+// Mindestens ein Sonderzeichen
+
+# =
+
+// Metazeichen: Spezielle Zeichen mit Besonderer Bedeutung.
+// .: ein Beliebiges Zeichen (außer einem Zeilenumbruch).
+// ^: Anfang der Zeichenkette.
+// $: Ende der Zeichenkette.
+// *: Null oder mehr des vorherigen Zeichens.
+// +: Eins oder mehr des vorherigen Zeichens.
+// ?: Null oder eins des vorherigen Zeichens.
+// []: Zeichenklasse. Beispiel [a-z] findet alle kleinbuchstaben.
+// \: Escape-zeichen, um Metazeichen zu maskieren.
+// \d: Digit 0-9 [0-9] < Beispiel
+
+// Quantifizierter: Bestimmen die Anzahl der Vorkommen.
+// {n}: Genau "n" Vorkommen.
+// {n,}: Mindestens "n" Vorkommen.
+// {n,m}: Zwischen "n" und "m" Vorkommen.
+
+// Gruppierung: Runde Klammern () werden verwendet, um Gruppen zu erstellen und Operationen zu steuern.
+
+# = ^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$!.*?%&/§])(?=.*\d)[A-Za-z\d@$!.*?%&/§]{8,16}$
+
+
+
+
 
 require_once("./Form/form.php");
 

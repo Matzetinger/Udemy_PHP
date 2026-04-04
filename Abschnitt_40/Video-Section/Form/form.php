@@ -17,7 +17,7 @@
           type="text"
           name="username"
           id="input-username"
-          placeholder="Benutzername"
+          placeholder="Benutzername" value="<?php echo $username ?? "" ?>"
           required
         />
       </div>
@@ -28,14 +28,14 @@
           type="email"
           name="email"
           id="input-email"
-          placeholder="your@email.com"
+          placeholder="your@email.com" value="<?php echo $email ?? "" ?>"
           required
         />
       </div>
 
       <div class="input-container">
         <label for="input-age">Alter</label>
-        <input type="number" name="age" id="input-age" placeholder="Alter" />
+        <input type="number" name="age" id="input-age" placeholder="Alter" value="<?php echo $age ?? "" ?>" />
       </div>
 
       <div class="input-container">
@@ -44,7 +44,7 @@
           type="password"
           name="password"
           id="input-password"
-          placeholder="Passwort"
+          placeholder="Passwort" value="<?php echo $password ?? "" ?>"
           required
         />
       </div>
@@ -52,7 +52,7 @@
         <button type="submit" name="send-login">Absenden</button>
       </div>
     </form>
-    <small class="error"><?php echo $errormsg;?></small>
+    <small class="error"><?php echo $errormsg; ?></small>
     <a href="../../Abschnitt_40/Video-Section/index.php">Zurücksetzen</a>
     <a href="https://www.w3schools.com/php/php_ref_string.asp" target="_blank" rel="noopener noreferrer">Validierung Strings</a>
     <a href="https://www.w3schools.com/php/php_filter.asp" target="_blank" rel="noopener noreferrer">Validierung mit filter</a>
