@@ -18,8 +18,8 @@
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. getdate()</a></li>
-        <li><a href="#2">02. </a></li>
-        <li><a href="#3">03. </a></li>
+        <li><a href="#2">02. date()</a></li>
+        <li><a href="#3">03. Objektorientierte Version mit DateTime</a></li>
         <li><a href="#4">04. </a></li>
         <li><a href="#5">05. </a></li>
         <li><a href="#6">06. </a></li>
@@ -55,25 +55,160 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
+         $date = getdate();
+        ?>
+        <p>$date = <span class="orange">getdate()</span>;</p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+
+        <!-- Code und Ausgabe -->
+        <h4>Code und Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>print_r(<span class="orange">$date</span>);</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                print_r($date);
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex">
+            <pre>
+              foreach (<span class="orange">$date</span> as $index => $wert) {
+                echo $index . ": " . $wert . "< br >";
+              };
+            </pre>
+            </td>
+
+            <td class="noFlex"><p> = </p></td>
+
+            <td class="noFlex">
+              <span><?php 
+                foreach ($date as $index => $wert) {
+                  echo $index . ": " . $wert . "<br>";
+                };
+                
+              ?></span>
+            </td>
+          </tr>
+          
+          <tr>
+            <td class="noFlex">
+              <p>
+                echo "Es ist " . <span class="orange">$date["weekday"]</span> . " der " . <span class="orange">$date["mday"]</span> . ". " . <span class="orange">$date["month"]</span> . " " . <span class="orange">$date["year"]</span>;
+              </p>
+            </td>
+
+            <td class="noFlex"><p> = </p></td>
+
+            <td class="noFlex">
+              <span><?php 
+                echo "Es ist " . $date["weekday"] . " der " . $date["mday"] . ". " . $date["month"] . " " . $date["year"];
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02. date()-->
+  <section id="2" class="section">
+    <div class="text-box">
+      <h2>02. date()</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <h4>Hinweise</h4>
+        <p><strong>Tag</strong><br>
+        d = Tag des Monats, 2-stellig (01 bis 31)<br>
+        D = Wochentag, kurz (Mon bis Sun)<br>
+        j = Tag des Monats ohne führende Null (1 bis 31)<br>
+        l = Wochentag lang (Monday bis Sunday)<br>
+        N = ISO-8601 Wochentag (1 = Montag, 7 = Sonntag)<br>
+        w = Wochentag numerisch (0 = Sonntag, 6 = Samstag)<br>
+        z = Tag des Jahres (0 bis 365)
+        </p>
+
+        <p><strong>Monat</strong><br>
+        F = Monat lang (January bis December)<br>
+        m = Monat 2-stellig (01 bis 12)<br>
+        M = Monat kurz (Jan bis Dec)<br>
+        n = Monat ohne führende Null (1 bis 12)<br>
+        t = Anzahl Tage im Monat
+        </p>
+
+        <p><strong>Jahr</strong><br>
+        Y = Jahr, 4-stellig (2026)<br>
+        y = Jahr, 2-stellig (26)
+        </p>
+
+        <p><strong>Stunden</strong><br>
+        H = Stunde, 24h mit führender Null (00 bis 23)<br>
+        h = Stunde, 12h mit führender Null (01 bis 12)<br>
+        G = Stunde, 24h ohne führende Null (0 bis 23)<br>
+        g = Stunde, 12h ohne führende Null (1 bis 12)<br>
+        A = AM/PM Großbuchstaben<br>
+        a = am/pm Kleinbuchstaben
+        </p>
+
+        <p><strong>Minuten & Sekunden</strong><br>
+        i = Minuten (00 bis 59)<br>
+        s = Sekunden (00 bis 59)<br>
+        U = Unix-Timestamp (Sekunden seit 1.1.1970)
+        </p>
+    </div>
+
+    <div class="inhalt-container">
+
+      <!-- Code und Ausgabe -->
+      <div class="box">
+        <h4>Code und Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo date("d. F Y - H:i:s");</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo date("d. F Y - H:i:s");
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03. Objektorientierte Version mit DateTime -->
+  <section id="3" class="section">
+    <div class="text-box">
+      <h2>03. Objektorientierte Version mit DateTime</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
          
         ?>
         <p></p>
 
-        <h4>Hinweise</h4>
-        
-        
-       </div>
+      <h4>Hinweise</h4>
+       
+    </div>
 
     <div class="inhalt-container">
 
-      <!-- function -->
+      <!-- Code -->
       <div class="box">
-      <h4>function</h4>
+      <h4>Code</h4>
 
         <?php 
-        
-
-            
+               
         ?>
 
         <div class="code-container">
@@ -85,13 +220,12 @@
         <h4>Ausgabe</h4>
 
         <table>
-  
           <tr>
             <td class="noFlex"><p></p></td>
             <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
-                
+               
               ?></span>
             </td>
           </tr>
