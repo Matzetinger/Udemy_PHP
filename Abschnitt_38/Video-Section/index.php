@@ -46,7 +46,8 @@
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
         <li>38_Funktionen in PHP</li>
         <li><a href="../../Abschnitt_39/Video-Section/index.php">39_Typedeklaration in Funktionen</a></li>
-        <li><a href="../../Abschnitt_40/Video-Section/index.php">40_Das Arbeiten mit Formularen</a></li>
+        <li><a href="../../Abschnitt_40_u_41/Video-Section/index.php">40_Das Arbeiten mit Formularen <br> 41_Formularvalidierung</a></li>
+        <li><a href="../../Abschnitt_42/Video-Section/index.php">42_Datum & Uhrzeit</a></li>
       </ul>
     </div>
   </section>

@@ -1,0 +1,308 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui;
+}
+
+body {
+  font-size: 1.2em;
+  background: #1e1e1e;
+  color: #ddd;
+
+  .btn {
+    padding: 0px 30px 0px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border: 3px solid blue;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #ffffff;
+      border: 3px solid rgb(86, 86, 255);
+    }
+    &:active {
+      color: blue;
+    }
+  }
+
+  input {
+    margin: 0px 30px 0px 30px;
+  }
+
+  label {
+    margin-right: 10px;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 1rem;
+    padding: 15px;
+
+    a {
+      text-decoration: none;
+      color: gray;
+      &:hover {
+        color: #4fc1ff;
+        border-bottom: #1aff00 3px solid;
+      }
+    }
+  }
+
+  h2,
+  h3,
+  h4 {
+    color: #4fc1ff;
+  }
+
+  .section_index {
+    display: flex;
+    justify-content: space-between;
+    gap: 10rem;
+    padding: 10rem 5rem;
+    font-size: 1.3rem;
+    min-height: 100vh;
+    ul {
+      padding-top: 1rem;
+      list-style: none;
+
+      a {
+        display: inline-block; /* Notwendig für transform */
+        text-decoration: none;
+        transition: 0.5s ease;
+        color: #ddd;
+        &:hover {
+          color: #4fc1ff;
+          transform: translateX(-1.2rem);
+        }
+      }
+    }
+    .box_abschnitte {
+      ul {
+        li:nth-child(12) {
+          color: #e1801f;
+          transform: translateX(-1.2rem);
+        }
+      }
+    }
+  }
+
+  .section {
+    padding: 5rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background: #252526;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    min-height: 100vh;
+
+    span {
+      color: #ffd700;
+      text-decoration: underline;
+    }
+
+    .grün {
+      color: rgb(0, 176, 0);
+      text-decoration: none;
+    }
+
+    .dunkelgrün {
+      color: darkgreen;
+      text-decoration: none;
+    }
+
+    .pink {
+      color: rgb(255, 0, 174);
+      text-decoration: none;
+    }
+
+    .türkis {
+      color: #30d5c8;
+      text-decoration: none;
+    }
+
+    .lila {
+      color: #df00df;
+      text-decoration: none;
+    }
+
+    .grau {
+      color: gray;
+      text-decoration: none;
+    }
+
+    .rot {
+      color: rgb(191, 21, 21);
+      text-decoration: none;
+    }
+
+    .orange {
+      color: rgb(255, 123, 0);
+      text-decoration: none;
+    }
+
+    .blau {
+      color: rgb(0, 110, 255);
+      text-decoration: none;
+    }
+
+    .weiß {
+      color: #ddd;
+      text-decoration: none;
+    }
+
+    .bomb-shake {
+      display: inline-block; /* Wichtig für Animation */
+      animation: shake 0.5s infinite;
+      filter: drop-shadow(0 0 8px orange); /* Macht sie im Dunkeln sichtbar */
+      text-decoration: none;
+    }
+    .text-box {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      padding: 0.5rem;
+
+      a {
+        text-decoration: none;
+        color: grey;
+        &:hover {
+          color: #4fc1ff;
+        }
+      }
+    }
+
+    .error-throw {
+      font-family: Consolas, monospace;
+      background: #333;
+      padding: 2px 8px;
+      border-radius: 5px;
+      color: #ff4d4d; /* Ein leichtes Error-Rot für den Smiley */
+      border: 1px solid #444;
+      display: inline-block;
+      text-shadow:
+        0 0 8px rgba(255, 255, 255, 0.2),
+        /* Weißes Grundleuchten */ 0 0 12px rgba(255, 165, 0, 0.4);
+    }
+
+    .inhalt-container {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: auto;
+      margin-bottom: auto;
+      gap: 1rem;
+
+      .box {
+        border: 1px solid #333;
+        padding: 2rem;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        border: 3px solid rgb(135, 130, 130);
+
+        .code-container {
+          border: 3px solid rgb(64, 67, 59);
+          padding: 1rem;
+          border-radius: 1rem;
+
+          pre {
+            padding-right: 3.3rem;
+            font-family: Consolas, "Courier New", monospace;
+            /* text-align: left;
+            /* white-space: pre-wrap;  Behält Zeilenumbrüche von var_dump bei */
+            /* word-break: break-all;  Erzwingt Umbruch mitten im Wort (z.B. bei langen Pfaden) */
+            /* max-width: 80%;  Oder ein fester Wert wie 600px */
+            /* margin: 0 auto;  Jetzt gibt es Platz zum Zentrieren */
+
+            span {
+              font-family: Consolas, "Courier New", monospace;
+            }
+          }
+        }
+
+        form {
+          display: flex;
+          justify-content: center;
+        }
+
+        table tbody tr td.noFlex {
+          display: revert;
+        }
+
+        table {
+          border-collapse: collapse;
+          margin: 1rem;
+          display: flex;
+          justify-content: center;
+          text-align: center;
+
+          td {
+            padding: 1rem;
+            border: 1px solid rgb(136, 136, 136);
+            display: flex;
+            justify-content: center;
+            text-align: center;
+
+            input[type="submit"] {
+              padding: 0.2rem 1.5rem 0.2rem 1.5rem;
+              font-size: 1.2rem;
+              cursor: pointer;
+            }
+
+            input[type="number"] {
+              font-size: 1.2rem;
+              width: 23%;
+            }
+          }
+          td > pre {
+            text-align: start;
+          }
+        }
+
+        a {
+          text-decoration: none;
+          color: rgb(6, 232, 168);
+          &:hover {
+            color: #1aff00;
+          }
+        }
+
+        h4 {
+          text-align: center;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  20% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  40% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  60% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  80% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  100% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+}

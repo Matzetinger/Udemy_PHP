@@ -1,4 +1,6 @@
 <?php
+
+
 $ok = true;
 $errormsg= null;
 
@@ -12,11 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $password = trim($_POST["password"]);
       $password_pattern = '/^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$!.*?%&§])(?=.*\d)[A-Za-z\d@$!.*?%&§]{8,16}$/';
     
-
-     
-  
-  
-  
       switch (true) {
 
       # Username
@@ -30,7 +27,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $ok = false;
         break;
 
-      
       # Email 
       case empty($email):
         $errormsg = "Die Email ist noch nicht eingetragen";
@@ -41,10 +37,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errormsg = "Die Email hat kein Korrektes Format";
         $ok = false;
         break;
-
-      
-
-      
 
       #Password
       case empty($password):
@@ -85,19 +77,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
       $email = null;
       $age = null;
       $password = null;
-
-      
-
-    
-    // echo htmlspecialchars($username, ENT_QUOTES, "UTF-8");
-    
-
     }
   }
 }
+require_once("./Form/form.php");
 
 
-
+// echo htmlspecialchars($username, ENT_QUOTES, "UTF-8");
 
 
 // PASSWORD 
@@ -107,7 +93,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 // Mindestens eine Zahl
 // Mindestens ein Sonderzeichen
 
-# =
+# = ^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$!.*?%&§])(?=.*\d)[A-Za-z\d@$!.*?%&§]{8,16}$
 
 // Metazeichen: Spezielle Zeichen mit Besonderer Bedeutung.
 // .: ein Beliebiges Zeichen (außer einem Zeilenumbruch).
@@ -127,11 +113,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
 // Gruppierung: Runde Klammern () werden verwendet, um Gruppen zu erstellen und Operationen zu steuern.
 
-# = ^(?=.*[A-Z])(?=.*[a-z])(?=.*[@$!.*?%&/§])(?=.*\d)[A-Za-z\d@$!.*?%&/§]{8,16}$
 
 
 
 
 
-require_once("./Form/form.php");
+
+
 

@@ -11,7 +11,7 @@
   <nav>
     <p><a href="../../Abschnitt_38/Video-Section/index.php">37</a></p>
     <h1>Abschnitt 39</h1>
-    <p><a href="../../Abschnitt_40/Video-Section/index.php">40</a></p>
+    <p><a href="../../Abschnitt_40_u_41/Video-Section/index.php">40_u_41</a></p>
   </nav>
   <section id="0" class="section_index">
     <div>
@@ -40,7 +40,8 @@
         <li><a href="../../Abschnitt_37/Video-Section/index.php">37_Zufallszahlen generieren</a></li>
         <li><a href="../../Abschnitt_38/Video-Section/index.php">38_Funktionen in PHP</a></li>
         <li>39_Typedeklaration in Funktionen</li>
-        <li><a href="../../Abschnitt_40/Video-Section/index.php">40_Das Arbeiten mit Formularen</a></li>
+        <li><a href="../../Abschnitt_40_u_41/Video-Section/index.php">40_Das Arbeiten mit Formularen <br> 41_Formularvalidierung</a></li>
+        <li><a href="../../Abschnitt_42/Video-Section/index.php">42_Datum & Uhrzeit</a></li>
       </ul>
     </div>
   </section>
