@@ -193,27 +193,31 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
+         $date = new DateTime();
+         $setDate1 = new DateTime();
          
         ?>
-        <p></p>
+        <p>$date = new DateTime();</p>
+        <p>$setDate1 = new DateTime();</p>
 
       <h4>Hinweise</h4>
-       
+       <p><a href="http://php.net/manual/en/class.datetime.php" target="_blank" rel="noopener noreferrer">Date/Time in Php (Anleitung)</a></p>
+       <p>Mit setDate und setTime kann ich die Zeit manuell setzen</p> 
     </div>
 
     <div class="inhalt-container">
 
-      <!-- Code -->
+      <!-- Date Format -->
       <div class="box">
-      <h4>Code</h4>
+      <h4>Date Format</h4>
 
         <?php 
-               
+          $formatDate = $date->format("D-F-Y H:i:s");
         ?>
 
         <div class="code-container">
           <pre>
-            
+          $formatDate = $date->format("D-F-Y H:i:s");
           </pre>
         </div>
 
@@ -221,11 +225,56 @@
 
         <table>
           <tr>
-            <td class="noFlex"><p></p></td>
+            <td class="noFlex"><p>var_dump($date)</p></td>
             <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
-               
+               var_dump($date);
+              ?></span>
+            </td>
+          </tr>
+          <tr>
+            <td class="noFlex"><p>echo $formatDate</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               echo $formatDate;
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <!-- Set Date und Time -->
+      <div class="box">
+      <h4>Set Date und Time</h4>
+
+        <?php 
+
+          $setDate1->setDate(2029, 5, 11);
+          $setDate1->setTime(6, 12, 36);
+
+          $formatDate1 = $setDate1->format("D-F-Y H:i:s");
+        ?>
+
+        <div class="code-container">
+          <pre>
+            $setDate1->setDate(2029, 5, 11);
+            $setDate1->setTime(6, 12, 36);
+
+          $formatDate1 = $setDate1->format("D-F-Y H:i:s");
+          </pre>
+        </div>
+
+        <h4>Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo $formatDate1</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               echo $formatDate1;
               ?></span>
             </td>
           </tr>
