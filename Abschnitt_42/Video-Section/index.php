@@ -20,10 +20,11 @@
         <li><a href="#1">01. getdate()</a></li>
         <li><a href="#2">02. date()</a></li>
         <li><a href="#3">03. Objektorientierte Version mit DateTime</a></li>
-        <li><a href="#4">04. </a></li>
-        <li><a href="#5">05. </a></li>
-        <li><a href="#6">06. </a></li>
-        <li><a href="#7">07.</a></li>
+        <li><a href="#4">04. Zeitstempel (Timestamp) mit time() + damit rechnen</a></li>
+        <li><a href="#5">05. Objektorientiert mit DateTime->getTimestamp()</a></li>
+        <li><a href="#6">06. Datum von String umwandeln zu Timestamp oder Datum</a></li>
+        <li><a href="#7">07. checkdate</a></li>
+        <li><a href="#8">08. Deutsches Datum mit DateTime</a></li>
         
       </ul>
     </div>
@@ -278,6 +279,339 @@
               ?></span>
             </td>
           </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 04. Zeitstempel (Timestamp) mit time() + damit rechnen -->
+  <section id="4" class="section">
+    <div class="text-box">
+      <h2>04. Zeitstempel (Timestamp) mit time() + damit rechnen</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+         $current_time_stamp = time();
+         
+         $newTime = $current_time_stamp + 3600;
+
+         $timestamp_set = 1773457657;
+
+         
+        ?>
+        <p>$current_time_stamp = <span class="orange">time()</span>;</p>
+        <p>$newTime = <span class="türkis">$current_time_stamp + 3600</span>;</p>
+        <p>$timestamp_set = <span class="lila">17757657</span>;</p>
+        
+      <!-- Hinweise-->
+      <h4>Hinweise</h4>
+      <p>Timestamp ist die Sekundenanzahl die seid dem 1. Januar 1970 um 00:00 Uhr vergangen sind </p>
+      <p><span class="türkis">3600</span> sec = 1 Std / <span class="türkis">86400</span> sec = 1 Tag</p>
+      <p> Mann kann Tage abziehen oder zb. dazurechnen: <br> 3 Tage = <span class="türkis">(3 * 86400)</span> oder 2 Wochen = <span class="türkis">(2 * 7 * 86400)</span> </p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+
+        <!-- Code und Ausgabe -->
+        <h4>Code und Ausgabe</h4>
+
+        <table>
+          <tr>
+            <td class="noFlex"><p>echo <span class="orange">$current_time_stamp</span> . "Sekunden";</p></td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $current_time_stamp . " Sekunden";
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex">
+            <p> echo "Date & Time: " . date("d. F Y - H:i:s", <span class="orange">time()</span>)</p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo "Date & Time: " . date("d. F Y - H:i:s", time());
+              ?></span>
+            </td>
+          </tr>
+          
+          <tr>
+            <td class="noFlex">
+            <p> echo "Date + Time + 1 Std " . date("d. F Y - H:i:s", <span class="türkis">$newTime</span>)</p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo "Date + 1 Std " . date("d. F Y - H:i:s", $newTime);
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex">
+            <p> echo "Date & Time_set: " . date("d. F Y - H:i:s", <span class="lila">$timestamp_set</span>)</p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo "Date & Time_set: " . date("d. F Y - H:i:s", $timestamp_set);
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 05. Objektorientiert mit DateTime->getTimestamp() -->
+  <section id="5" class="section">
+    <div class="text-box">
+      <h2>05. Objektorientiert mit DateTime->getTimestamp()</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+
+        $time = new DateTime();
+
+        $curren_time_stamp = $time->getTimestamp();
+
+        ?>
+
+      <p><span class="orange">$time</span> = new DateTime();</p>
+      <p>$curren_time_stamp = <span class="orange">$time</span>->getTimestamp();</p> 
+      
+        
+      <!-- Hinweise-->
+      <h4>Hinweise</h4>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+
+        <!-- Code und Ausgabe -->
+        <h4>Code und Ausgabe</h4>
+
+        <table>
+          
+          <tr>
+            <td class="noFlex">
+            <p> echo "Date & Time: " . date("d. F Y - H:i:s", $curren_time_stamp)</p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo "Date & Time: " . date("d. F Y - H:i:s", $curren_time_stamp);
+              ?></span>
+            </td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06. Datum von String umwandeln zu Timestamp oder Datum -->
+  <section id="6" class="section">
+    <div class="text-box">
+      <h2>06. Datum von String umwandeln zu Timestamp oder Datum</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+        
+        $date_string = "2026-04-09";
+        
+        $date_time_string = "2026-04-09 21:08:10";
+
+        $date1 = new DateTime($date_time_string);
+
+        $timestamp_setting = $date1->getTimestamp();
+
+        ?>
+
+      <p>$date_string = <span class="lila">"2026-04-09"</span>;</p> 
+      <p>---------------------------------------</p>
+      <p><span class="türkis">$date_time_string</span> = "2026-04-09 21:08:10";</p> 
+      <p><span class="pink">$date1</span> = new DateTime(<span class="türkis">$date_time_string</span>);</p>
+      <p>$timestamp_setting = <span class="pink">$date1</span>->getTimestamp();</p>
+      
+        
+      <!-- Hinweise-->
+      <h4>Hinweise</h4>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+
+        <!-- Code und Ausgabe -->
+        <h4>Code und Ausgabe</h4>
+
+        <table>
+          
+          <tr>
+            <td class="noFlex">
+            <p>echo <span class="orange">strtotime</span>(<span class="lila">$date_string</span>);</p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo strtotime($date_string);
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex">
+            <p>echo echo $timestamp_setting;</p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                echo $timestamp_setting;
+              ?></span>
+            </td>
+          </tr>
+          
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07. checkdate -->
+  <section id="7" class="section">
+    <div class="text-box">
+      <h2>07. checkdate</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+        
+        $month = 4;
+        $day = 31;
+        $year = 2026;
+
+        ?>
+
+      <p>$month = 4; <br> $day = 31; <br> $year = 2026;</p> 
+     
+      
+        
+      <!-- Hinweise-->
+      <h4>Hinweise</h4>
+      <p>Prüft ob es ein gültiges Datum ist.</p>
+      <p>false wenn nicht - true wenn schon</p>
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+
+        <!-- Code und Ausgabe -->
+        <h4>Code und Ausgabe</h4>
+
+        <table>
+          
+          <tr>
+            <td class="noFlex">
+            <p>var_dump(checkdate($month, $day, $year));</p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                var_dump(checkdate($month, $day, $year));
+              ?></span>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- 08. Deutsches Datum mit DateTime -->
+  <section id="8" class="section">
+    <div class="text-box">
+      <h2>08. Deutsches Datum mit DateTime</h2>
+      <p><a href="#0">Inhaltsverzeichnis</a></p>
+      
+      <!-- Variablen -->
+      <h4>Variablen</h4>
+        <?php 
+          $daysOfWeek = [
+            "Monday"    => "Montag",
+            "Tuesday"   => "Dienstag",
+            "Wednesday" => "Mittwoch",
+            "Thursday"  => "Donnerstag",
+            "Friday"    => "Freitag",
+            "Saturday"  => "Samstag",
+            "Sunday"    => "Sonntag"
+          ];
+
+          $months = [
+            "January"   => "Januar",
+            "February"  => "Februar",
+            "March"     => "März",
+            "April"     => "April",
+            "May"       => "Mai",
+            "June"      => "Juni",
+            "July"      => "Juli",
+            "August"    => "August",
+            "September" => "September",
+            "October"   => "Oktober",
+            "November"  => "November",
+            "December"  => "Dezember"
+          ];
+        ?>
+
+      <p></p> 
+     
+      
+        
+      <!-- Hinweise-->
+      <h4>Hinweise</h4>
+      
+    </div>
+
+    <div class="inhalt-container">
+      <div class="box">
+
+        <!-- Code und Ausgabe -->
+        <h4>Code und Ausgabe</h4>
+
+        <table>
+          
+          <tr>
+            <td class="noFlex">
+            <p></p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+                
+              ?></span>
+            </td>
+          </tr>
+
+          <tr>
+            <td class="noFlex">
+            <p></p>
+            </td>
+            <td class="noFlex"><p> = </p></td>
+            <td class="noFlex">
+              <span><?php 
+               
+              ?></span>
+            </td>
+          </tr>
+          
         </table>
       </div>
     </div>
