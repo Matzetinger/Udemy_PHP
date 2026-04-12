@@ -18,7 +18,7 @@
     <h2>Inhaltsverzeichnis</h2>
       <ul>
         <li><a href="#1">01. getdate()</a></li>
-        <li><a href="#2">02. date()</a></li>
+        <li><a href="#2">02. date() und seine Formate</a></li>
         <li><a href="#3">03. Objektorientierte Version mit DateTime</a></li>
         <li><a href="#4">04. Zeitstempel (Timestamp) mit time() + damit rechnen</a></li>
         <li><a href="#5">05. Objektorientiert mit DateTime->getTimestamp()</a></li>
@@ -124,7 +124,7 @@
       <h2>02. date()</h2>
       <p><a href="#0">Inhaltsverzeichnis</a></p>
       
-      <h4>Hinweise</h4>
+      <h4>Hinweise FORMATE</h4>
         <p><strong>Tag</strong><br>
         d = Tag des Monats, 2-stellig (01 bis 31)<br>
         D = Wochentag, kurz (Mon bis Sun)<br>
@@ -545,7 +545,9 @@
       <!-- Variablen -->
       <h4>Variablen</h4>
         <?php 
-          $daysOfWeek = [
+          $datum = new DateTime();
+
+          $wochentag = [
             "Monday"    => "Montag",
             "Tuesday"   => "Dienstag",
             "Wednesday" => "Mittwoch",
@@ -555,7 +557,7 @@
             "Sunday"    => "Sonntag"
           ];
 
-          $months = [
+          $monat = [
             "January"   => "Januar",
             "February"  => "Februar",
             "March"     => "März",
@@ -569,9 +571,42 @@
             "November"  => "November",
             "December"  => "Dezember"
           ];
-        ?>
 
-      <p></p> 
+          $wochentag = $wochentag[$datum->format("l")];
+          $monat = $monat[$datum->format("F")];
+          $tag = $datum->format("d");
+          $jahr = $datum->format("Y");
+        ?>
+      <p><span class ="türkis">$datum</span> = new DateTime();</p>
+      <p><span class ="orange">$wochentag</span> = [ <br>
+            "Monday"    => "Montag", <br>
+            "Tuesday"   => "Dienstag", <br>
+            "Wednesday" => "Mittwoch", <br>
+            "Thursday"  => "Donnerstag", <br>
+            "Friday"    => "Freitag", <br>
+            "Saturday"  => "Samstag", <br>
+            "Sunday"    => "Sonntag" <br>
+          ]; <br>  <br>
+
+          <span class ="orange">$monat</span> = [ <br>
+            "January"   => "Januar", <br>
+            "February"  => "Februar", <br>
+            "March"     => "März", <br>
+            "April"     => "April", <br>
+            "May"       => "Mai", <br>
+            "June"      => "Juni", <br>
+            "July"      => "Juli", <br>
+            "August"    => "August", <br>
+            "September" => "September", <br>
+            "October"   => "Oktober", <br>
+            "November"  => "November", <br>
+            "December"  => "Dezember" <br>
+          ];</p>
+          <p>$wochentag = <span class ="orange">$wochentag</span>[<span class ="türkis">$datum</span>->format("l")]; </p>
+          <p>$monat = <span class ="orange">$monat</span>[<span class ="türkis">$datum</span>->format("F")]; </p>
+          <p>$tag = <span class ="türkis">$datum</span>->format("d");</p>
+          <p>$jahr = <span class ="türkis">$datum</span>->format("Y");</p>
+          <p><a href="#2"> Zu den Formaten</a></p>
      
       
         
@@ -590,28 +625,15 @@
           
           <tr>
             <td class="noFlex">
-            <p></p>
+            <p>echo "$wochentag den $tag. $monat $jahr";</p>
             </td>
             <td class="noFlex"><p> = </p></td>
             <td class="noFlex">
               <span><?php 
-                
+                echo "$wochentag den $tag. $monat $jahr";
               ?></span>
             </td>
           </tr>
-
-          <tr>
-            <td class="noFlex">
-            <p></p>
-            </td>
-            <td class="noFlex"><p> = </p></td>
-            <td class="noFlex">
-              <span><?php 
-               
-              ?></span>
-            </td>
-          </tr>
-          
         </table>
       </div>
     </div>
