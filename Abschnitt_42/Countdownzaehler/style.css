@@ -5,26 +5,72 @@
 }
 
 h1 {
-  font-size: 3.297rem;
+  font-size: 4.002rem;
 }
 h2 {
-  font-size: 2.703rem;
+  font-size: 3.176rem;
 }
 h3 {
-  font-size: 2.215rem;
+  font-size: 2.52rem;
 }
 h4 {
-  font-size: 1.816rem;
+  font-size: 2rem;
 }
 h5 {
-  font-size: 1.488rem;
+  font-size: 1.588rem;
 }
 h6 {
-  font-size: 1.22rem;
+  font-size: 1.26rem;
 }
 p {
   font-size: 1rem;
 }
 small {
-  font-size: 0.82rem;
+  font-size: 0.794rem;
+}
+
+@font-face {
+  font-family: "Popp";
+  src: url("./src/fonts/Poppins-Regular.ttf") format("truetype");
+}
+
+body {
+  font-family: Popp;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  background-image: url(./src/public/wurmloch1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: whitesmoke;
+
+  .card-container {
+    /* From https://css.glass */
+    background: rgba(154, 142, 142, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 0.5rem 2rem 0 rgba(213, 10, 10, 0.37);
+    backdrop-filter: blur(5.5px);
+    -webkit-backdrop-filter: blur(5.5px);
+    border: 1px solid rgba(154, 142, 142, 1);
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+
+    .title-container {
+      border-right: 1px solid rgb(0, 0, 0);
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      h1 {
+        font-weight: 400;
+        display: inline;
+      }
+    }
+  }
 }
