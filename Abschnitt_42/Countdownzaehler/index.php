@@ -1,6 +1,7 @@
 <?php
 
-$years = $month = $days = $hours = $minutes = $seconds = null;
+$years = $month = $days = $hours = $minutes = $seconds = 0;
+$error = null;
 
 function validateDateTime($date, $format = "Y-m-d\TH:i"){
   $d = Datetime::createFromFormat($format, $date);
@@ -35,11 +36,11 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
       $minutes = $diff->i;
       $seconds = $diff->s;
     }else{
-      echo "Date is not in the future";
+      $error = "Date is not in the future";
     }
 
   }else{
-    echo "Error";
+    $error = "Bitte Datum angeben !";
   }
 
 }
@@ -65,37 +66,37 @@ if($_SERVER["REQUEST_METHOD"] === "POST"){
 
 <div class="card-container">
   <div class="title-container">
-    <h1>Wie viele Tage</h1>
+    <h1>Wie viele Tage noch</h1>
   </div>
   <div class="time-container">
     <div class="time-section">
       <p class="time-title">Jahre</p>
-      <p class="time-count"><?php echo sprintf("%02d", $years)  ?> </p>
+      <p class="time-count"><?php echo sprintf("%02d", htmlspecialchars($years))  ?> </p>
     </div>
     <div class="time-section">
       <p class="time-title">Monate</p>
-      <p class="time-count"><?php echo sprintf("%02d", $month) ?></p>
+      <p class="time-count"><?php echo sprintf("%02d", htmlspecialchars($month)) ?></p>
     </div>
     <div class="time-section">
       <p class="time-title">Tage</p>
-      <p class="time-count"><?php echo sprintf("%02d", $days) ?> </p>
+      <p class="time-count"><?php echo sprintf("%02d", htmlspecialchars($days)) ?> </p>
     </div>
     <div class="time-section">
       <p class="time-title">Stunden</p>
-      <p class="time-count"><?php echo sprintf("%02d", $hours) ?> </p>
+      <p class="time-count"><?php echo sprintf("%02d", htmlspecialchars($hours)) ?> </p>
     </div>
     <div class="time-section">
       <p class="time-title">Minuten</p>
-      <p class="time-count"><?php echo sprintf("%02d", $minutes) ?> </p>
+      <p class="time-count"><?php echo sprintf("%02d", htmlspecialchars($minutes)) ?> </p>
     </div>
     <div class="time-section">
       <p class="time-title">Sekunden</p>
-      <p class="time-count"><?php echo sprintf("%02d", $seconds) ?> </p>
+      <p class="time-count"><?php echo sprintf("%02d", htmlspecialchars($seconds)) ?> </p>
     </div>
   </div>
   <div class="form-container">
     <?php require_once("./src/forms/form.php");?>
-    <small class="err">Fehler</small>
+    <small class="err"><?php echo $error ?></small>
   </div>
 </div>
 

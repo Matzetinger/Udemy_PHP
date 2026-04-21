@@ -26,6 +26,7 @@
         <li><a href="#7">07. checkdate</a></li>
         <li><a href="#8">08. Deutsches Datum mit DateTime</a></li>
         <li><a href="../../Abschnitt_42/Countdownzaehler/index.php">09 Zum Countdown Zähler</a></li>
+        <li><a href="../../Abschnitt_42/Lösung/lösung.php">Lösung Abschnitt 42</a></li>
         
       </ul>
     </div>

@@ -52,7 +52,7 @@ body {
     background: rgba(154, 142, 142, 0.3);
     border-radius: 16px;
     box-shadow: 0 0.5rem 2rem 0 rgba(213, 10, 10, 0.37);
-    backdrop-filter: blur(5.5px);
+    backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(5.5px);
     border: 1px solid rgba(154, 142, 142, 1);
     padding: 3rem;
@@ -71,6 +71,66 @@ body {
         font-weight: 400;
         display: inline;
       }
+    }
+
+    .time-container {
+      display: flex;
+      gap: 0.5rem;
+      flex-direction: column;
+
+      .time-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .time-count {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .form-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 1rem;
+
+        label {
+          text-align: center;
+          font-size: 1.5rem;
+        }
+
+        input,
+        button {
+          padding: 0.8rem;
+          border-radius: 0.5rem;
+          border: none;
+
+          &:focus {
+            outline: 0.0625rem solid rgb(128, 135, 158);
+          }
+        }
+
+        button {
+          background-color: rgb(143, 107, 123, 0.5);
+          color: whitesmoke;
+          &:hover {
+            background-color: rgb(143, 107, 123);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    .err {
+      color: rgb(255, 45, 45);
     }
   }
 }
